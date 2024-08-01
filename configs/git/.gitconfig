@@ -1,0 +1,156 @@
+[alias]
+    ll = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --abbrev-commit --date=relative
+    lle = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --abbrev-commit --date=relative
+    la = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --decorate --numstat
+    # https://gist.github.com/ecasilla/9669241
+    hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short
+    age = "!f() { git log --reverse --pretty=oneline --format="%ar" | head -n 1 | LC_ALL=C sed 's/ago//'; }; f"
+
+    first-commit = "!f() { git log --reverse | sed -n -e '1,5p'; }; f"
+    first-commit-message = "!f() { git log --reverse --format="%s" | sed -n -e '1,1p'; }; f"
+    first-commit-date = "!f() { git log --reverse --format="%ci" | sed -n -e '1,1p'; }; f"
+    last-commit = "!f() { git log -1; }; f"
+    last-commit-message = "!f() { git log --format="%s" | sed -n -e '1,1p'; }; f"
+    last-commit-date = "!f() { git log --format="%ci" | sed -n -e '1,1p'; }; f"
+
+    save = "!f() { git add . -v && git commit -am 'Save current state'; }; f"
+    # Usage: git set-last-commit-date 2022-12-21_09:55:59
+    set-last-commit-date = "!f() { GIT_COMMITTER_DATE=$1 git commit --amend --no-edit --date $1; }; f"
+
+    delete-branch = "!f() { git branch -D $1; git push origin --delete $1; }; f"
+    branch-name = "!f() { git rev-parse --abbrev-ref HEAD; }; f"
+    feature = "!f() { git checkout -b feature/$1; }; f"
+
+    delete-tag = "!f() { git tag -d $1; git push origin --delete $1; }; f"
+    # Usage: git rename-tag OLD_NAME NEW_NAME
+    rename-tag = "!f() { git tag $2 $1; git delete-tag $1; }; f"
+    last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
+
+    up = pull --rebase --autostash
+    pull-request = "!f() { hub pull-request -pm \"$1\"; }; f"
+    changed-packages2 = "!f() { git --no-pager diff master.. --name-only | grep \"^packages/\" | cut -f2 -d/ | sort | uniq | xargs echo; } ; f"
+    cp = cherry-pick
+
+    repo = config remote.origin.url
+    reset-author = commit --amend --no-edit --reset-author
+    set-default-branch = config remote.origin.push HEAD
+
+    user-local = config user.email
+    user-global = config --global user.email
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+
+[tag]
+    forceSignAnnotated = false
+
+[init]
+    defaultBranch = main
+
+[core]
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    # Enable case sensitive
+    ignorecase = false
+    # Enable global configuration for ignoring list
+    excludesfile = ~/.gitignore
+    # Setup default editor
+    editor = /usr/bin/vim
+    # Convert end of line to pair: CRLF
+    autocrlf = input
+    # Set char for end of line
+    # eol = crlf
+    # Exit from command when file has bad end of line
+    safecrlf = true
+
+[color]
+    # Use colors in Git commands that are capable of colored output when outputting to the terminal
+    ui = auto
+    # Always add colors to output. Good thing to "what-happened" command.
+    status = always
+
+[color "branch"]
+    # current = yellow reverse
+    # local = yellow
+    # remote = green
+
+[color "diff"]
+    # meta = yellow bold
+    # frag = magenta bold
+    # old = red strike bold
+    # new = green italic bold
+
+[color "status"]
+    # added = yellow
+    # changed = green
+    # untracked = cyan
+
+[commit]
+    gpgsign = true
+
+[filter "media"]
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+[push]
+    default = upstream
+
+[remote "origin"]
+    tagopt = --no-tags
+
+[user]
+    name = Piotr Kowalski
+
+[pager]
+    log = delta
+    diff = delta
+    show = delta
+    status = delta
+    reflog = delta
+
+[delta]
+    syntax-theme = Monokai Extended
+    navigate = true
+    color-only = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[gpg]
+    format = openpgp
+    program = gpg
+
+[gpg "ssh"]
+    program = ssh-keygen
+    allowedSignersFile = ""
+
+# Include private configuration
+[include]
+    path = ~/projects/dotfiles-private/.gitconfig
+
+# Include platform-specific configuration
+[include]
+    # path = ~/projects/dotfiles/configs/git/.gitconfig-linux
+    # path = ~/projects/dotfiles/configs/git/.gitconfig-macos
+    # path = ~/projects/dotfiles/configs/git/.gitconfig-windows

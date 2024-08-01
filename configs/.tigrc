@@ -1,0 +1,3 @@
+set editor-line-number = no
+set vertical-split = horizontal
+set main-view-id-display = yes

@@ -1,0 +1,23 @@
+# Windows
+$RECYCLE.BIN/
+Desktop.ini
+*.db
+*.autosave
+
+# Linux
+*~
+.directory
+
+# macOS
+.Spotlight-V100/
+.Trashes/
+.DS_Store
+._*
+
+# Editors
+.idea/
+.settings/
+.project
+nbproject/
+*.swp
+.vscode

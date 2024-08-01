@@ -1,0 +1,62 @@
+{
+    "Define CommonJS module": {
+        "prefix": "mx",
+        "body": [
+            "module.exports = {\n\t$1\n}"
+        ]
+    },
+    "Immediately-invoked function expression": {
+        "prefix": "iife",
+        "body": [
+            "(function () {\n\t$1\n})();"
+        ]
+    },
+    "Lamba": {
+        "prefix": "l",
+        "body": [
+            "() => {\n\t$1\n}"
+        ]
+    },
+    "console.debug + label=piecioshka": {
+        "prefix": "cd",
+        "body": [
+            "console.debug('piecioshka', { $1 });"
+        ]
+    },
+    "Testing: describe": {
+        "prefix": "de",
+        "body": [
+            "describe('$1', () => {\n\t$2\n});"
+        ]
+    },
+    "Testing: suite": {
+        "prefix": "su",
+        "body": [
+            "suite('$1', () => {\n\t$2\n});"
+        ]
+    },
+    "Testing: it": {
+        "prefix": "it",
+        "body": [
+            "it('$1', () => {\n\t$2\n});"
+        ]
+    },
+    "Testing: test": {
+        "prefix": "tt",
+        "body": [
+            "test('$1', () => {\n\t$2\n});"
+        ]
+    },
+    "Testing: expect": {
+        "prefix": "ex",
+        "body": [
+            "expect($1).$2"
+        ]
+    },
+    "Testing: assert": {
+        "prefix": "ae",
+        "body": [
+            "assert.equal($1, $2);"
+        ]
+    }
+}

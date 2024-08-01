@@ -1,0 +1,17 @@
+# https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
+
+# Don't let ripgrep vomit really long lines to my terminal.
+--max-columns=150
+
+# Flag below means: --no-ignore --hidden --binary
+-uuu
+
+# Display hidden files
+--hidden
+
+# Ignore binary files
+--no-binary
+
+# Ignore directories
+--glob=!.git/
+--glob=!.angular/

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# ------------------------------------------------------------------------------
+# Use http://ezprompt.net/ to build custom prompt.
+# ------------------------------------------------------------------------------
+
+### Load file with colors
+source ~/projects/dotfiles/configs/shells/.colors.sh
+
+# Get current state of git repo
+__parse_git_state() {
+    state=`git status 2>&1 | tee`
+
+    dirty=`echo -n "${state}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+    untracked=`echo -n "${state}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+    ahead=`echo -n "${state}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+    newfile=`echo -n "${state}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+    renamed=`echo -n "${state}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+    deleted=`echo -n "${state}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+    bits=''
+
+    if [ "${renamed}" == "0" ]; then
+        bits=">${bits}"
+    fi
+    if [ "${ahead}" == "0" ]; then
+        bits="*${bits}"
+    fi
+    if [ "${newfile}" == "0" ]; then
+        bits="+${bits}"
+    fi
+    if [ "${untracked}" == "0" ]; then
+        bits="?${bits}"
+    fi
+    if [ "${deleted}" == "0" ]; then
+        bits="x${bits}"
+    fi
+    if [ "${dirty}" == "0" ]; then
+        bits="!${bits}"
+    fi
+    if [ ! "${bits}" == "" ]; then
+        echo " ${bits}"
+    else
+        echo ""
+    fi
+}
+
+# Get current branch and status in git repo
+__parse_git_branch_with_state() {
+    branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+
+    if [ ! "${branch}" == "" ]; then
+        status=`__parse_git_state`
+        echo " [${branch}${status}]"
+    else
+        echo ""
+    fi
+}
+
+PS1="${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__parse_git_branch_with_state\`${__COLOR_BLUE_LIGHT} > ${__COLOR_RESET}"
+# PS1="${__COLOR_GREEN}\w${__COLOR_BLUE_LIGHT} > ${__COLOR_RESET}"

@@ -1,0 +1,207 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 120],
+  "editor.scrollBeyondLastLine": false,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.snippetSuggestions": "top",
+  "editor.stickyScroll.enabled": false,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": false, // bounded
+  "editor.wordWrapColumn": 80,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.scale": 2,
+  "editor.minimap.autohide": true,
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.enabled": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 1,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.idea": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.watcherExclude": {
+    "**/.idea/**": true,
+    "**/.git/**": true,
+    "**/bower_components/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/build-types/**": true
+  },
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "html.format.wrapLineLength": -1,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "multiDiffEditor.experimental.enabled": true,
+  "scm.defaultViewMode": "tree",
+  "search.defaultViewMode": "tree",
+  "search.showLineNumbers": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/.idea": true,
+    "**/.nyc_output": true,
+    "**/bower_components": true,
+    "**/build": true,
+    "**/build-types": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.profiles.osx": {
+    "zsh": null,
+    "fish": {
+      "path": "/opt/homebrew/bin/fish",
+      // https://code.visualstudio.com/api/references/icons-in-labels
+      "icon": "symbol-event"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.scrollback": 10000,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.location": "top",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  "workbench.list.horizontalScrolling": true,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.tree.indent": 30,
+  "window.zoomLevel": 1,
+  // Per FileType
+  "[markdown]": {
+    "editor.wordWrap": "off" // bounded
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  // Plugins
+  "cSpell.language": "en,pl",
+  "vsicons.projectDetection.disableDetect": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "better-comments.highlightPlainText": true,
+  "wallaby.suppressExpirationNotifications": true,
+  "prettier.trailingComma": "all",
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "always",
+  "prettier.proseWrap": "never",
+  "prettier.useTabs": false,
+  "prettier.quoteProps": "as-needed",
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": false,
+  "pdf-preview.default.scale": "page-fit",
+  "svelte.enable-ts-plugin": true,
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text-and-comment",
+    "foreground": "black",
+    "background": "white",
+    "opacity": 50,
+    "iconColour": "blue",
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    // https://microsoft.github.io/vscode-codicons/dist/codicon.html
+    "TODO": {
+      "icon": "check",
+      "foreground": "black",
+      "background": "white",
+      "iconColour": "white"
+    },
+    "NOTE": {
+      "icon": "note",
+      "foreground": "black",
+      "background": "darkgray",
+      "iconColour": "darkgray"
+    },
+    "COMMENT": {
+      "icon": "comment",
+      "foreground": "white",
+      "background": "gray",
+      "iconColour": "gray"
+    },
+    "FIXME": {
+      "foreground": "black",
+      "background": "yellow",
+      "iconColour": "yellow"
+    },
+    "BUG": {
+      "foreground": "black",
+      "background": "red",
+      "iconColour": "red"
+    },
+    "HACK": {
+      "foreground": "black",
+      "background": "orange",
+      "iconColour": "orange"
+    },
+    "INFO": {
+      "icon": "info",
+      "foreground": "white",
+      "background": "#3d98c9",
+      "iconColour": "#3d98c9"
+    },
+    "XXX": {
+      "icon": "comment",
+      "foreground": "black",
+      "background": "red",
+      "iconColour": "red"
+    }
+  },
+  "todo-tree.general.tags": [
+    "TODO",
+    "NOTE",
+    "COMMENT",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "INFO",
+    "XXX"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+  "hediet.vscode-drawio.resizeImages": null,
+  "sequencediagrams.diagram.style": "simple",
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "gitlens.graph.minimap.additionalTypes": [
+    "localBranches",
+    "stashes",
+    "tags",
+    "pullRequests"
+  ],
+}

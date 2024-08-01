@@ -1,0 +1,10 @@
+{
+	"Angular: ng-container": {
+		"prefix": "ng-con",
+		"body": [
+			"<ng-container$1>",
+			"\t$2",
+			"</ng-container>"
+		]
+	}
+}
