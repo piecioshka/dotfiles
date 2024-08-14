@@ -85,6 +85,7 @@
   "terminal.integrated.scrollback": 10000,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1,
   "workbench.activityBar.location": "top",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "workbench.editor.titleScrollbarSizing": "large",
@@ -94,7 +95,6 @@
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 30,
-  "window.zoomLevel": 1,
   // Per FileType
   "[markdown]": {
     "editor.wordWrap": "off" // bounded
@@ -104,6 +104,9 @@
   },
   // Plugins
   "cSpell.language": "en,pl",
+  "cSpell.userWords": [
+    "piecioshka"
+  ],
   "vsicons.projectDetection.disableDetect": true,
   "vsicons.dontShowNewVersionMessage": true,
   "better-comments.highlightPlainText": true,
