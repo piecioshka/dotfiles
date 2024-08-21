@@ -65,7 +65,7 @@ source ~/projects/dotfiles/configs/shells/.aliases.sh
 bass source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 
 ### Load secret config files
-bass source ~/projects/dotfiles-private/.profile
+[ -s "~/projects/dotfiles-private/.profile" ] && bass source ~/projects/dotfiles-private/.profile
 
 # ------------------------------------------------------------------------------
 

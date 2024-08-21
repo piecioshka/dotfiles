@@ -34,7 +34,7 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 eval "$(rbenv init -)"
 
 ### Support fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -s ~/.fzf.bash ] && source ~/.fzf.bash
 
 ### Support Cargo (Rust Package Manager)
 [ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"

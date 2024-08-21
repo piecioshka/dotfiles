@@ -57,7 +57,7 @@ __create_project_by() {
 
     for FILE in ${files[*]}
     do
-        if [ -f "${FILE}" ]; then
+        if [ -s "${FILE}" ]; then
             __replace_file_content "INSERT_NAME" ${name} ${FILE}
         fi
     done

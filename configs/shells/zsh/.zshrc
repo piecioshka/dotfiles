@@ -16,7 +16,7 @@ source ~/projects/dotfiles/configs/shells/zsh/.prompt
 source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 
 ### Load secret config files
-[ -f ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
+[ -s ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
 
 ### Support fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s ~/.fzf.zsh ] && source ~/.fzf.zsh

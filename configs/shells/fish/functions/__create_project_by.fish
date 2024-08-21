@@ -27,7 +27,7 @@ function __create_project_by
     set files README.md package.json package-lock.json index.html src/index.html .changelogrc slides.md bin/cli.js electron-builder.json5
 
     for FILE in $files
-        if [ -f "$FILE" ]
+        if [ -s "$FILE" ]
             __replace_file_content "INSERT_NAME" $name $FILE
         end
     end
