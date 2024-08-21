@@ -6,10 +6,14 @@ My public dotfiles.
 
 ```bash
 brew install fzf
+brew install bat
+brew install rg
 brew install git-gui
 brew install git-delta
+brew install tig
 # nvm, install by running a command from https://github.com/nvm-sh/nvm#install-script
 nvm install stable
+npm install -g browser-sync
 brew install rbenv
 brew install pyenv
 ```
