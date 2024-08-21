@@ -37,7 +37,7 @@ set -gx PATH $HOME/usr/local/sbin $PATH
 # uru_rt admin install | source
 
 ### Suppport rbenv - Ruby Version Manager
-status --is-interactive; and rbenv init - fish | source
+[ -s "/opt/homebrew/bin/rbenv" ] && status --is-interactive; and rbenv init - fish | source
 
 ### Support ripgrep
 set -gx RIPGREP_CONFIG_PATH $HOME/projects/dotfiles/configs/.ripgreprc

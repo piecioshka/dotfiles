@@ -31,7 +31,7 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 # eval "$(uru_rt admin install)"
 
 ### Suppport rbenv - Ruby Version Manager
-eval "$(rbenv init -)"
+[ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
 
 ### Support fzf
 [ -s ~/.fzf.bash ] && source ~/.fzf.bash
