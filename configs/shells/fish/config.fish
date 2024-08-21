@@ -42,8 +42,8 @@ set -gx PATH $HOME/usr/local/sbin $PATH
 ### Support ripgrep
 set -gx RIPGREP_CONFIG_PATH $HOME/projects/dotfiles/configs/.ripgreprc
 
-### Support pyenv
-#status --is-interactive; and source (pyenv init -|psub)
+### Support pyenv - Python Version Manager
+[ -s "/opt/homebrew/bin/pyenv" ] && status --is-interactive; and source (pyenv init -|psub)
 
 # Resolve an issue:
 # $ fish: Unknown command: python

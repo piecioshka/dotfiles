@@ -33,6 +33,9 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 ### Suppport rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
 
+### Support pyenv - Python Version Manager
+# you don't need to do nothing, because pyenv is already available
+
 ### Support fzf
 [ -s ~/.fzf.bash ] && source ~/.fzf.bash
 

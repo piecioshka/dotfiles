@@ -10,6 +10,8 @@ brew install git-gui
 brew install git-delta
 # nvm, install by running a command from https://github.com/nvm-sh/nvm#install-script
 nvm install stable
+brew install rbenv
+brew install pyenv
 ```
 
 ## Install my custom scripts
