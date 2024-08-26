@@ -18,6 +18,9 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 ### Support load_nvm
 source ~/projects/dotfiles/configs/shells/zsh/load_nvm.zsh
 
+### Load file .profile
+[ -s ~/.profile ] && source ~/.profile
+
 ### Load secret config files
 [ -s ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
 

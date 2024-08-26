@@ -23,6 +23,11 @@ __link_file() {
 
 # ------------------------------------------------------------------------------
 
+__install_profile() {
+  __print_dotfile_line "==> .profile"
+  __link_file $base/configs/.profile ~/.profile
+}
+
 __install_bash() {
   __print_dotfile_line "==> Bash"
   __link_file $base/configs/shells/bash/.bash_profile ~/.bash_profile
@@ -97,6 +102,7 @@ __install_mc() {
 
 echo -e "Install configs"
 
+__install_profile
 __install_bash
 __install_zsh
 __install_fish
