@@ -13,11 +13,10 @@ __print_dotfile_line() {
 __link_file() {
   file1=${1}
   file2=${2}
-  if [ -e "$file2" ]; then
-    # delta $file2 $file1
-    rm $file2
-    echo "[+] Remove file: ${file2}"
-  fi
+  echo -e ""
+  ls -la --color=auto $file2
+  rm $file2
+  echo "[+] Remove file: ${file2}"
   echo "[+] Link file: $file1 => $file2"
   ln -s $file1 $file2
 }
