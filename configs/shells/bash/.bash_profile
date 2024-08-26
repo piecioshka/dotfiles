@@ -15,6 +15,9 @@ source ~/projects/dotfiles/configs/shells/bash/.prompt
 ### Support Angular CLI
 source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 
+### Support load_nvm
+source ~/projects/dotfiles/configs/shells/bash/load_nvm.bash
+
 ### Load file .bashrc
 [ -s ~/.bashrc ] && source ~/.bashrc
 
