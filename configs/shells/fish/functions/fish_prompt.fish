@@ -53,7 +53,7 @@ function fish_prompt
     set_color $fish_color_command
     echo -n (__parse_git_branch_with_state)
     set_color $fish_color_param
-    echo -n ' > '
+    echo -n ' 🐟 '
     set_color normal
 end
 
