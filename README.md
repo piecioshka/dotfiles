@@ -5,9 +5,12 @@ My public dotfiles.
 ## Required software
 
 ```bash
+brew install watch
+brew install tree
+brew install mc
 brew install fzf
 brew install bat
-brew install rg
+brew install ripgrep # rg
 brew install git-gui
 brew install git-delta
 brew install tig
