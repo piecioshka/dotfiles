@@ -92,12 +92,12 @@ __install_fzf() {
 
 __install_fastfetch() {
   __print_dotfile_line "==> fastfetch"
-  __link_file $base/configs/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+  __link_file $base/configs/fastfetch/ ~/.config/fastfetch
 }
 
 __install_mc() {
   __print_dotfile_line "==> mc"
-  __link_file $base/configs/mc/ini ~/.config/mc/ini
+  __link_file $base/configs/mc/ ~/.config/mc
 }
 
 echo -e "Install configs"
