@@ -92,12 +92,22 @@ __install_fzf() {
 
 __install_fastfetch() {
   __print_dotfile_line "==> fastfetch"
-  __link_file $base/configs/fastfetch/ ~/.config/fastfetch
+  __link_file $base/configs/.config/fastfetch/ ~/.config/fastfetch
 }
 
 __install_mc() {
   __print_dotfile_line "==> mc"
-  __link_file $base/configs/mc/ ~/.config/mc
+  __link_file $base/configs/.config/mc/ ~/.config/mc
+}
+
+__install_btop() {
+  __print_dotfile_line "==> btop"
+  __link_file $base/configs/.config/btop/ ~/.config/btop
+}
+
+__install_htop() {
+  __print_dotfile_line "==> htop"
+  __link_file $base/configs/.config/htop/ ~/.config/htop
 }
 
 echo -e "Install configs"
@@ -114,3 +124,5 @@ __install_vsc
 __install_fzf
 __install_fastfetch
 __install_mc
+__install_btop
+__install_htop
