@@ -18,6 +18,9 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 ### Support load_nvm
 source ~/projects/dotfiles/configs/shells/zsh/load_nvm.zsh
 
+### Support Zsh Completion for Homebrew
+source ~/projects/dotfiles/configs/shells/zsh/homebrew-completion.zsh
+
 ### Load file .profile
 [ -s ~/.profile ] && source ~/.profile
 

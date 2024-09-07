@@ -18,6 +18,9 @@ source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 ### Support load_nvm
 source ~/projects/dotfiles/configs/shells/bash/load_nvm.bash
 
+### Support Bash Completion for Homebrew
+source ~/projects/dotfiles/configs/shells/bash/homebrew-completion.bash
+
 ### Load file .bashrc
 [ -s ~/.bashrc ] && source ~/.bashrc
 
