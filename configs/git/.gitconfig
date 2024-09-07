@@ -9,7 +9,7 @@
     first-commit = "!f() { git log --reverse | sed -n -e '1,5p'; }; f"
     first-commit-message = "!f() { git log --reverse --format="%s" | sed -n -e '1,1p'; }; f"
     first-commit-date = "!f() { git log --reverse --format="%ci" | sed -n -e '1,1p'; }; f"
-    last-commit = "!f() { git log -1; }; f"
+    last-commit = log -1
     last-commit-message = "!f() { git log --format="%s" | sed -n -e '1,1p'; }; f"
     last-commit-date = "!f() { git log --format="%ci" | sed -n -e '1,1p'; }; f"
 
@@ -27,7 +27,6 @@
     last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
 
     up = pull --rebase --autostash
-    pull-request = "!f() { hub pull-request -pm \"$1\"; }; f"
     changed-packages2 = "!f() { git --no-pager diff master.. --name-only | grep \"^packages/\" | cut -f2 -d/ | sort | uniq | xargs echo; } ; f"
     cp = cherry-pick
 
@@ -42,7 +41,6 @@
     # Detect whitespace errors when applying a patch
     whitespace = fix
 
-# Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
     remote = origin
     merge = refs/heads/master

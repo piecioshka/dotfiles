@@ -10,10 +10,17 @@ brew install tree
 brew install mc
 brew install fzf
 brew install bat
-brew install ripgrep # rg
+brew install ripgrep # shell command: rg
+brew install btop
+brew install htop
+brew install fastfetch # shell commands: fastfetch, flashfetch
+
+brew install git # INFO: macOS built-in version is always older
 brew install git-gui
 brew install git-delta
 brew install tig
+brew install gh # official GitHub CLI
+
 # nvm, install by running a command from https://github.com/nvm-sh/nvm#install-script
 nvm install stable
 npm install -g browser-sync

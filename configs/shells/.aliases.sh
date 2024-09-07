@@ -5,20 +5,16 @@
 # Apps with GUI
 alias chrome="open -a 'Google Chrome'"
 alias p="open -a 'Plain Text Editor'"
+alias c="open -a 'Visual Studio Code'"
 
 # ------------------------------------------------------------------------------
 
 # Misc
-
 # alias _='sudo' # not working on Fish
+alias b='brew'
 alias v='vim'
-alias c='"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"'
 alias tree='tree --dirsfirst -C'
 alias f='find . -iname'
-alias b='brew'
-alias y='yarn'
-alias s='browser-sync start --server --no-ui --no-open --directory --serveStatic .'
-alias sw='s --watch' ## for slides
 alias grep='grep --color=auto'
 alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # Get file with last modified time.
 alias mode="stat -f '%p %N'"
@@ -26,6 +22,13 @@ alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:50
 alias search-open="code \$(search)"
 alias rgg="rg --glob=!node_modules/"
 alias exif-clean="exiftool -all= -overwrite_original"
+
+# ------------------------------------------------------------------------------
+
+# Node.js global packages
+alias y='yarn'
+alias s='browser-sync start --server --no-ui --no-open --directory --serveStatic .'
+alias sw='s --watch' ## for slides
 
 # ------------------------------------------------------------------------------
 
@@ -89,5 +92,8 @@ alias grh='git reset --hard'
 alias grhh='git reset --hard HEAD'
 alias gt='git tag'
 alias gfp='git fetch -p'
-alias gf='git fire'
 alias gmm='git merge master'
+# My Git scripts
+alias gf='git fire'
+# Official GitHub CLI
+alias gpr='gh pr create --fill'
