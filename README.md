@@ -21,11 +21,18 @@ brew install git # INFO: macOS built-in version is always older
 brew install git-gui # shell command: gitk
 brew install git-delta # shell command: delta
 brew install tig
-brew install gh # official GitHub CLI
+brew install gh
 
-# nvm, install by running a command from https://github.com/nvm-sh/nvm#install-script
+# nvm installation guide - https://github.com/nvm-sh/nvm#install-script
 nvm install stable
-npm install -g browser-sync
+npm install -g yarn # https://github.com/yarnpkg/yarn
+npm install -g browser-sync # https://github.com/BrowserSync/browser-sync
+npm install -g npm-check # https://github.com/dylang/npm-check
+npm install -g fkill-cli # https://github.com/sindresorhus/fkill-cli
+npm install -g zx # https://github.com/google/zx
+npm install -g convert-md-to-html # https://github.com/piecioshka/convert-md-to-html
+npm install -g convert-md-to-pdf # https://github.com/piecioshka/convert-md-to-pdf
+
 brew install rbenv
 brew install pyenv
 ```
