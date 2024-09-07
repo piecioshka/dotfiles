@@ -48,12 +48,13 @@ function __parse_git_branch_with_state
 end
 
 function fish_prompt
+    echo -n '(fish) '
     set_color $fish_color_cwd
     echo -n (prompt_pwd)
     set_color $fish_color_command
     echo -n (__parse_git_branch_with_state)
     set_color $fish_color_param
-    echo -n ' 🐟 '
+    echo -n ' > '
     set_color normal
 end
 

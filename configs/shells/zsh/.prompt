@@ -25,4 +25,4 @@ zstyle ':vcs_info:git:*' check-for-unstaged-changes true
 zstyle ':vcs_info:git:*' check-for-untracked-files true
 
 setopt prompt_subst
-PS1='%F{green}%~%f%F{cyan} [${vcs_info_msg_0_}${untracked_files}]%f%F{blue} > %f'
+PS1='(zsh) %F{green}%~%f%F{cyan} [${vcs_info_msg_0_}${untracked_files}]%f%F{blue} > %f'
