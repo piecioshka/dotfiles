@@ -22,6 +22,7 @@ brew install git-gui # shell command: gitk
 brew install git-delta # shell command: delta
 brew install tig
 brew install gh
+gh extension install dlvhdr/gh-dash # shell command: gh dash
 
 # nvm installation guide - https://github.com/nvm-sh/nvm#install-script
 nvm install stable
