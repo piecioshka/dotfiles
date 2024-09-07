@@ -14,10 +14,12 @@ brew install ripgrep # shell command: rg
 brew install btop
 brew install htop
 brew install fastfetch # shell commands: fastfetch, flashfetch
+brew install httpie # shell command: http
+brew install nmap
 
 brew install git # INFO: macOS built-in version is always older
-brew install git-gui
-brew install git-delta
+brew install git-gui # shell command: gitk
+brew install git-delta # shell command: delta
 brew install tig
 brew install gh # official GitHub CLI
 
