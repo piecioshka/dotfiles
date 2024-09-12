@@ -95,5 +95,6 @@ alias gfp='git fetch -p'
 alias gmm='git merge master'
 # My Git scripts
 alias gf='git fire'
+alias gpu='git projects-update'
 # Official GitHub CLI
 alias gpr='gh pr create --fill'
