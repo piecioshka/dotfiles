@@ -1,7 +1,7 @@
 function self-destruct --description='Remove current directory with all files inside'
     set -l name (basename (pwd))
 
-    read -p "set_color yellow; echo -ne 'Are you sure you want to delete \"$name\" directory? [y/n]: '; set_color normal;" choice
+    read -p "set_color yellow; echo -ne 'Are you sure you want to delete \"$name\" directory? [y/N]: '; set_color normal;" choice
 
     switch $choice
         case "y" "Y"
