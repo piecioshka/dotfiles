@@ -268,3 +268,23 @@ __ts_to_mp4() {
 }
 
 alias ts-to-mp4=__ts_to_mp4
+
+# ------------------------------------------------------------------------------
+#
+# Remove current directory with all files inside
+function self-destruct {
+  name=$(basename "$(pwd)")
+
+  read -p "Are you sure you want to delete \"$name\" directory? [y/N]: " choice
+
+  case $choice in
+    [yY])
+      cd ..
+      rm -rfv "$name"
+      echo "Directory \"$name\" was removed successfully!"
+      ;;
+    *)
+      echo "ERROR: Process was canceled"
+      ;;
+  esac
+}
