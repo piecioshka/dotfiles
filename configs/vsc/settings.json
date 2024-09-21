@@ -103,14 +103,29 @@
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   // Plugins
+  "better-comments.highlightPlainText": true,
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "piecioshka"
   ],
-  "vsicons.projectDetection.disableDetect": true,
-  "vsicons.dontShowNewVersionMessage": true,
-  "better-comments.highlightPlainText": true,
-  "wallaby.suppressExpirationNotifications": true,
+  "excalidraw.theme": "dark",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "gitlens.graph.minimap.additionalTypes": [
+    "localBranches",
+    "stashes",
+    "tags",
+    "pullRequests"
+  ],
+  "gitlens.ai.experimental.model": "openai:gpt-4o",
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+  "hediet.vscode-drawio.resizeImages": null,
+  "pdf-preview.default.scale": "page-fit",
   "prettier.trailingComma": "all",
   "prettier.tabWidth": 2,
   "prettier.semi": true,
@@ -121,8 +136,18 @@
   "prettier.quoteProps": "as-needed",
   "prettier.bracketSpacing": true,
   "prettier.bracketSameLine": false,
-  "pdf-preview.default.scale": "page-fit",
+  "sequencediagrams.diagram.style": "simple",
   "svelte.enable-ts-plugin": true,
+  "todo-tree.general.tags": [
+    "TODO",
+    "NOTE",
+    "COMMENT",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "INFO",
+    "XXX"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
     "type": "text-and-comment",
@@ -180,31 +205,8 @@
       "iconColour": "red"
     }
   },
-  "todo-tree.general.tags": [
-    "TODO",
-    "NOTE",
-    "COMMENT",
-    "FIXME",
-    "BUG",
-    "HACK",
-    "INFO",
-    "XXX"
-  ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
-  "hediet.vscode-drawio.resizeImages": null,
-  "sequencediagrams.diagram.style": "simple",
-  "gitlens.ai.experimental.provider": "openai",
-  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "gitlens.graph.minimap.additionalTypes": [
-    "localBranches",
-    "stashes",
-    "tags",
-    "pullRequests"
-  ],
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.projectDetection.disableDetect": true,
+  "wallaby.suppressExpirationNotifications": true,
 }
