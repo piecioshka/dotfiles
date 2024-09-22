@@ -14,11 +14,11 @@ __link_file() {
   file1=${1}
   file2=${2}
   echo -e ""
-  ls -la --color=auto $file2
-  rm $file2
+  ls -la --color=auto "${file2}"
+  rm "${file2}"
   echo "[+] Remove file: ${file2}"
-  echo "[+] Link file: $file1 => $file2"
-  ln -s $file1 $file2
+  echo "[+] Link file: ${file1} => ${file2}"
+  ln -s "${file1}" "${file2}"
 }
 
 # ------------------------------------------------------------------------------
@@ -78,7 +78,9 @@ __install_vsc() {
 
   if [ -d "${path}" ]; then
     echo -e "Directory ${path} exists\n"
-    cp -vR $base/configs/vsc/* "${path}"
+    __link_file $base/configs/vsc/snippets/ "${path}snippets"
+    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
+    __link_file $base/configs/vsc/settings.json "${path}settings.json"
   else
     echo -e "Directory ${path} not exists"
   fi
