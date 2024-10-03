@@ -7,7 +7,7 @@ base=`pwd`
 
 __print_dotfile_line() {
   message="${1}"
-  echo -e "\n${__BLUE_LIGHT}${message}${__WHITE}"
+  echo -e "\n${__COLOR_BLUE_LIGHT}${message}${__WHITE}"
 }
 
 # ------------------------------------------------------------------------------
