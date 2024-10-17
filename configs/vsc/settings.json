@@ -111,9 +111,9 @@
   "excalidraw.theme": "dark",
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true
   },
   "gitlens.graph.minimap.additionalTypes": [
     "localBranches",
