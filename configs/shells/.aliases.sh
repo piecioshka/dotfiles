@@ -15,12 +15,13 @@ alias b='brew'
 alias v='vim'
 alias tree='tree --dirsfirst -C'
 alias f='find . -iname'
+alias ff='find . -not -path "*/node_modules/*" -not -path "*/.git/*" -iname'
 alias grep='grep --color=auto'
 alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # Get file with last modified time.
 alias mode="stat -f '%p %N'"
 alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias search-open="code \$(search)"
-alias rgg="rg --glob=!node_modules/"
+alias rgg="rg --iglob=!node_modules --iglob=!.git"
 alias exif-clean="exiftool -all= -overwrite_original"
 
 # ------------------------------------------------------------------------------
