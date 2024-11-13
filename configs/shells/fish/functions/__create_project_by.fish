@@ -38,6 +38,7 @@ function __create_project_by
     git add .
     git commit -am 'Initialize project' > /dev/null
 
-    echo -e "\nProject created successfully!"
-    echo -e "\n\tNew project is ready on http://localhost:3000/$name/\n"
+    set_color brgreen
+    echo -e "[+] Project created successfully!"
+    set_color normal
 end
