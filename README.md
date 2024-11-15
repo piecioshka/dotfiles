@@ -42,7 +42,6 @@ brew install pyenv
 
 ```bash
 cd ~/projects/
-git clone git@github.com:piecioshka/git-browse.git
 git clone git@github.com:piecioshka/git-scripts.git
 git clone git@github.com:piecioshka/my-binaries.git
 git clone git@github.com:piecioshka/my-scripts.git

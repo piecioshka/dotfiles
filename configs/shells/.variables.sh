@@ -1,7 +1,6 @@
 # Public shell aliases
 
 ### Add my extensions
-export PATH="$HOME/projects/git-browse/:$PATH"
 export PATH="$HOME/projects/git-scripts/:$PATH"
 export PATH="$HOME/projects/my-binaries/:$PATH"
 export PATH="$HOME/projects/my-scripts/:$PATH"

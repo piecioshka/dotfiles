@@ -14,7 +14,6 @@ set fish_greeting
 # ------------------------------------------------------------------------------
 
 ### Add my extensions
-set -gx PATH $HOME/projects/git-browse/ $PATH
 set -gx PATH $HOME/projects/git-scripts/ $PATH
 set -gx PATH $HOME/projects/my-binaries/ $PATH
 set -gx PATH $HOME/projects/my-scripts/ $PATH
