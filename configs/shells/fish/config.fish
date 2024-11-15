@@ -17,7 +17,6 @@ set fish_greeting
 set -gx PATH $HOME/projects/git-scripts/ $PATH
 set -gx PATH $HOME/projects/my-binaries/ $PATH
 set -gx PATH $HOME/projects/my-scripts/ $PATH
-set -gx PATH $HOME/projects/npm-scripts/ $PATH
 
 ### Support gpg
 set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH

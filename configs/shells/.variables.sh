@@ -4,7 +4,6 @@
 export PATH="$HOME/projects/git-scripts/:$PATH"
 export PATH="$HOME/projects/my-binaries/:$PATH"
 export PATH="$HOME/projects/my-scripts/:$PATH"
-export PATH="$HOME/projects/npm-scripts/:$PATH"
 
 ### GPG
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
