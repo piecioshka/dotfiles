@@ -21,7 +21,7 @@ alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | h
 alias mode="stat -f '%p %N'"
 alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias search-open="code \$(search)"
-alias rgg="rg --iglob=!node_modules --iglob=!.git"
+alias rgg="rg --glob=!node_modules"
 alias exif-clean="exiftool -all= -overwrite_original"
 
 # ------------------------------------------------------------------------------
