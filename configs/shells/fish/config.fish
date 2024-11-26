@@ -35,7 +35,7 @@ set -gx PATH $HOME/usr/local/sbin $PATH
 ### Support uru - Ruby Version Manager
 # uru_rt admin install | source
 
-### Suppport rbenv - Ruby Version Manager
+### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && status --is-interactive; and rbenv init - fish | source
 
 ### Support ripgrep
@@ -44,12 +44,11 @@ set -gx RIPGREP_CONFIG_PATH $HOME/projects/dotfiles/configs/.ripgreprc
 ### Support pyenv - Python Version Manager
 [ -s "/opt/homebrew/bin/pyenv" ] && status --is-interactive; and source (pyenv init -|psub)
 
-# Resolve an issue:
-# $ fish: Unknown command: python
+### Resolve an issue: $ fish: Unknown command: python
 set -gx PATH $(brew --prefix python@3)/libexec/bin $PATH
 set -gx PYTHON $(which python3)
 
-# Increase default memory for Node.js processes
+### Increase default memory for Node.js processes
 set -gx NODE_OPTIONS "--max_old_space_size=4096"
 
 # ------------------------------------------------------------------------------

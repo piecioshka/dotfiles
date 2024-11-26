@@ -1,4 +1,4 @@
-# Public shell aliases
+# Public shell variables
 
 ### Add my extensions
 export PATH="$HOME/projects/git-scripts/:$PATH"
@@ -22,7 +22,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # ------------------------------------------------------------------------------
 
-# Disable default greeting message "The default interactive shell is now zsh."
+### Disable default greeting message "The default interactive shell is now zsh."
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ### Setup default editor
@@ -38,7 +38,7 @@ export PYTHON=$(which python3)
 ### Support ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/projects/dotfiles/configs/.ripgreprc"
 
-# Increase default memory for Node.js processes
+### Increase default memory for Node.js processes
 export NODE_OPTIONS=--max_old_space_size=4096
 
 ### Support nvm

@@ -47,7 +47,7 @@ __create_project_by() {
 
     # 2. Clone template project and remove Git history
     repo=git@github.com:piecioshka/${type}.git
-    echo "[+] Clonning: $repo"
+    echo "[+] Cloning: $repo"
     git clone $repo --quiet .
     rm -rf .git/
 

@@ -2,14 +2,14 @@
 
 # ------------------------------------------------------------------------------
 
-# Apps with GUI
+### Apps with GUI
 alias chrome="open -a 'Google Chrome'"
 alias p="open -a 'Plain Text Editor'"
 alias c="open -a 'Visual Studio Code'"
 
 # ------------------------------------------------------------------------------
 
-# Misc
+### Misc
 # alias _='sudo' # not working on Fish
 alias b='brew'
 alias v='vim'
@@ -26,14 +26,14 @@ alias exif-clean="exiftool -all= -overwrite_original"
 
 # ------------------------------------------------------------------------------
 
-# Node.js global packages
+### Node.js global packages
 alias y='yarn'
 alias s='browser-sync start --server --no-ui --no-open --directory --serveStatic .'
 alias sw='s --watch' ## for slides
 
 # ------------------------------------------------------------------------------
 
-# Network (macOS)
+### Network (macOS)
 alias ip="ifconfig | grep 'inet '" # Print all IP addresses
 alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index of /" content
 alias https='http --default-scheme=https'
@@ -41,7 +41,7 @@ alias open-ports='sudo nmap -sS localhost'
 
 # ------------------------------------------------------------------------------
 
-# Enter to up in structure directory
+### Enter to up in structure directory
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -50,7 +50,7 @@ alias ......='cd ../../../../..'
 
 # ------------------------------------------------------------------------------
 
-# List directory contents
+### List directory contents
 alias ls='ls -pG --color=auto'
 alias ll='ls -hlt'
 alias la='ll -A'
@@ -59,7 +59,7 @@ alias lldw='ls -hAltd www.*'
 
 # ------------------------------------------------------------------------------
 
-# npm
+### npm
 alias ss='npm run start'
 alias bb='npm run build'
 alias ww='npm run watch'
@@ -68,7 +68,7 @@ alias ee='npm run e2e'
 
 # ------------------------------------------------------------------------------
 
-# Git
+### Git
 alias g='git'
 alias ga='git add'
 alias gb='git branch'

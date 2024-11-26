@@ -36,7 +36,7 @@ source ~/projects/dotfiles/configs/shells/bash/homebrew-completion.bash
 ### Support uru - Ruby Version Manager
 # eval "$(uru_rt admin install)"
 
-### Suppport rbenv - Ruby Version Manager
+### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
 
 ### Support pyenv - Python Version Manager
