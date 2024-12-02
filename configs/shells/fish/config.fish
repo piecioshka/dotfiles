@@ -29,11 +29,8 @@ set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH
 set -gx PATH $HOME/usr/local/sbin $PATH
 # set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
-### Support rvm - Ruby Version Manager
-# set -gx PATH $HOME/.rvm/bin $PATH
-
-### Support uru - Ruby Version Manager
-# uru_rt admin install | source
+### Support Rust
+set -gx PATH $HOME/.cargo/bin $PATH
 
 ### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && status --is-interactive; and rbenv init - fish | source

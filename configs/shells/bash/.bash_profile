@@ -30,12 +30,6 @@ source ~/projects/dotfiles/configs/shells/bash/homebrew-completion.bash
 ### Load secret config files
 [ -s ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
 
-### Support rvm - Ruby Version Manager
-# [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-
-### Support uru - Ruby Version Manager
-# eval "$(uru_rt admin install)"
-
 ### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
 

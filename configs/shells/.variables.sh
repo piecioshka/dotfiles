@@ -14,11 +14,11 @@ export PATH="/usr/local/bin:$PATH"
 ### Support PHP
 export PATH="/usr/local/sbin:$PATH"
 
-### Support rvm
-# export PATH="$HOME/.rvm/bin:$PATH"
-
 ### Support pip
 # export PATH="~/.local/bin:$PATH"
+
+### Support Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # ------------------------------------------------------------------------------
 
