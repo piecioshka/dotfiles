@@ -36,6 +36,8 @@ npm install -g convert-md-to-pdf # https://github.com/piecioshka/convert-md-to-p
 
 brew install rbenv
 brew install pyenv
+brew install lla # https://github.com/triyanox/lla
+brew install eza # https://github.com/eza-community/eza
 ```
 
 ## Install my custom scripts
