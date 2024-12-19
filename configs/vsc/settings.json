@@ -164,58 +164,54 @@
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
     "type": "text-and-comment",
-    "foreground": "black",
-    "background": "white",
-    "opacity": 50,
-    "iconColour": "blue",
-    "gutterIcon": true
+    "gutterIcon": true,
+    "fontStyle": "italic"
   },
   "todo-tree.highlights.customHighlight": {
     // https://microsoft.github.io/vscode-codicons/dist/codicon.html
     "TODO": {
-      "icon": "check",
-      "foreground": "black",
-      "background": "white",
-      "iconColour": "white"
+      "icon": "tools",
+      "background": "#FF00001A",
+      "iconColour": "#FFA500"
     },
     "NOTE": {
       "icon": "note",
-      "foreground": "black",
-      "background": "darkgray",
-      "iconColour": "darkgray"
+      "foreground": "#FFF",
+      "background": "#A9A9A91A",
+      "iconColour": "#A9A9A9"
     },
     "COMMENT": {
       "icon": "comment",
-      "foreground": "white",
-      "background": "gray",
-      "iconColour": "gray"
+      "foreground": "#FFF",
+      "background": "#808080",
+      "iconColour": "#808080"
     },
     "FIXME": {
-      "foreground": "black",
-      "background": "yellow",
-      "iconColour": "yellow"
+      "foreground": "#000",
+      "background": "#FFFF00",
+      "iconColour": "#FFFF00"
     },
     "BUG": {
-      "foreground": "black",
-      "background": "red",
-      "iconColour": "red"
+      "foreground": "#000",
+      "background": "#FF0000",
+      "iconColour": "#FF0000"
     },
     "HACK": {
-      "foreground": "black",
-      "background": "orange",
-      "iconColour": "orange"
+      "foreground": "#000",
+      "background": "#FFA500",
+      "iconColour": "#FFA500"
     },
     "INFO": {
       "icon": "info",
-      "foreground": "white",
-      "background": "#3d98c9",
+      "foreground": "#FFF",
+      "background": "#3D98C9",
       "iconColour": "#3d98c9"
     },
     "XXX": {
       "icon": "comment",
-      "foreground": "black",
-      "background": "red",
-      "iconColour": "red"
+      "foreground": "#000",
+      "background": "#FF0000",
+      "iconColour": "#FF0000"
     }
   },
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
