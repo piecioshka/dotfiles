@@ -100,6 +100,8 @@ alias gfp='git fetch -p'
 alias gmm='git merge master'
 # My Git scripts
 alias gf='git fire'
+alias gpp='git publish-branch'
 alias gpu='git projects-update'
+alias gtr='git tags-refresh'
 # Official GitHub CLI
 alias gpr='gh pr create --fill'

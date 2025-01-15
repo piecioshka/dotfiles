@@ -13,27 +13,6 @@ alias what-happened=__what_happened
 
 # ------------------------------------------------------------------------------
 #
-# Git refresh tags (remove all local tags and fetch from origin).
-__git_tags_refresh() {
-    git tag -l | xargs git tag -d
-    git fetch
-}
-
-alias gtr=__git_tags_refresh
-
-# ------------------------------------------------------------------------------
-#
-# Git push branch to origin with the same name.
-__git_publish_branch() {
-    branch="$(git rev-parse --abbrev-ref HEAD)"
-    echo -e 'Track your local branch to remove: '$branch
-    git push -u origin "${branch}"
-}
-
-alias gpp=__git_publish_branch
-
-# ------------------------------------------------------------------------------
-#
 # Convert MP4 to 3GP
 __mp4_to_3gp() {
     echo "Source: ${1}"
