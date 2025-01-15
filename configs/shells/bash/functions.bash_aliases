@@ -125,32 +125,6 @@ alias new-react-app=__new_react_app
 
 # ------------------------------------------------------------------------------
 #
-# Run passed command to each child directory.
-__run_on_each_dir() {
-    command="${1}"
-
-    for d in ./*/
-    do
-        if [ -d "$d" ]; then
-            cd "$d"
-            echo -n "==> "
-            __set_color "${__COLOR_GREEN}"
-            echo -n "$d"
-            __set_color "${__COLOR_BLUE}"
-            echo -n " > "
-            __set_color "${__COLOR_RESET}"
-            echo -e "$command"
-            eval "$command"
-            cd ".."
-            echo ""
-        fi
-    done
-}
-
-alias run-on-each-dir=__run_on_each_dir
-
-# ------------------------------------------------------------------------------
-#
 # Display what is happen in repository in that moment.
 __what_happened() {
     watch -n 5 --color "git status -sb"
