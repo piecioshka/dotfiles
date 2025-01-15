@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 
-### Load file with colors
-source ~/projects/dotfiles/configs/shells/.colors.sh
-
-base=`pwd`
-
-__print_dotfile_line() {
-  message="${1}"
-  echo -e "\n${__COLOR_BLUE_LIGHT}${message}${__COLOR_RESET}"
-}
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$script_dir/__shared.sh"
+source "$script_dir/configs/shells/__colors.sh"
 
 # ------------------------------------------------------------------------------
 
-__collect_vsc() {
-  __print_dotfile_line "==> Visual Studio Code"
+function __collect_vsc {
+  __print_title "Visual Studio Code"
+
   rm -rf ./configs/vsc/*
   path="$HOME/Library/Application Support/Code/User/"
   cp "${path}keybindings.json" ./configs/vsc/

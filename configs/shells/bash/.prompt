@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------------------
 
 ### Load file with colors
-source ~/projects/dotfiles/configs/shells/.colors.sh
+source ~/projects/dotfiles/configs/shells/__colors.sh
 
 ### Get current state of git repo
 __parse_git_state() {

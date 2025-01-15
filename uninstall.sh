@@ -1,66 +1,62 @@
 #!/usr/bin/env bash
 
-### Load file with colors
-source ~/projects/dotfiles/configs/shells/.colors.sh
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$script_dir/__shared.sh"
+source "$script_dir/configs/shells/__colors.sh"
 
 base=`pwd`
 
-__print_dotfile_line() {
-  message="${1}"
-  echo -e "\n${__COLOR_BLUE_LIGHT}${message}${__COLOR_RESET}"
-}
-
 # ------------------------------------------------------------------------------
 
-__remove_ssh() {
-  __print_dotfile_line "==> SSH"
+function __remove_ssh {
+  __print_title "SSH"
   rm ~/.ssh/
 }
 
-__remove_bash() {
-  __print_dotfile_line "==> Bash"
+function __remove_bash {
+  __print_title "Bash"
   rm $base/configs/shells/bash/.bash_profile ~/.bash_profile
   rm $base/configs/shells/bash/.bashrc ~/.bashrc
   rm ~/.bash_history
 }
 
-__remove_zsh() {
-  __print_dotfile_line "==> Zsh"
+function __remove_zsh {
+  __print_title "Zsh"
   rm $base/configs/shells/zsh/.zprofile ~/.zprofile
   rm $base/configs/shells/zsh/.zshrc ~/.zshrc
   rm ~/.zsh_history
 }
 
-__remove_fish() {
-  __print_dotfile_line "==> Fish"
+function __remove_fish {
+  __print_title "Fish"
   rm -rf ~/.config/fish
   rm $base/configs/shells/fish/ ~/.config/fish
 }
 
-__remove_vim() {
-  __print_dotfile_line "==> Vim"
+function __remove_vim {
+  __print_title "Vim"
   rm $base/configs/.vimrc ~/.vimrc
 }
 
-__remove_git() {
-  __print_dotfile_line "==> Git"
+function __remove_git {
+  __print_title "Git"
   rm $base/configs/git/.gitattributes ~/.gitattributes
   rm $base/configs/git/.gitconfig ~/.gitconfig
   rm $base/configs/git/.gitignore ~/.gitignore
 }
 
-__remove_tig() {
-  __print_dotfile_line "==> Tig"
+function __remove_tig {
+  __print_title "Tig"
   rm $base/configs/.tigrc ~/.tigrc
 }
 
-__remove_tmux() {
-  __print_dotfile_line "==> Tmux"
+function __remove_tmux {
+  __print_title "Tmux"
   rm $base/configs/.tmux.conf ~/.tmux.conf
 }
 
-__remove_vsc() {
-  __print_dotfile_line "==> Visual Studio Code"
+function __remove_vsc {
+  __print_title "Visual Studio Code"
   path="$HOME/Library/Application Support/Code/User/"
 
   if [ -d "${path}" ]; then
@@ -71,19 +67,19 @@ __remove_vsc() {
   fi
 }
 
-__remove_fzf() {
-  __print_dotfile_line "==> fzf"
+function __remove_fzf {
+  __print_title "fzf"
   rm $base/configs/.fzf.bash ~/.fzf.bash
   rm $base/configs/.fzf.zsh ~/.fzf.zsh
 }
 
-__remove_fastfetch() {
-  __print_dotfile_line "==> fastfetch"
+function __remove_fastfetch {
+  __print_title "fastfetch"
   rm $base/configs/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 }
 
-__remove_mc() {
-  __print_dotfile_line "==> mc"
+function __remove_mc {
+  __print_title "mc"
   rm $base/configs/mc/ini ~/.config/mc/ini
 }
 

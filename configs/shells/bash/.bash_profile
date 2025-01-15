@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 ### Load file with variables
-source ~/projects/dotfiles/configs/shells/.variables.sh
+source ~/projects/dotfiles/configs/shells/__variables.sh
 
 ### Load file with aliases
-source ~/projects/dotfiles/configs/shells/.aliases.sh
+source ~/projects/dotfiles/configs/shells/__aliases.sh
 
 ### Load prompt definition
 source ~/projects/dotfiles/configs/shells/bash/.prompt

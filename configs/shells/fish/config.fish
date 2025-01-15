@@ -15,6 +15,7 @@ set fish_greeting
 
 ### Add my extensions
 set -gx PATH $HOME/projects/git-scripts/ $PATH
+set -gx PATH $HOME/projects/media-files-converters/ $PATH
 set -gx PATH $HOME/projects/my-binaries/ $PATH
 set -gx PATH $HOME/projects/my-scripts/ $PATH
 
@@ -51,7 +52,7 @@ set -gx NODE_OPTIONS "--max_old_space_size=4096"
 # ------------------------------------------------------------------------------
 
 ### Load file with aliases
-source ~/projects/dotfiles/configs/shells/.aliases.sh
+source ~/projects/dotfiles/configs/shells/__aliases.sh
 
 ### Support Angular CLI
 bass source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash

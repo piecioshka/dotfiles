@@ -1,53 +1,49 @@
 #!/usr/bin/env bash
 
-### Load file with colors
-source ~/projects/dotfiles/configs/shells/.colors.sh
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$script_dir/__shared.sh"
+source "$script_dir/configs/shells/__colors.sh"
 
 base=`pwd`
 
-__print_dotfile_line() {
-  message="${1}"
-  echo -e "\n${__COLOR_BLUE_LIGHT}${message}${__COLOR_RESET}"
-}
-
-__link_file() {
+function __link_file {
   file1=${1}
   file2=${2}
   echo -e ""
   ls -la --color=auto "${file2}"
   rm "${file2}"
-  echo "[+] Remove file: ${file2}"
-  echo "[+] Link file: ${file1} => ${file2}"
+  __print_action "Remove file: ${file2}"
+  __print_action "Link file: ${file1} => ${file2}"
   ln -s "${file1}" "${file2}"
 }
 
 # ------------------------------------------------------------------------------
 
-__install_profile() {
-  __print_dotfile_line "==> .profile"
+function __install_profile {
+  __print_title ".profile"
   __link_file $base/configs/.profile ~/.profile
 }
 
-__install_bash() {
-  __print_dotfile_line "==> Bash"
+function __install_bash {
+  __print_title "Bash"
   __link_file $base/configs/shells/bash/.bash_profile ~/.bash_profile
   __link_file $base/configs/shells/bash/.bashrc ~/.bashrc
 }
 
-__install_zsh() {
-  __print_dotfile_line "==> Zsh"
+function __install_zsh {
+  __print_title "Zsh"
   __link_file $base/configs/shells/zsh/.zprofile ~/.zprofile
   __link_file $base/configs/shells/zsh/.zshrc ~/.zshrc
 }
 
-__install_fish() {
-  __print_dotfile_line "==> Fish"
+function __install_fish {
+  __print_title "Fish"
   rm -rf ~/.config/fish
   __link_file $base/configs/shells/fish/ ~/.config/fish
 }
 
-__install_vim() {
-  __print_dotfile_line "==> Vim"
+function __install_vim {
+  __print_title "Vim"
   __link_file $base/configs/.vimrc ~/.vimrc
   mkdir -p ~/.vim/bundle
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -55,25 +51,25 @@ __install_vim() {
   echo | echo | vim +PluginInstall +qall &>/dev/null
 }
 
-__install_git() {
-  __print_dotfile_line "==> Git"
+function __install_git {
+  __print_title "Git"
   __link_file $base/configs/git/.gitattributes ~/.gitattributes
   __link_file $base/configs/git/.gitconfig ~/.gitconfig
   __link_file $base/configs/git/.gitignore ~/.gitignore
 }
 
-__install_tig() {
-  __print_dotfile_line "==> Tig"
+function __install_tig {
+  __print_title "Tig"
   __link_file $base/configs/.tigrc ~/.tigrc
 }
 
-__install_tmux() {
-  __print_dotfile_line "==> Tmux"
+function __install_tmux {
+  __print_title "Tmux"
   __link_file $base/configs/.tmux.conf ~/.tmux.conf
 }
 
-__install_vsc() {
-  __print_dotfile_line "==> Visual Studio Code"
+function __install_vsc {
+  __print_title "Visual Studio Code"
   path="$HOME/Library/Application Support/Code/User/"
 
   if [ -d "${path}" ]; then
@@ -86,29 +82,29 @@ __install_vsc() {
   fi
 }
 
-__install_fzf() {
-  __print_dotfile_line "==> fzf"
+function __install_fzf {
+  __print_title "fzf"
   __link_file $base/configs/.fzf.bash ~/.fzf.bash
   __link_file $base/configs/.fzf.zsh ~/.fzf.zsh
 }
 
-__install_fastfetch() {
-  __print_dotfile_line "==> fastfetch"
+function __install_fastfetch {
+  __print_title "fastfetch"
   __link_file $base/configs/.config/fastfetch/ ~/.config/fastfetch
 }
 
-__install_mc() {
-  __print_dotfile_line "==> mc"
+function __install_mc {
+  __print_title "mc"
   __link_file $base/configs/.config/mc/ ~/.config/mc
 }
 
-__install_btop() {
-  __print_dotfile_line "==> btop"
+function __install_btop {
+  __print_title "btop"
   __link_file $base/configs/.config/btop/ ~/.config/btop
 }
 
-__install_htop() {
-  __print_dotfile_line "==> htop"
+function __install_htop {
+  __print_title "htop"
   __link_file $base/configs/.config/htop/ ~/.config/htop
 }
 

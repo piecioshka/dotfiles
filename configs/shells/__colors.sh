@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://colors.sh/
+
 __COLOR_RESET="\033[0m"
 __COLOR_RESET_BACKGROUND="\033[m"
 __COLOR_BOLD="\033[1m"

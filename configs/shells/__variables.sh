@@ -2,6 +2,7 @@
 
 ### Add my extensions
 export PATH="$HOME/projects/git-scripts/:$PATH"
+export PATH="$HOME/projects/media-files-converters/:$PATH"
 export PATH="$HOME/projects/my-binaries/:$PATH"
 export PATH="$HOME/projects/my-scripts/:$PATH"
 

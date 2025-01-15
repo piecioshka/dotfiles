@@ -194,8 +194,8 @@ set history=100
 
 " Set 4 chars after what editor has stopped
 set tabstop=4
-" TODO: nie wiem co to robi?
-" set softtabstop
+" Controls tab and backspace spacing in insert mode.
+set softtabstop=0 " 0 means the same as tabstop
 " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
 set shiftwidth=4
 " (et) expand tabs to spaces (use :retab to redo entire file)

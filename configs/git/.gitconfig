@@ -29,7 +29,6 @@
     last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
 
     up = pull --rebase --autostash
-    changed-packages2 = "!f() { git --no-pager diff master.. --name-only | grep \"^packages/\" | cut -f2 -d/ | sort | uniq | xargs echo; } ; f"
     cp = cherry-pick
 
     repo = config remote.origin.url
