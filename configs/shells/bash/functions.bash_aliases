@@ -4,15 +4,6 @@
 
 # ------------------------------------------------------------------------------
 #
-# Display what is happen in repository in that moment.
-__what_happened() {
-    watch -n 5 --color "git status -sb"
-}
-
-alias what-happened=__what_happened
-
-# ------------------------------------------------------------------------------
-#
 # Convert MP4 to 3GP
 __mp4_to_3gp() {
     echo "Source: ${1}"
