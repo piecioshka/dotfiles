@@ -6,9 +6,6 @@ source ~/projects/dotfiles/configs/shells/.variables.sh
 ### Load file with aliases
 source ~/projects/dotfiles/configs/shells/.aliases.sh
 
-### Load file function, which are used in aliases
-source ~/projects/dotfiles/configs/shells/bash/functions.bash_aliases
-
 ### Load prompt definition
 source ~/projects/dotfiles/configs/shells/zsh/.prompt
 

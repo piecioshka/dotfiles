@@ -53,9 +53,6 @@ set -gx NODE_OPTIONS "--max_old_space_size=4096"
 ### Load file with aliases
 source ~/projects/dotfiles/configs/shells/.aliases.sh
 
-### Load file function, which are used in aliases
-# bass source ~/projects/dotfiles/configs/shells/bash/functions.bash_aliases
-
 ### Support Angular CLI
 bass source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
 
