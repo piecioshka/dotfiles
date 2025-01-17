@@ -59,6 +59,7 @@ alias lldw='ls -hAltd www.*'
 # Aliases based on other tools
 alias lt='lla --timeline'
 alias lr='eza -R --ignore-glob=node_modules'
+alias le='eza -Tx --ignore-glob=node_modules'
 
 # ------------------------------------------------------------------------------
 
