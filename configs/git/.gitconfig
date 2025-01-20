@@ -31,7 +31,6 @@
     up = pull --rebase --autostash
     cp = cherry-pick
 
-    repo = config remote.origin.url
     reset-author = commit --amend --no-edit --reset-author
     set-default-branch = config remote.origin.push HEAD
 
