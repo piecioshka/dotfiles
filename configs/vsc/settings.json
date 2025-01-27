@@ -115,6 +115,7 @@
     "markdown": true,
     "scminput": true
   },
+  "gitlens.codeLens.enabled": false,
   "gitlens.graph.minimap.additionalTypes": [
     "localBranches",
     "stashes",
