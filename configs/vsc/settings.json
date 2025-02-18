@@ -2,6 +2,10 @@
 {
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "editor.copyWithSyntaxHighlighting": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
