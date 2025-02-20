@@ -124,6 +124,7 @@
     "markdown": true,
     "scminput": true
   },
+  "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.enabled": false,
   "gitlens.graph.minimap.additionalTypes": [
     "localBranches",
@@ -131,6 +132,7 @@
     "tags",
     "pullRequests"
   ],
+  "gitlens.hovers.enabled": false,
   "gitlens.ai.experimental.model": "openai:gpt-4o",
   "gitlens.ai.experimental.provider": "openai",
   "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
