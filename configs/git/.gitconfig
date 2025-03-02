@@ -41,10 +41,6 @@
     # Detect whitespace errors when applying a patch
     whitespace = fix
 
-[branch "master"]
-    remote = origin
-    merge = refs/heads/master
-
 [branch "main"]
     remote = origin
     merge = refs/heads/main
@@ -53,27 +49,8 @@
     remote = origin
     merge = refs/heads/develop
 
-[tag]
-    forceSignAnnotated = false
-
-[init]
-    defaultBranch = main
-
-[core]
-    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-    whitespace = space-before-tab,indent-with-non-tab,trailing-space
-    # Enable case sensitive
-    ignorecase = false
-    # Enable global configuration for ignoring list
-    excludesfile = ~/.gitignore
-    # Setup default editor
-    editor = /usr/bin/vim
-    # Convert end of line to pair: CRLF
-    autocrlf = input
-    # Set char for end of line
-    # eol = crlf
-    # Exit from command when file has bad end of line
-    safecrlf = true
+[column]
+    ui = auto
 
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -98,40 +75,42 @@
     # untracked = cyan
 
 [commit]
+    verbose = true
     gpgsign = true
 
-[filter "media"]
-    clean = git media clean %f
-    smudge = git media smudge %f
-    required = true
-
-[merge]
-    # Include summaries of merged commits in newly created merge commit messages
-    log = true
-
-[push]
-    default = upstream
-
-[remote "origin"]
-    tagopt = --no-tags
-
-[user]
-    name = Piotr Kowalski
-
-[pager]
-    log = delta
-    diff = delta
-    show = delta
-    status = delta
-    reflog = delta
+[core]
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    # Enable case sensitive
+    ignorecase = false
+    # Enable global configuration for ignoring list
+    excludesfile = ~/.gitignore
+    # Setup default editor
+    editor = /usr/bin/vim
+    # Convert end of line to pair: CRLF
+    autocrlf = input
+    # Set char for end of line
+    # eol = crlf
+    # Exit from command when file has bad end of line
+    safecrlf = true
 
 [delta]
     syntax-theme = Monokai Extended
     navigate = true
     color-only = true
 
-[interactive]
-    diffFilter = delta --color-only
+[fetch]
+    # Remove remote-tracking references that no longer exist on the remote
+    prune = true
+    # Remove tags that no longer exist on the remote
+    pruneTags = true
+    # Fetch all remotes
+    all = true
+
+[filter "media"]
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -146,6 +125,40 @@
 [gpg "ssh"]
     program = ssh-keygen
     allowedSignersFile = ""
+
+[init]
+    defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+[pager]
+    log = delta
+    diff = delta
+    show = delta
+    status = delta
+    reflog = delta
+
+[push]
+    # Push the current branch to the remote branch with the same name
+    default = simple
+    # Automatically set up the remote as upstream
+    autoSetupRemote = true
+    # Push tags along with branches
+    followTags = true
+
+[remote "origin"]
+    tagopt = --no-tags
+
+[tag]
+    forceSignAnnotated = false
+
+[user]
+    name = Piotr Kowalski
 
 # Include private configuration
 [include]
