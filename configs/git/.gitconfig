@@ -75,8 +75,8 @@
     # untracked = cyan
 
 [commit]
-    verbose = true
     gpgsign = true
+    verbose = true
 
 [core]
     # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
@@ -89,8 +89,8 @@
     editor = /usr/bin/vim
     # Convert end of line to pair: CRLF
     autocrlf = input
-    # Set char for end of line
-    # eol = crlf
+    # Enable file system monitoring
+    fsmonitor = true
     # Exit from command when file has bad end of line
     safecrlf = true
 
@@ -98,6 +98,10 @@
     syntax-theme = Monokai Extended
     navigate = true
     color-only = true
+
+[diff]
+    # An incremental improvement on ‘patience’
+    algorithm = histogram
 
 [fetch]
     # Remove remote-tracking references that no longer exist on the remote
