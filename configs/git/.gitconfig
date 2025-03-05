@@ -50,7 +50,7 @@
     merge = refs/heads/develop
 
 [column]
-    ui = auto
+    # ui = auto # Enable column output for commands that support it
 
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
