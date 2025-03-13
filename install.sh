@@ -82,6 +82,11 @@ function __install_vsc {
   fi
 }
 
+function __install_zed {
+  __print_title "zed"
+  __link_file $base/configs/.config/zed/settings.json ~/.config/zed/settings.json
+}
+
 function __install_fzf {
   __print_title "fzf"
   __link_file $base/configs/.fzf.bash ~/.fzf.bash
@@ -119,6 +124,7 @@ __install_vim
 __install_tig
 __install_tmux
 __install_vsc
+__install_zed
 __install_fzf
 __install_fastfetch
 __install_mc
