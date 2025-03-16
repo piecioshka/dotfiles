@@ -7,15 +7,31 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "VSCode Icons (Dark)",
   "telemetry": {
     "metrics": false,
     "diagnostics": false
   },
   "ui_font_size": 16,
-  "buffer_font_size": 12,
+  "buffer_font_size": 14,
+  "buffer_font_family": "Menlo",
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "monokai Darker (Filter Machine)"
+  },
+  "scroll_beyond_last_line": "off",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "autosave": { "after_delay": { "milliseconds": 500 } },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false
+    }
   }
 }
