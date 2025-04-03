@@ -13,7 +13,8 @@
     last-commit-message = "!f() { git log --format="%s" | sed -n -e '1,1p'; }; f"
     last-commit-date = "!f() { git log --format="%ci" | sed -n -e '1,1p'; }; f"
 
-    save = "!f() { git add . -v && git commit -am 'Save current state'; }; f"
+    # Usage: git save [-n]
+    save = "!f() { git add . -v && git commit -am 'Save current state' $@; }; f"
     # Usage: git set-last-commit-date 2022-12-21_09:55:59
     set-last-commit-date = "!f() { GIT_COMMITTER_DATE=$1 git commit --amend --no-edit --date $1; }; f"
 
