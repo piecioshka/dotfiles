@@ -45,6 +45,7 @@ brew install eza # https://github.com/eza-community/eza
 ```bash
 cd ~/projects/
 git clone git@github.com:piecioshka/git-scripts.git
+git clone git@github.com:piecioshka/jira-scripts.git
 git clone git@github.com:piecioshka/media-files-converters.git
 git clone git@github.com:piecioshka/my-binaries.git
 git clone git@github.com:piecioshka/my-scripts.git

@@ -15,6 +15,7 @@ set fish_greeting
 
 ### Add my extensions
 set -gx PATH $HOME/projects/git-scripts/ $PATH
+set -gx PATH $HOME/projects/jira-scripts/bin/ $PATH
 set -gx PATH $HOME/projects/media-files-converters/ $PATH
 set -gx PATH $HOME/projects/my-binaries/ $PATH
 set -gx PATH $HOME/projects/my-scripts/ $PATH
