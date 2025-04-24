@@ -10,13 +10,16 @@ source ~/projects/dotfiles/configs/shells/__aliases.sh
 source ~/projects/dotfiles/configs/shells/bash/.prompt
 
 ### Support Angular CLI
-source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
+source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
 
 ### Support load_nvm
-source ~/projects/dotfiles/configs/shells/bash/load_nvm.bash
+source ~/projects/dotfiles/configs/shells/bash/functions/load_nvm.bash
 
 ### Support Bash Completion for Homebrew
-source ~/projects/dotfiles/configs/shells/bash/homebrew-completion.bash
+source ~/projects/dotfiles/configs/shells/bash/functions/homebrew-completion.bash
+
+### Support command to shorten the prompt
+source ~/projects/dotfiles/configs/shells/bash/functions/tiny_prompt.bash
 
 ### Load file .bashrc
 [ -s ~/.bashrc ] && source ~/.bashrc

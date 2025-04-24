@@ -9,14 +9,14 @@ source ~/projects/dotfiles/configs/shells/__aliases.sh
 ### Load prompt definition
 source ~/projects/dotfiles/configs/shells/zsh/.prompt
 
-### Support Angular CLI
-source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
+### Support Angular CLI (from bash)
+source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
 
 ### Support load_nvm
-source ~/projects/dotfiles/configs/shells/zsh/load_nvm.zsh
+source ~/projects/dotfiles/configs/shells/zsh/functions/load_nvm.zsh
 
 ### Support Zsh Completion for Homebrew
-source ~/projects/dotfiles/configs/shells/zsh/homebrew-completion.zsh
+source ~/projects/dotfiles/configs/shells/zsh/functions/homebrew-completion.zsh
 
 ### Load file .profile
 [ -s ~/.profile ] && source ~/.profile
