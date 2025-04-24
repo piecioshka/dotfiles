@@ -56,7 +56,7 @@ set -gx NODE_OPTIONS "--max_old_space_size=4096"
 source ~/projects/dotfiles/configs/shells/__aliases.sh
 
 ### Support Angular CLI
-bass source ~/projects/dotfiles/configs/shells/bash/angular-cli.bash
+bass source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
 
 ### Load secret config files
 [ -s "$HOME/projects/dotfiles-private/.profile" ] && bass source ~/projects/dotfiles-private/.profile
