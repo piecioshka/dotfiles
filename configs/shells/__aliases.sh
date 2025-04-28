@@ -47,6 +47,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+alias pro='cd ~/projects/'
+alias tmp='cd ~/projects/tmp/'
+alias dotfiles='cd ~/projects/dotfiles/'
+alias dotfiles-private='cd ~/projects/dotfiles-private/'
+
 # ------------------------------------------------------------------------------
 
 ### List directory contents
