@@ -83,7 +83,7 @@ function __remove_mc {
   rm $base/configs/mc/ini ~/.config/mc/ini
 }
 
-echo -e "Remove configs"
+echo "Remove configs"
 
 __remove_ssh
 __remove_bash

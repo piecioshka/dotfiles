@@ -70,7 +70,24 @@ function __install_tmux {
 
 function __install_vsc {
   __print_title "Visual Studio Code"
-  path="$HOME/Library/Application Support/Code/User/"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by VSC"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Code/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Code/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
 
   if [ -d "${path}" ]; then
     echo -e "Directory ${path} exists\n"
@@ -78,7 +95,7 @@ function __install_vsc {
     __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
     __link_file $base/configs/vsc/settings.json "${path}settings.json"
   else
-    echo -e "Directory ${path} not exists"
+    echo -e "Directory ${path} not exists\n"
   fi
 }
 
@@ -113,20 +130,38 @@ function __install_htop {
   __link_file $base/configs/.config/htop/ ~/.config/htop
 }
 
-echo -e "Install configs"
+echo "Install configs"
 
-__install_profile
-__install_bash
-__install_zsh
-__install_fish
-__install_git
-__install_vim
-__install_tig
-__install_tmux
-__install_vsc
-__install_zed
-__install_fzf
-__install_fastfetch
-__install_mc
-__install_btop
-__install_htop
+case "$(uname -s)" in
+  Linux*)
+    echo "Running on Linux"
+    echo "TODO: verify tools"
+    ;;
+  Darwin*)
+    echo "Running on macOS"
+    __install_profile
+    __install_bash
+    __install_zsh
+    __install_fish
+    __install_git
+    __install_vim
+    __install_tig
+    __install_tmux
+    __install_vsc
+    __install_zed
+    __install_fzf
+    __install_fastfetch
+    __install_mc
+    __install_btop
+    __install_htop
+    ;;
+  CYGWIN*|MINGW*|MSYS*|Windows_NT)
+    echo "Running on Windows"
+    __install_bash
+    __install_git
+    __install_vsc
+    ;;
+  *)
+    echo "Unknown OS"
+    ;;
+esac
