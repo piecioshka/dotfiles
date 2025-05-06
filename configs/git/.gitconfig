@@ -76,7 +76,7 @@
     # untracked = cyan
 
 [commit]
-    gpgsign = true
+    gpgsign = false
     verbose = true
 
 [core]
