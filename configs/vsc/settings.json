@@ -84,6 +84,7 @@
     }
   },
   "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
