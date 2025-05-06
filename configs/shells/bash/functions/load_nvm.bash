@@ -1,5 +1,10 @@
 cdnvm() {
     command cd "$@" || return $?
+
+    if ! command -v nvm &>/dev/null; then
+        return 0
+    fi
+
     nvm_path="$(nvm_find_up .nvmrc | command tr -d '\n')"
 
     # If there are no .nvmrc file, use the default nvm version
