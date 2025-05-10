@@ -1,10 +1,14 @@
 {
-	"Angular: ng-container": {
-		"prefix": "ng-con",
-		"body": [
-			"<ng-container$1>",
-			"\t$2",
-			"</ng-container>"
-		]
-	}
+    "Lorem Ipsum (first sentence)": {
+        "prefix": "lorem",
+        "body": [
+            "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        ]
+    },
+    "Line": {
+       "prefix": "-",
+       "body": [
+            "--------------------------------------------------------------------------------"
+       ]
+   }
 }
