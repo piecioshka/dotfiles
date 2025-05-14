@@ -31,8 +31,6 @@ npm install -g browser-sync # https://github.com/BrowserSync/browser-sync
 npm install -g npm-check # https://github.com/dylang/npm-check
 npm install -g fkill-cli # https://github.com/sindresorhus/fkill-cli
 npm install -g zx # https://github.com/google/zx
-npm install -g convert-md-to-html # https://github.com/piecioshka/convert-md-to-html
-npm install -g convert-md-to-pdf # https://github.com/piecioshka/convert-md-to-pdf
 
 brew install rbenv
 brew install pyenv
