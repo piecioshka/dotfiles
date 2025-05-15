@@ -11,7 +11,7 @@ function __link_file {
   file2=${2}
   echo -e ""
   ls -la --color=auto "${file2}"
-  rm "${file2}"
+  rm -rf "${file2}"
   __print_action "Remove file: ${file2}"
   __print_action "Link file: ${file1} => ${file2}"
   ln -s "${file1}" "${file2}"
@@ -90,7 +90,36 @@ function __install_vsc {
   esac
 
   if [ -d "${path}" ]; then
-    echo -e "Directory ${path} exists\n"
+    __link_file $base/configs/vsc/snippets/ "${path}snippets"
+    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
+    __link_file $base/configs/vsc/settings.json "${path}settings.json"
+  else
+    echo -e "Directory ${path} not exists\n"
+  fi
+}
+
+function __install_cursor {
+  __print_title "Cursor"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by Cursor"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Cursor/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Cursor/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
+
+  if [ -d "${path}" ]; then
     __link_file $base/configs/vsc/snippets/ "${path}snippets"
     __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
     __link_file $base/configs/vsc/settings.json "${path}settings.json"
@@ -148,6 +177,7 @@ case "$(uname -s)" in
     __install_tig
     __install_tmux
     __install_vsc
+    __install_cursor
     __install_zed
     __install_fzf
     __install_fastfetch

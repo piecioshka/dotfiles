@@ -57,11 +57,55 @@ function __remove_tmux {
 
 function __remove_vsc {
   __print_title "Visual Studio Code"
-  path="$HOME/Library/Application Support/Code/User/"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by VSC"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Code/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Code/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
 
   if [ -d "${path}" ]; then
-      echo -e "Directory ${path} exists\n"
-      rm $base/configs/vsc/* "${path}"
+      rm -rf $base/configs/vsc/* "${path}"
+  else
+      echo -e "Directory ${path} not exists\n"
+  fi
+}
+
+function __remove_cursor {
+  __print_title "Cursor"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by Cursor"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Cursor/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Cursor/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
+
+  if [ -d "${path}" ]; then
+      rm -rf $base/configs/vsc/* "${path}"
   else
       echo -e "Directory ${path} not exists\n"
   fi
@@ -94,6 +138,7 @@ __remove_vim
 __remove_tig
 __remove_tmux
 __remove_vsc
+__remove_cursor
 __remove_fzf
 __remove_fastfetch
 __remove_mc
