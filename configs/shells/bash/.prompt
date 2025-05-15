@@ -45,7 +45,7 @@ __parse_git_state() {
 }
 
 ### Get current branch and status in git repo
-__parse_git_branch_with_state() {
+__get_git_branch_with_state() {
     branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
     if [ ! "${branch}" == "" ]; then
@@ -56,4 +56,4 @@ __parse_git_branch_with_state() {
     fi
 }
 
-PS1="(bash) ${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__parse_git_branch_with_state\`${__COLOR_BLUE_LIGHT} > ${__COLOR_RESET}"
+PS1="(bash) ${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__get_git_branch_with_state\`${__COLOR_BLUE_LIGHT} > ${__COLOR_RESET}"

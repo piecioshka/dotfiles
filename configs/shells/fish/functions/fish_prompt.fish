@@ -1,3 +1,5 @@
+set -g fish_tiny_prompt 0
+
 # Get current state of git repo
 function __parse_git_state
     set -l state (git status 2>&1 | tee)
@@ -36,7 +38,7 @@ function __parse_git_state
 end
 
 # Get current branch and status in git repo
-function __parse_git_branch_with_state
+function __get_git_branch_with_state
     set -l branch (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 
     if [ "$branch" != "" ]
@@ -47,13 +49,21 @@ function __parse_git_branch_with_state
     end
 end
 
+function tiny_prompt
+    set -g fish_tiny_prompt 1
+end
+
 function fish_prompt
     echo -n '(fish) '
     set_color $fish_color_cwd
     echo -n (prompt_pwd)
-    set_color $fish_color_command
-    echo -n (__parse_git_branch_with_state)
-    set_color $fish_color_param
+    set_color $fish_color_operator
+    if [ "$fish_tiny_prompt" = 0 ]
+      echo -n (__get_git_branch_with_state)
+    else
+      echo -n (__parse_git_state)
+    end
+    set_color $fish_color_cwd_root
     echo -n ' > '
     set_color normal
 end
