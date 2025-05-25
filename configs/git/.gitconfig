@@ -87,7 +87,7 @@
     # Enable global configuration for ignoring list
     excludesfile = ~/.gitignore
     # Setup default editor
-    editor = /usr/bin/vim
+    editor = vim
     # Convert end of line to pair: CRLF
     autocrlf = input
     # Enable file system monitoring
@@ -142,11 +142,11 @@
     log = true
 
 [pager]
-    log = delta
-    diff = delta
-    show = delta
-    status = delta
-    reflog = delta
+    log = false
+    diff = false
+    show = false
+    status = false
+    reflog = false
 
 [push]
     # Push the current branch to the remote branch with the same name
@@ -172,5 +172,5 @@
 # Include platform-specific configuration
 [include]
     # path = ~/projects/dotfiles/configs/git/.gitconfig-linux
-    # path = ~/projects/dotfiles/configs/git/.gitconfig-macos
+    path = ~/projects/dotfiles/configs/git/.gitconfig-macos
     # path = ~/projects/dotfiles/configs/git/.gitconfig-windows

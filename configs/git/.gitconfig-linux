@@ -1,9 +1,2 @@
 [debug]
     os = linux
-
-[pager]
-    log = false
-    diff = false
-    show = false
-    status = false
-    reflog = false

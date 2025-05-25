@@ -1,2 +1,9 @@
 [debug]
     os = macos
+
+[pager]
+    log = delta
+    diff = delta
+    show = delta
+    status = delta
+    reflog = delta
