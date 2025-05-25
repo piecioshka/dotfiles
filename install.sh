@@ -189,6 +189,7 @@ case "$(uname -s)" in
     echo "Running on Windows"
     __install_bash
     __install_git
+    __install_vim
     __install_vsc
     ;;
   *)
