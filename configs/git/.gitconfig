@@ -1,9 +1,10 @@
 [alias]
+    # https://gist.github.com/ecaqsilla/9669241
+    hist = log --pretty=format:'%C(green)%ad%C(reset) | %C(red)%h%C(reset) | %C(blue)%an%C(reset) | %s %C(yellow)%d%C(reset)' --graph --date=short
+    la = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --decorate --numstat
     ll = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --abbrev-commit --date=relative
     lle = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --abbrev-commit --date=relative
-    la = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --decorate --numstat
-    # https://gist.github.com/ecasilla/9669241
-    hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short
+
     age = "!f() { git log --reverse --pretty=oneline --format="%ar" | head -n 1 | LC_ALL=C sed 's/ago//'; }; f"
 
     first-commit = "!f() { git log --reverse | sed -n -e '1,5p'; }; f"
