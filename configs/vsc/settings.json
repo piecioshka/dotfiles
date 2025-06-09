@@ -4,7 +4,7 @@
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "never"
   },
   "editor.copyWithSyntaxHighlighting": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
