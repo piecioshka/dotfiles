@@ -81,10 +81,6 @@
         "command": "-workbench.action.navigateForward"
     },
     {
-        "key": "shift+cmd+l",
-        "command": "git.cleanAll"
-    },
-    {
         "key": "shift+cmd+k",
         "command": "git.commitAll"
     },
@@ -259,5 +255,9 @@
         "key": "cmd+k shift+q",
         "command": "quokka.toggle",
         "when": "!quokka.isLiveShareClient && !terminalFocus"
+    },
+    {
+      "key": "shift+alt+l",
+      "command": "workbench.action.openChat"
     },
 ]
