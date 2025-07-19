@@ -25,7 +25,7 @@ alias exif-clean="exiftool -all= -overwrite_original"
 # ------------------------------------------------------------------------------
 
 ### Node.js global packages
-alias s='browser-sync start --server --no-ui --no-open --directory --serveStatic .'
+alias s='npx browser-sync start --server --no-ui --no-open --directory --serveStatic .'
 alias sw='s --watch' ## for slides
 
 # ------------------------------------------------------------------------------
