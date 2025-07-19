@@ -132,6 +132,9 @@
     program = ssh-keygen
     allowedSignersFile = ""
 
+[help]
+    autocorrect = prompt
+
 [init]
     defaultBranch = main
 
