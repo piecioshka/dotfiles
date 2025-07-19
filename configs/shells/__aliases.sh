@@ -120,4 +120,4 @@ alias gps='git run-on-nested-repos "git status -sb"'
 alias gtr='git tags-refresh'
 
 ### Official GitHub CLI
-alias gpr='gh pr create --fill --draft'
+alias gpr='gh pr create --fill-first --draft'
