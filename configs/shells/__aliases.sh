@@ -45,6 +45,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+### Aliases for project directories
 alias pro='cd ~/projects/'
 alias tmp='cd ~/projects/tmp/'
 alias dotfiles='cd ~/projects/dotfiles/'
@@ -58,7 +59,8 @@ alias ll='ls -hlt'
 alias la='ll -A'
 alias lld='ls -hAltd'
 alias lldw='ls -hAltd www.*'
-# Aliases based on other tools
+
+### Aliases based on other tools
 alias lt='lla --timeline'
 alias lr='eza -R -L 1 --ignore-glob=node_modules'
 alias le='eza -Tx -L 1 --ignore-glob=node_modules'
@@ -109,7 +111,7 @@ alias gss='gs'
 alias gsss='gss'
 alias gt='git tag'
 
-# My Git scripts
+### My Git scripts
 alias gf='git fire'
 alias gpp='git publish-branch'
 alias gpu='git projects-update'
@@ -117,5 +119,5 @@ alias gpb='git projects-births'
 alias gps='git run-on-nested-repos "git status -sb"'
 alias gtr='git tags-refresh'
 
-# Official GitHub CLI
+### Official GitHub CLI
 alias gpr='gh pr create --fill --draft'
