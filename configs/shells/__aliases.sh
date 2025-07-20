@@ -12,6 +12,7 @@ alias c="open -a 'Visual Studio Code'"
 ### Misc
 # alias _='sudo' # not working on Fish
 alias b='brew'
+alias d='docker'
 alias v='vim'
 alias tree='tree --dirsfirst -C'
 alias f='find . -not -path "*/node_modules/*" -not -path "*/.git/*" -iname'
