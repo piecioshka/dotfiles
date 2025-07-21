@@ -129,6 +129,7 @@
     "markdown": true,
     "scminput": true
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.enabled": false,
   "gitlens.graph.minimap.additionalTypes": [
