@@ -97,7 +97,7 @@
   "workbench.activityBar.location": "top",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "workbench.editor.titleScrollbarSizing": "large",
-  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Monokai Pro (Filter Machine)",
   "workbench.list.horizontalScrolling": true,
   "workbench.startupEditor": "none",
