@@ -25,6 +25,7 @@
   "editor.minimap.enabled": false,
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
+  "emmet.useInlineCompletions": true,
   "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
