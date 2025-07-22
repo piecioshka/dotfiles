@@ -57,6 +57,7 @@
   "git.openRepositoryInParentFolders": "never",
   "html.format.wrapLineLength": -1,
   "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": true,
   "multiDiffEditor.experimental.enabled": true,
