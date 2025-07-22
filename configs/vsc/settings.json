@@ -133,6 +133,8 @@
     "scminput": true
   },
   "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.completionContext.typescript.mode": "on",
+  "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.enabled": false,
   "gitlens.graph.minimap.additionalTypes": [
