@@ -119,6 +119,7 @@
   "cSpell.userWords": [
     "piecioshka"
   ],
+  "cucumberautocomplete.strictGherkinCompletion": true,
   "excalidraw.theme": "dark",
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
