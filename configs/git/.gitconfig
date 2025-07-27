@@ -137,7 +137,7 @@
     allowedSignersFile = ""
 
 [help]
-    autocorrect = prompt
+    autocorrect = immediate
 
 [init]
     defaultBranch = main
