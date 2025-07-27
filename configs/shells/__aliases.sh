@@ -20,7 +20,6 @@ alias grep='grep --color=auto'
 alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # Get file with last modified time.
 alias mode="stat -f '%p %N'"
 alias z="code \$(fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
-alias rg="rg --glob=!node_modules"
 alias exif-clean="exiftool -all= -overwrite_original"
 
 # ------------------------------------------------------------------------------
