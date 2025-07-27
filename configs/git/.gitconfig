@@ -60,7 +60,7 @@
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
     ui = auto
-    # Always add colors to output. Good thing to "what-happened" command.
+    # Always add colors to output. Good for the "what-happened" command.
     status = always
 
 [color "branch"]
@@ -84,19 +84,19 @@
     verbose = true
 
 [core]
-    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as errors
     whitespace = space-before-tab,indent-with-non-tab,trailing-space
-    # Enable case sensitive
+    # Enable case sensitivity
     ignorecase = false
-    # Enable global configuration for ignoring list
+    # Enable global configuration for the ignore list
     excludesfile = ~/.gitignore
-    # Setup default editor
+    # Set up the default editor
     editor = code --wait
     # Convert end of line to pair: CRLF
     autocrlf = input
     # Enable file system monitoring
     fsmonitor = true
-    # Exit from command when file has bad end of line
+    # Exit from the command when a file has a bad end of line
     safecrlf = true
 
 [delta]
