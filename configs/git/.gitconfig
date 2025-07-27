@@ -5,14 +5,14 @@
     ll = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --date=relative
     lle = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --date=relative
 
-    age = "!f() { git log --reverse --pretty=oneline --format="%ar" | head -n 1 | LC_ALL=C sed 's/ago//'; }; f"
+    age = "!f() { git log --reverse --pretty=oneline --format='%ar' | head -n 1 | LC_ALL=C sed 's/ago//'; }; f"
 
     first-commit = "!f() { git log --reverse | sed -n -e '1,5p'; }; f"
-    first-commit-message = "!f() { git log --reverse --format="%s" | sed -n -e '1,1p'; }; f"
-    first-commit-date = "!f() { git log --reverse --format="%ci" | sed -n -e '1,1p'; }; f"
+    first-commit-message = "!f() { git log --reverse --format='%s' | sed -n -e '1,1p'; }; f"
+    first-commit-date = "!f() { git log --reverse --format='%ci' | sed -n -e '1,1p'; }; f"
     last-commit = log -1
-    last-commit-message = "!f() { git log --format="%s" | sed -n -e '1,1p'; }; f"
-    last-commit-date = "!f() { git log --format="%ci" | sed -n -e '1,1p'; }; f"
+    last-commit-message = "!f() { git log --format='%s' | sed -n -e '1,1p'; }; f"
+    last-commit-date = "!f() { git log --format='%ci' | sed -n -e '1,1p'; }; f"
 
     # Usage: git save [-n]
     save = "!f() { git add . -v && git commit -am 'Save current state' $@; }; f"
