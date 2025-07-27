@@ -91,7 +91,7 @@
     # Enable global configuration for ignoring list
     excludesfile = ~/.gitignore
     # Setup default editor
-    editor = vim
+    editor = code --wait
     # Convert end of line to pair: CRLF
     autocrlf = input
     # Enable file system monitoring
