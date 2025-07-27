@@ -260,4 +260,8 @@
       "key": "shift+alt+l",
       "command": "workbench.action.openChat"
     },
+    {
+      "key": "cmd+k g",
+      "command": "git-graph.view"
+    },
 ]
