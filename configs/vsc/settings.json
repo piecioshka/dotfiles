@@ -34,23 +34,23 @@
   "files.autoSaveDelay": 500,
   "files.eol": "\n",
   "files.exclude": {
+    "**/.classpath": true,
     "**/.DS_Store": true,
+    "**/.factorypath": true,
     "**/.git": true,
     "**/.idea": true,
-    "**/.classpath": true,
     "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
+    "**/.settings": true
   },
   "files.watcherExclude": {
-    "**/.idea/**": true,
     "**/.git/**": true,
+    "**/.idea/**": true,
     "**/bower_components/**": true,
-    "**/node_modules/**": true,
-    "**/tmp/**": true,
-    "**/dist/**": true,
+    "**/build-types/**": true,
     "**/build/**": true,
-    "**/build-types/**": true
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true
   },
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
