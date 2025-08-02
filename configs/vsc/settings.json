@@ -1,6 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
   "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
