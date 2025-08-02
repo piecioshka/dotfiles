@@ -110,6 +110,11 @@
 [diff]
     # An incremental improvement on ‘patience’
     algorithm = histogram
+    tool = vscode
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+    trustExitCode = false
 
 [fetch]
     # Remove remote-tracking references that no longer exist on the remote
@@ -148,8 +153,14 @@
     diffFilter = delta --color-only
 
 [merge]
+    conflictstyle = zdiff3 # Options: merge, diff3, zdiff3
+    tool = vscode
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+    trustExitCode = false
 
 [pager]
     log = false
@@ -170,7 +181,9 @@
     tagopt = --no-tags
 
 [tag]
+    gpgsign = false
     forceSignAnnotated = false
+    sort = version:refname
 
 [user]
     name = Piotr Kowalski
