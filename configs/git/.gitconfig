@@ -32,7 +32,6 @@
     rename-tag = "!f() { git tag $2 $1; git delete-tag $1; }; f"
     last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
 
-    up = pull --rebase --autostash
     cp = cherry-pick
 
     reset-author = commit --amend --no-edit --reset-author
@@ -168,6 +167,10 @@
     show = false
     status = false
     reflog = false
+
+[pull]
+    # Rebase the current branch on top of the upstream branch after fetching
+    rebase = true
 
 [push]
     # Push the current branch to the remote branch with the same name
