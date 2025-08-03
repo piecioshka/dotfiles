@@ -109,10 +109,6 @@
     algorithm = histogram
     tool = vscode
 
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-    trustExitCode = false
-
 [fetch]
     # Remove remote-tracking references that no longer exist on the remote
     prune = true
@@ -154,10 +150,6 @@
     tool = vscode
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-
-[mergetool "vscode"]
-    cmd = code --wait $MERGED
-    trustExitCode = false
 
 [pager]
     log = false
