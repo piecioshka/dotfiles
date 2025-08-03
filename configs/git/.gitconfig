@@ -18,11 +18,12 @@
     save = "!f() { git add . -v && git commit -am 'Save current state' $@; }; f"
     # Usage: git set-last-commit-date 2022-12-21_09:55:59
     set-last-commit-date = "!f() { GIT_COMMITTER_DATE=$1 git commit --amend --no-edit --date $1; }; f"
+    reset-author = commit --amend --no-edit --reset-author
 
     delete-branch = "!f() { git branch -D $1; git push origin --delete $1; }; f"
     # Usage: git rename-branch OLD_NAME NEW_NAME
     rename-branch = "!f() { git branch -m $1 $2; git push origin :$1 $2; }; f"
-    branch-name = "!f() { git rev-parse --abbrev-ref HEAD; }; f"
+    last-branch-name = "!f() { git rev-parse --abbrev-ref HEAD; }; f"
 
     feature = "!f() { git switch -c feature/$1; }; f"
     bugfix = "!f() { git switch -c bugfix/$1; }; f"
@@ -33,9 +34,6 @@
     last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
 
     cp = cherry-pick
-
-    reset-author = commit --amend --no-edit --reset-author
-    set-default-branch = config remote.origin.push HEAD
 
     user-local = config user.email
     user-global = config --global user.email
@@ -182,6 +180,7 @@
 
 [remote "origin"]
     tagopt = --no-tags
+    push = HEAD
 
 [tag]
     gpgsign = false
