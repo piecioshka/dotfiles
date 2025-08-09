@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+setopt EXTENDED_HISTORY
+
 ### Load file with variables
 source ~/projects/dotfiles/configs/shells/__variables.sh
 
@@ -17,6 +19,9 @@ source ~/projects/dotfiles/configs/shells/zsh/functions/load_nvm.zsh
 
 ### Support Zsh Completion for Homebrew
 source ~/projects/dotfiles/configs/shells/zsh/functions/homebrew-completion.zsh
+
+### Support timestamps for all executed commands
+source ~/projects/dotfiles/configs/shells/zsh/functions/zhist.zsh
 
 ### Load file .profile
 [ -s ~/.profile ] && source ~/.profile
