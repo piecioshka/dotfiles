@@ -31,6 +31,8 @@ function __remove_fish {
   __print_title "Fish"
   rm -rf ~/.config/fish
   rm $base/configs/shells/fish/ ~/.config/fish
+  rm ~/.local/share/fish/fish_history
+  rm "~/.local/share/fish/*_history"
 }
 
 function __remove_vim {
