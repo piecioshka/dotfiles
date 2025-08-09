@@ -109,6 +109,9 @@
     algorithm = histogram
     tool = vscode
 
+[difftool]
+    prompt = false
+
 [fetch]
     # Remove remote-tracking references that no longer exist on the remote
     prune = true
