@@ -32,10 +32,14 @@ npm install -g npm-check # https://github.com/dylang/npm-check
 npm install -g fkill-cli # https://github.com/sindresorhus/fkill-cli
 npm install -g zx # https://github.com/google/zx
 
-brew install rbenv
-brew install pyenv
+brew install rbenv # https://github.com/rbenv/rbenv
+brew install pyenv # https://github.com/pyenv/pyenv
 brew install lla # https://github.com/triyanox/lla
 brew install eza # https://github.com/eza-community/eza
+
+brew install ncdu # https://dev.yorhel.nl/ncdu
+brew install entr # https://github.com/eradman/entr/
+brew install difftastic # https://github.com/Wilfred/difftastic
 ```
 
 ## Install my custom scripts
