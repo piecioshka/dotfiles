@@ -19,9 +19,10 @@ brew install nmap
 
 brew install git # INFO: macOS built-in version is always older
 brew install git-gui # shell command: gitk
-brew install git-delta # shell command: delta
-brew install tig
-brew install gh
+brew install git-delta # shell command: delta - https://github.com/dandavison/delta
+brew install difftastic # shell command: difft - https://github.com/Wilfred/difftastic
+brew install tig # shell command: tig - https://github.com/jonas/tig
+brew install gh # shell command: gh - https://github.com/cli/cli
 gh extension install dlvhdr/gh-dash # shell command: gh dash
 
 # nvm installation guide - https://github.com/nvm-sh/nvm#install-script
@@ -39,7 +40,6 @@ brew install eza # https://github.com/eza-community/eza
 
 brew install ncdu # https://dev.yorhel.nl/ncdu
 brew install entr # https://github.com/eradman/entr/
-brew install difftastic # https://github.com/Wilfred/difftastic
 ```
 
 ## Install my custom scripts
