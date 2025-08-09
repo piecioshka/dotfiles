@@ -40,6 +40,7 @@ brew install eza # https://github.com/eza-community/eza
 
 brew install ncdu # https://dev.yorhel.nl/ncdu
 brew install entr # https://github.com/eradman/entr/
+brew install yt-dlp # https://github.com/yt-dlp/yt-dlp
 ```
 
 ## Install my custom scripts
