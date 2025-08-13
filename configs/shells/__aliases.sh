@@ -56,8 +56,8 @@ alias dotfiles-private='cd ~/projects/dotfiles-private/'
 
 ### List directory contents
 alias ls='ls -pG --color=auto'
-alias ll='ls -hl'
-alias la='ll -A'
+alias ll='ls -Ahl'
+alias la='ll -a'
 alias lld='ls -hAld'
 alias lldw='ls -hAld www.*'
 
