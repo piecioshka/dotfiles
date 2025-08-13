@@ -4,6 +4,9 @@ My public dotfiles.
 
 ## Required software
 
+<details>
+<summary>macOS</summary>
+
 ```bash
 brew install watch
 brew install tree
@@ -17,21 +20,12 @@ brew install fastfetch # shell commands: fastfetch, flashfetch
 brew install httpie # shell command: http
 brew install nmap
 
-brew install git # INFO: macOS built-in version is always older
+brew install git # NOTE: macOS built-in version is always older
 brew install git-gui # shell command: gitk
-brew install git-delta # shell command: delta - https://github.com/dandavison/delta
+brew install git-delta # https://github.com/dandavison/delta
 brew install difftastic # shell command: difft - https://github.com/Wilfred/difftastic
-brew install tig # shell command: tig - https://github.com/jonas/tig
-brew install gh # shell command: gh - https://github.com/cli/cli
-gh extension install dlvhdr/gh-dash # shell command: gh dash
-
-# nvm installation guide - https://github.com/nvm-sh/nvm#install-script
-nvm install stable
-npm install -g yarn # https://github.com/yarnpkg/yarn
-npm install -g browser-sync # https://github.com/BrowserSync/browser-sync
-npm install -g npm-check # https://github.com/dylang/npm-check
-npm install -g fkill-cli # https://github.com/sindresorhus/fkill-cli
-npm install -g zx # https://github.com/google/zx
+brew install tig # https://github.com/jonas/tig
+brew install gh # https://github.com/cli/cli
 
 brew install rbenv # https://github.com/rbenv/rbenv
 brew install pyenv # https://github.com/pyenv/pyenv
@@ -42,6 +36,13 @@ brew install ncdu # https://dev.yorhel.nl/ncdu
 brew install entr # https://github.com/eradman/entr/
 brew install yt-dlp # https://github.com/yt-dlp/yt-dlp
 ```
+
+```bash
+gh extension install dlvhdr/gh-dash # shell command: gh dash
+nvm install stable # install Node.js - https://github.com/nvm-sh/nvm#install-script
+```
+
+</details>
 
 ## Install my custom scripts
 
