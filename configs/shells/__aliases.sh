@@ -115,9 +115,9 @@ alias gt='git tag'
 alias gf='git fire'
 alias gpp='git publish-branch'
 alias gpu='git projects-update'
-alias gpl='git run-on-nested-repos "git pull --all"'
 alias gpb='git projects-births'
-alias gps='git run-on-nested-repos "git status -sb"'
+alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
+alias gps='git run-on-nested-repos "git -c color.ui=always status -sb"'
 alias gtr='git tags-refresh'
 
 ### Official GitHub CLI
