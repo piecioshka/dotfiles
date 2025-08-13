@@ -56,10 +56,10 @@ alias dotfiles-private='cd ~/projects/dotfiles-private/'
 
 ### List directory contents
 alias ls='ls -pG --color=auto'
-alias ll='ls -hlt'
+alias ll='ls -hl'
 alias la='ll -A'
-alias lld='ls -hAltd'
-alias lldw='ls -hAltd www.*'
+alias lld='ls -hAld'
+alias lldw='ls -hAld www.*'
 
 ### Aliases based on other tools
 alias lt='lla --timeline'
