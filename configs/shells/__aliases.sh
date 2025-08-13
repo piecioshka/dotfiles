@@ -118,7 +118,6 @@ alias gpu='git projects-update'
 alias gpb='git projects-births'
 alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
 alias gps='git run-on-nested-repos "git -c color.ui=always status -sb"'
-alias gtr='git tags-refresh'
 
 ### Official GitHub CLI
 alias gpr='gh pr create --fill-first --draft'
