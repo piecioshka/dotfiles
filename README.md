@@ -40,7 +40,6 @@ brew install yt-dlp # https://github.com/yt-dlp/yt-dlp
 ```bash
 gh extension install dlvhdr/gh-dash # shell command: gh dash
 brew install --cask font-fira-code-nerd-font # then set "FiraCode Nerd Font" as default font in terminal
-gh extension install mislav/gh-branch # shell command: gh branch
 nvm install stable # install Node.js - https://github.com/nvm-sh/nvm#install-script
 ```
 
