@@ -79,7 +79,7 @@ alias ee='npm run e2e'
 ### Git
 alias g='git'
 alias ga='git add'
-alias gb='git branch'
+alias gb='git branch -vv'
 alias gba='git branch -a'
 alias gbr='git branch -r'
 alias gc='git commit -v'
