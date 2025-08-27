@@ -1,11 +1,11 @@
 # Public shell variables
 
 ### Add my extensions
-export PATH="$HOME/projects/git-scripts/bin/:$PATH"
-export PATH="$HOME/projects/jira-scripts/bin/:$PATH"
-export PATH="$HOME/projects/media-scripts/bin/:$PATH"
-export PATH="$HOME/projects/my-binaries/bin/:$PATH"
-export PATH="$HOME/projects/my-scripts/bin/:$PATH"
+export PATH="$HOME/projects/git-scripts/bin:$PATH"
+export PATH="$HOME/projects/jira-scripts/bin:$PATH"
+export PATH="$HOME/projects/media-scripts/bin:$PATH"
+export PATH="$HOME/projects/my-binaries/bin:$PATH"
+export PATH="$HOME/projects/my-scripts/bin:$PATH"
 
 ### GPG
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"

@@ -14,11 +14,11 @@ set fish_greeting
 # ------------------------------------------------------------------------------
 
 ### Add my extensions
-set -gx PATH $HOME/projects/git-scripts/bin/ $PATH
-set -gx PATH $HOME/projects/jira-scripts/bin/ $PATH
-set -gx PATH $HOME/projects/media-scripts/bin/ $PATH
-set -gx PATH $HOME/projects/my-binaries/bin/ $PATH
-set -gx PATH $HOME/projects/my-scripts/bin/ $PATH
+set -gx PATH $HOME/projects/git-scripts/bin $PATH
+set -gx PATH $HOME/projects/jira-scripts/bin $PATH
+set -gx PATH $HOME/projects/media-scripts/bin $PATH
+set -gx PATH $HOME/projects/my-binaries/bin $PATH
+set -gx PATH $HOME/projects/my-scripts/bin $PATH
 
 ### Support gpg
 set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH
