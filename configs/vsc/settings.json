@@ -54,6 +54,8 @@
     "**/tmp/**": true
   },
   "git.confirmSync": false,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
   "html.format.wrapLineLength": -1,
