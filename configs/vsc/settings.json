@@ -27,7 +27,8 @@
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.useInlineCompletions": true,
-  "explorer.compactFolders": false,
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
   "extensions.ignoreRecommendations": true,
@@ -54,7 +55,7 @@
     "**/tmp/**": true
   },
   "git.confirmSync": false,
-  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
@@ -94,6 +95,7 @@
     "FIG_NEW_SESSION": "1"
   },
   "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.stickyScroll.enabled": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": 1,
