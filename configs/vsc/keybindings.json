@@ -264,4 +264,13 @@
       "key": "cmd+k g",
       "command": "git-graph.view"
     },
+    {
+      "key": "alt+cmd+r",
+      "command": "-revealFileInOS",
+      "when": "!editorFocus"
+    },
+    {
+      "key": "shift+alt+cmd+r",
+      "command": "workbench.files.action.showActiveFileInExplorer"
+    },
 ]
