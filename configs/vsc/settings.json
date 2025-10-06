@@ -109,8 +109,17 @@
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 30,
   // Per FileType
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   "[feature]": {
     "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[markdown]": {
     "editor.wordWrap": "off" // bounded
