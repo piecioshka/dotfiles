@@ -122,7 +122,7 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[markdown]": {
-    "editor.wordWrap": "off" // bounded
+    "editor.wordWrap": "on"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
