@@ -39,6 +39,13 @@ alias open-ports='sudo nmap -sS localhost'
 
 # ------------------------------------------------------------------------------
 
+### Docker
+alias docker-kill-all='docker kill $(docker ps -a -q)'
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docker-stop-all='docker stop $(docker ps -a -q)'
+
+# ------------------------------------------------------------------------------
+
 ### Enter to up in structure directory
 alias ..='cd ..'
 alias ...='cd ../..'
