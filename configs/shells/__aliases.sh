@@ -126,7 +126,7 @@ alias gpp='git publish-branch'
 alias gpu='git projects-update'
 alias gpb='git projects-births'
 alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
-alias gps='git run-on-nested-repos "git -c color.ui=always status -sb"'
+alias gps='git run-on-nested-repos "git -c color.ui=always status -s"'
 
 ### Official GitHub CLI
 alias gpr='gh pr create --fill-first --draft'
