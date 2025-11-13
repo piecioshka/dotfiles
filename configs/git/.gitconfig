@@ -38,6 +38,10 @@
     user-local = config user.email
     user-global = config --global user.email
 
+    browse = "!f() { gh browse; }; f"
+    open = "!f() { gh browse; }; f"
+    www = "!f() { gh browse; }; f"
+
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = warn
