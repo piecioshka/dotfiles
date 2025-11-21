@@ -25,6 +25,9 @@ export PATH="$HOME/.local/bin:$PATH"
 ### Support OpenCode - https://opencode.ai/
 export PATH="$HOME/.opencode/bin:$PATH"
 
+### Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
 # ------------------------------------------------------------------------------
 
 ### Disable default greeting message "The default interactive shell is now zsh."
