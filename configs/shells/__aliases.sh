@@ -28,6 +28,7 @@ alias y="yt-dlp"
 ### Node.js global packages
 alias s='npx browser-sync start --server --no-ui --no-open --directory --serveStatic .'
 alias sw='s --watch' ## for slides
+alias owns="npx github-codeowners who -c CODEOWNERS" # Usage: owns <file-path>
 
 # ------------------------------------------------------------------------------
 
