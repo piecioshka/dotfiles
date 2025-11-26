@@ -171,6 +171,8 @@
     "sort": true,
     "stat": true,
     "tail": true,
+    "tee": true,
+    "timeout": true,
     "tr": true,
     "tree": true,
     "wc": true,
