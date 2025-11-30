@@ -104,12 +104,14 @@
   "workbench.colorTheme": "Monokai Pro (Filter Machine)",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.editor.wrapTabs": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.list.horizontalScrolling": true,
   "workbench.navigationControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 30,
+  "zenMode.showTabs": "single",
   // Per FileType
   "[dockercompose]": {
     "editor.insertSpaces": true,
