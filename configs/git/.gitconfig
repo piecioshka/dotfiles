@@ -42,6 +42,8 @@
     open = "!f() { gh browse; }; f"
     www = "!f() { gh browse; }; f"
 
+    repo-url = "!f() { gh repo view --json url -q .url; }; f"
+
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = warn
