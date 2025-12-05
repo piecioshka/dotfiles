@@ -55,9 +55,9 @@
     "**/tmp/**": true
   },
   "git.autofetch": true,
-  "git.confirmSync": false,
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": false,
+  "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
   "html.format.wrapLineLength": -1,
