@@ -41,7 +41,7 @@ else
 fi
 
 ### Setup Python
-export PYTHON=$(which python3)
+export PYTHON=$(command -v python3)
 
 ### Support ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/projects/dotfiles/configs/.ripgreprc"
