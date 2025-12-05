@@ -54,6 +54,7 @@
     "**/node_modules/**": true,
     "**/tmp/**": true
   },
+  "git.autofetch": true,
   "git.confirmSync": false,
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": false,
