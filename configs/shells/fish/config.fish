@@ -3,9 +3,9 @@ set -gx LC_ALL "en_US.UTF-8"
 
 ### Setup default editor
 if [ "$(uname)" = 'Darwin' ]
-  set -u EDITOR code
+  set -gx EDITOR code
 else
-  set -u EDITOR vim
+  set -gx EDITOR vim
 end
 
 ### Disable default greeting message
@@ -28,7 +28,7 @@ set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH
 [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ### Support PHP
-set -gx PATH $HOME/usr/local/sbin $PATH
+set -gx PATH /usr/local/sbin $PATH
 # set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 ### Support Rust
@@ -44,8 +44,10 @@ set -gx RIPGREP_CONFIG_PATH $HOME/projects/dotfiles/configs/.ripgreprc
 [ -s "/opt/homebrew/bin/pyenv" ] && status --is-interactive; and source (pyenv init -|psub)
 
 ### Resolve an issue: $ fish: Unknown command: python
-set -gx PATH $(brew --prefix python@3)/libexec/bin $PATH
-set -gx PYTHON $(which python3)
+if command -v brew > /dev/null 2>&1
+  set -gx PATH (brew --prefix python@3)/libexec/bin $PATH
+end
+set -gx PYTHON (command -v python3)
 
 ### Increase default memory for Node.js processes
 set -gx NODE_OPTIONS "--max_old_space_size=4096"
@@ -59,7 +61,7 @@ set -gx PATH $HOME/.opencode/bin $PATH
 # ------------------------------------------------------------------------------
 
 ### Load file with aliases
-source ~/projects/dotfiles/configs/shells/__aliases.sh
+bass source ~/projects/dotfiles/configs/shells/__aliases.sh
 
 ### Support Angular CLI
 bass source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
