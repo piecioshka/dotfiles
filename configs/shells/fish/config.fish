@@ -55,9 +55,6 @@ set -gx NODE_OPTIONS "--max_old_space_size=4096"
 ### Support Claude AI - https://claude.com/product/claude-code
 set -gx PATH $HOME/.local/bin $PATH
 
-### Support OpenCode - https://opencode.ai/
-set -gx PATH $HOME/.opencode/bin $PATH
-
 # ------------------------------------------------------------------------------
 
 ### Load file with aliases

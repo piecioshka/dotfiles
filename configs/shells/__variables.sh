@@ -22,9 +22,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 ### Support Claude AI - https://claude.com/product/claude-code
 export PATH="$HOME/.local/bin:$PATH"
 
-### Support OpenCode - https://opencode.ai/
-export PATH="$HOME/.opencode/bin:$PATH"
-
 ### Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
