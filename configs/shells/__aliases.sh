@@ -36,7 +36,6 @@ alias owns="npx github-codeowners who -c CODEOWNERS" # Usage: owns <file-path>
 alias ip="ifconfig | grep 'inet '" # Print all IP addresses
 alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index of /" content
 alias https='http --default-scheme=https'
-alias open-ports='sudo nmap -sS localhost'
 
 # ------------------------------------------------------------------------------
 
