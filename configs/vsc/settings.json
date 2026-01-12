@@ -160,6 +160,7 @@
     "jq": true,
     "ls": true,
     "node": true,
+    "npm audit": true,
     "npm ci": true,
     "npm install": true,
     "npm run build": true,
