@@ -167,6 +167,7 @@
     "npm run test": true,
     "npm test": true,
     "npm uninstall": true,
+    "npm update": true,
     "pnpm install": true,
     "pwd": true,
     "readlink": true,
