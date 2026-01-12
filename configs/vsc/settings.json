@@ -166,6 +166,7 @@
     "npm run lint": true,
     "npm run test": true,
     "npm test": true,
+    "npm uninstall": true,
     "pnpm install": true,
     "pwd": true,
     "readlink": true,
@@ -196,6 +197,7 @@
     "top": false,
     "wget": false,
   },
+  "claudeCode.preferredLocation": "panel",
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "piecioshka"
