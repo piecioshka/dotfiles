@@ -172,6 +172,7 @@
     "readlink": true,
     "realpath": true,
     "sleep": true,
+    "snyk": true,
     "sort": true,
     "stat": true,
     "tail": true,
