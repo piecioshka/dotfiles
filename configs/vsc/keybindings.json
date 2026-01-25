@@ -274,6 +274,14 @@
       "command": "workbench.files.action.showActiveFileInExplorer"
     },
     {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
+    },
+    {
       "key": "cmd+k t",
       "command": "workbench.action.hideEditorTabs",
       "when": "editorTabsVisible"
