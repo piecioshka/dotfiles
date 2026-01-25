@@ -273,4 +273,14 @@
       "key": "shift+alt+cmd+r",
       "command": "workbench.files.action.showActiveFileInExplorer"
     },
+    {
+      "key": "cmd+k t",
+      "command": "workbench.action.hideEditorTabs",
+      "when": "editorTabsVisible"
+    },
+    {
+      "key": "cmd+k t",
+      "command": "workbench.action.showMultipleEditorTabs",
+      "when": "!editorTabsVisible"
+    }
 ]
