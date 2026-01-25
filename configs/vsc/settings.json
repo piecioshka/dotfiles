@@ -200,7 +200,8 @@
     "top": false,
     "wget": false,
   },
-  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.preferredLocation": "sidebar",
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "piecioshka"
@@ -259,6 +260,8 @@
   "prettier.trailingComma": "all",
   "prettier.useTabs": false,
   "prettier.vueIndentScriptAndStyle": false,
+  "r.lsp.debug": true,
+  "r.lsp.diagnostics": false,
   "sequencediagrams.diagram.style": "simple",
   "svelte.enable-ts-plugin": true,
   "todo-tree.general.tags": [
