@@ -240,6 +240,7 @@
   "hexeditor.defaultEndianness": "little",
   "hexeditor.inspectorType": "aside",
   "hexeditor.showDecodedText": true,
+  "notebook.output.wordWrap": "on",
   "pdf-preview.default.scale": "page-fit",
   "prettier.arrowParens": "always",
   "prettier.bracketSameLine": false,
