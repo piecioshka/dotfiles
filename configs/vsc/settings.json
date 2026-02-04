@@ -202,6 +202,7 @@
   },
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.preferredLocation": "sidebar",
+  "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "piecioshka"
