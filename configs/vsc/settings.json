@@ -134,6 +134,7 @@
   },
   // Plugins
   "better-comments.highlightPlainText": true,
+  "chat.mcp.gallery.enabled": true,
   "chat.tools.terminal.autoApprove": {
     // Enabled commands
     "basename": true,
