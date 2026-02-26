@@ -21,3 +21,6 @@ Desktop.ini
 nbproject/
 *.swp
 .vscode
+
+# AI
+.playwright-mcp/
