@@ -73,6 +73,7 @@
     "**/.git": true,
     "**/.idea": true,
     "**/.nyc_output": true,
+    "**/.playwright-mcp": true,
     "**/bower_components": true,
     "**/build": true,
     "**/build-types": true,
