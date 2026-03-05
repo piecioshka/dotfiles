@@ -20,12 +20,15 @@ set -gx PATH $HOME/projects/media-scripts/bin $PATH
 set -gx PATH $HOME/projects/my-binaries/bin $PATH
 set -gx PATH $HOME/projects/my-scripts/bin $PATH
 
-### Support gpg
+### Support GPG
 set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH
 
 ### Support Homebrew
 # set -gx PATH $HOME/usr/local/bin $PATH
 [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+### Support Java
+set -gx PATH /opt/homebrew/opt/openjdk/bin $PATH
 
 ### Support PHP
 set -gx PATH /usr/local/sbin $PATH

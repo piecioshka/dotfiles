@@ -7,11 +7,14 @@ export PATH="$HOME/projects/media-scripts/bin:$PATH"
 export PATH="$HOME/projects/my-binaries/bin:$PATH"
 export PATH="$HOME/projects/my-scripts/bin:$PATH"
 
-### GPG
+### Support GPG
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
 
 ### Support Homebrew
 export PATH="/usr/local/bin:$PATH"
+
+### Support Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 ### Support PHP
 export PATH="/usr/local/sbin:$PATH"
