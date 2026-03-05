@@ -1,6 +1,4 @@
 [alias]
-    # https://gist.github.com/ecaqsilla/9669241
-    hist = log --pretty=format:'%C(green)%ad%C(reset) | %C(red)%h%C(reset) | %C(blue)%an%C(reset) | %s %C(yellow)%d%C(reset)' --date=short
     la = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --stat
     ll = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset)' --date=relative
     lle = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --date=relative
