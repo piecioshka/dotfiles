@@ -1,6 +1,7 @@
 [alias]
     la = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --stat
     ll = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --date=relative
+    ld = log --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)%an%C(reset) %C(magenta)(%ae)%C(reset)' --patch
 
     age = "!f() { git log --reverse --pretty=oneline --format='%ar' | head -n 1 | LC_ALL=C sed 's/ago//'; }; f"
 
