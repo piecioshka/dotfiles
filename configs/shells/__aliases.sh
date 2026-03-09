@@ -131,3 +131,5 @@ alias gpd='git run-on-nested-repos "git -c color.ui=always diff --unified=1"'
 
 ### Official GitHub CLI
 alias gpr='gh pr create --fill-first --draft'
+alias new-repo-public="gh repo new --public --push --source ."
+alias new-repo-private="gh repo new --private --push --source ."
