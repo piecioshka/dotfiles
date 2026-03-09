@@ -121,6 +121,7 @@ alias gsss='gss'
 alias gt='git tag'
 
 ### My Git scripts
+alias gcb='git copy-branch-name'
 alias gf='git fire'
 alias gpp='git publish-branch'
 alias gpu='git projects-update'
