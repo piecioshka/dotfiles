@@ -54,13 +54,14 @@ function tiny_prompt
 end
 
 function fish_prompt
-    echo -n '(fish) '
-    set_color $fish_color_cwd
-    echo -n (prompt_pwd)
-    set_color $fish_color_operator
     if [ "$fish_tiny_prompt" = 0 ]
+      echo -n '(fish) '
+      set_color $fish_color_cwd
+      echo -n (prompt_pwd)
+      set_color $fish_color_operator
       echo -n (__get_git_branch_with_state)
     else
+      set_color $fish_color_operator
       echo -n (__parse_git_state)
     end
     set_color $fish_color_cwd_root
