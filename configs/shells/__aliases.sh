@@ -6,6 +6,7 @@
 alias chrome="open -a 'Google Chrome'"
 alias p="open -a 'Plain Text Editor'"
 alias c="open -a 'Visual Studio Code'"
+alias com="open -a 'Commander One'"
 
 # ------------------------------------------------------------------------------
 
