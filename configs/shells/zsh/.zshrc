@@ -27,7 +27,7 @@ source ~/projects/dotfiles/configs/shells/zsh/functions/zhist.zsh
 [ -s ~/.profile ] && source ~/.profile
 
 ### Load secret config files
-[ -s ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
+[ -s ~/projects-private/dotfiles-private/.profile ] && source ~/projects-private/dotfiles-private/.profile
 
 ### Support fzf
 [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh

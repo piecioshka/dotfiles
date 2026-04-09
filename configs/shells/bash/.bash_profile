@@ -28,7 +28,7 @@ source ~/projects/dotfiles/configs/shells/bash/functions/tiny_prompt.bash
 [ -s ~/.profile ] && source ~/.profile
 
 ### Load secret config files
-[ -s ~/projects/dotfiles-private/.profile ] && source ~/projects/dotfiles-private/.profile
+[ -s ~/projects-private/dotfiles-private/.profile ] && source ~/projects-private/dotfiles-private/.profile
 
 ### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
