@@ -56,4 +56,16 @@ __get_git_branch_with_state() {
     fi
 }
 
-PS1="(bash) ${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__get_git_branch_with_state\`${__COLOR_BLUE_LIGHT} > ${__COLOR_RESET}"
+### Get host name (hidden when it contains ".lan")
+__get_host() {
+    host=`hostname 2> /dev/null`
+    host_lc=`echo "${host}" | tr '[:upper:]' '[:lower:]'`
+
+    if [[ "${host_lc}" == *.lan* ]]; then
+        echo ""
+    else
+        echo "@${host} "
+    fi
+}
+
+PS1="(bash) ${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__get_git_branch_with_state\`${__COLOR_BLUE_LIGHT} \`__get_host\`> ${__COLOR_RESET}"

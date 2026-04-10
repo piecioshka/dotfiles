@@ -49,6 +49,17 @@ function __get_git_branch_with_state
     end
 end
 
+function __get_host
+    set -l host (hostname 2> /dev/null)
+    set -l host_lc (string lower -- $host)
+
+    if string match -q '*.lan*' -- $host_lc
+        echo ""
+    else
+        echo -n " @$host"
+    end
+end
+
 function tiny_prompt
     set -g fish_tiny_prompt 1
 end
@@ -60,6 +71,8 @@ function fish_prompt
       echo -n (prompt_pwd)
       set_color $fish_color_operator
       echo -n (__get_git_branch_with_state)
+      set_color $fish_color_cwd_root
+      echo -n (__get_host)
     else
       set_color $fish_color_operator
       echo -n (__parse_git_state)
