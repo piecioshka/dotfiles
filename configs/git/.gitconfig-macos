@@ -1,6 +1,15 @@
 [debug]
     os = macos
 
+[delta]
+    syntax-theme = Monokai Extended
+    navigate = true
+    color-only = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only
+
 [pager]
     log = delta
     diff = delta

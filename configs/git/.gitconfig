@@ -103,12 +103,6 @@
     # Exit from the command when a file has a bad end of line
     safecrlf = true
 
-[delta]
-    syntax-theme = Monokai Extended
-    navigate = true
-    color-only = true
-    line-numbers = true
-
 [diff]
     # An incremental improvement on ‘patience’
     algorithm = histogram
@@ -149,9 +143,6 @@
 
 [init]
     defaultBranch = main
-
-[interactive]
-    diffFilter = delta --color-only
 
 [merge]
     conflictstyle = diff3 # Options: merge, diff3, zdiff3
