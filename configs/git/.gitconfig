@@ -139,7 +139,8 @@
     allowedSignersFile = ""
 
 [help]
-    autocorrect = immediate
+    # immediately show the help message without waiting for user input
+    autocorrect = 1
 
 [init]
     defaultBranch = main
