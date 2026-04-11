@@ -56,12 +56,12 @@ __get_git_branch_with_state() {
     fi
 }
 
-### Get host name (hidden when it contains ".lan")
+### Get host name (hidden when it contains ".lan" or ".local")
 __get_host() {
     host=`hostname 2> /dev/null`
     host_lc=`echo "${host}" | tr '[:upper:]' '[:lower:]'`
 
-    if [[ "${host_lc}" == *.lan* ]]; then
+    if [[ "${host_lc}" == *.lan ]] || [[ "${host_lc}" == *.local ]]; then
         echo ""
     else
         echo "@${host} "

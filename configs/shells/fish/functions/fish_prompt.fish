@@ -53,7 +53,7 @@ function __get_host
     set -l host (hostname 2> /dev/null)
     set -l host_lc (string lower -- $host)
 
-    if string match -q '*.lan*' -- $host_lc
+    if string match -q '*.lan' -- $host_lc; or string match -q '*.local' -- $host_lc
         echo ""
     else
         echo -n " @$host"
