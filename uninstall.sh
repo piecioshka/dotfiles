@@ -113,6 +113,34 @@ function __remove_cursor {
   fi
 }
 
+function __remove_windsurf {
+  __print_title "Windsurf"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by Windsurf"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Windsurf/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Windsurf/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
+
+  if [ -d "${path}" ]; then
+      rm -rf $base/configs/vsc/* "${path}"
+  else
+      echo -e "Directory ${path} not exists\n"
+  fi
+}
+
 function __remove_fzf {
   __print_title "fzf"
   rm $base/configs/.fzf.bash ~/.fzf.bash
@@ -141,6 +169,7 @@ __remove_tig
 __remove_tmux
 __remove_vsc
 __remove_cursor
+__remove_windsurf
 __remove_fzf
 __remove_fastfetch
 __remove_mc

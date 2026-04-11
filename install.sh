@@ -128,6 +128,36 @@ function __install_cursor {
   fi
 }
 
+function __install_windsurf {
+  __print_title "Windsurf"
+
+  case "$(uname -s)" in
+    Linux*)
+      echo "Running on Linux"
+      echo "TODO: check what path is used by Windsurf"
+      ;;
+    Darwin*)
+      echo "Running on macOS"
+      path="$HOME/Library/Application Support/Windsurf/User/"
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      echo "Running on Windows"
+      path="$HOME/AppData/Roaming/Windsurf/User/"
+      ;;
+    *)
+      echo "Unknown OS"
+      ;;
+  esac
+
+  if [ -d "${path}" ]; then
+    __link_file $base/configs/vsc/snippets/ "${path}snippets"
+    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
+    __link_file $base/configs/vsc/settings.json "${path}settings.json"
+  else
+    echo -e "Directory ${path} not exists\n"
+  fi
+}
+
 function __install_zed {
   __print_title "zed"
   __link_file $base/configs/.config/zed/settings.json ~/.config/zed/settings.json
@@ -178,6 +208,7 @@ case "$(uname -s)" in
     __install_tmux
     __install_vsc
     __install_cursor
+    __install_windsurf
     __install_zed
     __install_fzf
     __install_fastfetch
