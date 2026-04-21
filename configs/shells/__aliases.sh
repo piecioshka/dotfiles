@@ -77,6 +77,7 @@ alias le='eza -Tx -L 1 --ignore-glob=node_modules'
 # ------------------------------------------------------------------------------
 
 ### npm
+alias nrd='npm run dev'
 alias nrs='npm run start'
 alias nrb='npm run build'
 alias nrw='npm run watch'
