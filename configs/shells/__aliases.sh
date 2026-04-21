@@ -77,11 +77,11 @@ alias le='eza -Tx -L 1 --ignore-glob=node_modules'
 # ------------------------------------------------------------------------------
 
 ### npm
-alias ss='npm run start'
-alias bb='npm run build'
-alias ww='npm run watch'
-alias tt='npm run test'
-alias ee='npm run e2e'
+alias nrs='npm run start'
+alias nrb='npm run build'
+alias nrw='npm run watch'
+alias nrt='npm run test'
+alias nre='npm run e2e'
 
 # ------------------------------------------------------------------------------
 
