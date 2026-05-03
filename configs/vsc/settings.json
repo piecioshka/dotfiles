@@ -104,6 +104,7 @@
   "window.commandCenter": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.location": "top",
+  "workbench.browser.openLocalhostLinks": false,
   "workbench.colorTheme": "Monokai Pro (Filter Machine)",
   "workbench.editor.pinnedTabsOnSeparateRow": true,
   "workbench.editor.titleScrollbarSizing": "large",
