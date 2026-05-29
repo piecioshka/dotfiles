@@ -1,6 +1,7 @@
 # Public shell variables
 
 ### Add my extensions
+export PATH="$HOME/projects/claude-scripts/bin:$PATH"
 export PATH="$HOME/projects/git-scripts/bin:$PATH"
 export PATH="$HOME/projects/github-bash-scripts/bin:$PATH"
 export PATH="$HOME/projects/jira-scripts/bin:$PATH"

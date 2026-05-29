@@ -49,6 +49,7 @@ nvm install stable # install Node.js - https://github.com/nvm-sh/nvm#install-scr
 
 ```bash
 cd ~/projects/
+git clone https://github.com/piecioshka/claude-scripts.git
 git clone https://github.com/piecioshka/git-scripts.git
 git clone https://github.com/piecioshka/github-bash-scripts.git
 git clone https://github.com/piecioshka/jira-scripts.git

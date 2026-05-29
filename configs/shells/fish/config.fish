@@ -14,6 +14,7 @@ set fish_greeting
 # ------------------------------------------------------------------------------
 
 ### Add my extensions
+set -gx PATH $HOME/projects/claude-scripts/bin $PATH
 set -gx PATH $HOME/projects/git-scripts/bin $PATH
 set -gx PATH $HOME/projects/github-bash-scripts/bin $PATH
 set -gx PATH $HOME/projects/jira-scripts/bin $PATH
