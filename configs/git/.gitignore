@@ -25,3 +25,5 @@ nbproject/
 # AI
 .playwright-mcp/
 .claude/*.local.*
+.claude/worktrees/
+.claude/settings.local.json
