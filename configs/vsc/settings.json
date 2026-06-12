@@ -222,9 +222,7 @@
   "claudeCode.preferredLocation": "sidebar",
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en,pl",
-  "cSpell.userWords": [
-    "piecioshka"
-  ],
+  "cSpell.userWords": ["piecioshka"],
   "cucumberautocomplete.strictGherkinCompletion": true,
   "excalidraw.theme": "dark",
   "github.copilot.chat.commitMessageGeneration.instructions": [
@@ -259,7 +257,7 @@
   "hexeditor.defaultEndianness": "little",
   "hexeditor.inspectorType": "aside",
   "hexeditor.showDecodedText": true,
-  "notebook.output.wordWrap": "on",
+  "notebook.output.wordWrap": true,
   "pdf-preview.default.scale": "page-fit",
   "prettier.arrowParens": "always",
   "prettier.bracketSameLine": false,
@@ -284,14 +282,77 @@
   "r.lsp.diagnostics": false,
   "sequencediagrams.diagram.style": "simple",
   "svelte.enable-ts-plugin": true,
+  "todohighlight.defaultStyle": {
+    "fontStyle": "italic",
+    "backgroundColor": "none",
+    "overviewRulerColor": "transparent",
+    "cursor": "pointer",
+    "border": "0px",
+    "borderRadius": "2px",
+    "isWholeLine": true
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "BUG:",
+      "color": "#FF0000",
+      "backgroundColor": "#FF00001A"
+    },
+    {
+      "text": "COMMENT:",
+      "color": "#A0A2A1",
+      "backgroundColor": "#A0A2A11A"
+    },
+    {
+      "text": "DEBUG:",
+      "color": "#ADD8E6",
+      "backgroundColor": "#ADD8E61A"
+    },
+    {
+      "text": "FIXME:",
+      "color": "#FF2677",
+      "backgroundColor": "#FF26771A"
+    },
+    {
+      "text": "HACK:",
+      "color": "#FF0000",
+      "backgroundColor": "#FF00001A"
+    },
+    {
+      "text": "INFO:",
+      "color": "#1E90FF",
+      "backgroundColor": "#1E90FF1A"
+    },
+    {
+      "text": "NOTE:",
+      "color": "#DDD",
+      "backgroundColor": "#A9A9A91A"
+    },
+    {
+      "text": "REVIEW:",
+      "color": "#008000",
+      "backgroundColor": "#0080001A"
+    },
+    {
+      "text": "TODO:",
+      "color": "#FF9800",
+      "backgroundColor": "#FF00001A"
+    },
+    {
+      "text": "XXX:",
+      "color": "#FF0000",
+      "backgroundColor": "#FF00001A"
+    }
+  ],
   "todo-tree.general.tags": [
-    "TODO",
-    "NOTE",
-    "COMMENT",
-    "FIXME",
     "BUG",
+    "COMMENT",
+    "DEBUG",
+    "FIXME",
     "HACK",
     "INFO",
+    "NOTE",
+    "REVIEW",
+    "TODO",
     "XXX"
   ],
   "todo-tree.highlights.defaultHighlight": {
@@ -302,53 +363,66 @@
   },
   "todo-tree.highlights.customHighlight": {
     // https://microsoft.github.io/vscode-codicons/dist/codicon.html
-    "TODO": {
-      "icon": "tools",
+    "BUG": {
+      "foreground": "#FF0000",
       "background": "#FF00001A",
-      "iconColour": "#FFA500"
-    },
-    "NOTE": {
-      "icon": "note",
-      "foreground": "#FFF",
-      "background": "#A9A9A91A",
-      "iconColour": "#A9A9A9"
+      "iconColour": "#FF0000"
     },
     "COMMENT": {
       "icon": "comment",
-      "foreground": "#FFF",
-      "background": "#808080",
-      "iconColour": "#808080"
+      "foreground": "#A0A2A1",
+      "background": "#A0A2A11A",
+      "iconColour": "#A0A2A1"
+    },
+    "DEBUG": {
+      "icon": "debug",
+      "foreground": "#ADD8E6",
+      "background": "#ADD8E61A",
+      "iconColour": "#ADD8E6"
     },
     "FIXME": {
-      "foreground": "#000",
-      "background": "#FFFF00",
-      "iconColour": "#FFFF00"
-    },
-    "BUG": {
-      "foreground": "#000",
-      "background": "#FF0000",
-      "iconColour": "#FF0000"
+      "foreground": "#FF2677",
+      "background": "#FF26771A",
+      "iconColour": "#FF2677"
     },
     "HACK": {
-      "foreground": "#000",
-      "background": "#FFA500",
-      "iconColour": "#FFA500"
+      "foreground": "#FF0000",
+      "background": "#FF00001A",
+      "iconColour": "#FF0000"
     },
     "INFO": {
       "icon": "info",
-      "foreground": "#FFF",
-      "background": "#3D98C9",
-      "iconColour": "#3d98c9"
+      "foreground": "#1E90FF",
+      "background": "#1E90FF1A",
+      "iconColour": "#1E90FF"
+    },
+    "NOTE": {
+      "icon": "note",
+      "foreground": "#DDD",
+      "background": "#A9A9A91A",
+      "iconColour": "#A9A9A9"
+    },
+    "REVIEW": {
+      "icon": "note",
+      "foreground": "#008000",
+      "background": "#0080001A",
+      "iconColour": "#008000"
+    },
+    "TODO": {
+      "icon": "tools",
+      "foreground": "#FF9800",
+      "background": "#FF00001A",
+      "iconColour": "#FFA500"
     },
     "XXX": {
       "icon": "comment",
-      "foreground": "#000",
-      "background": "#FF0000",
+      "foreground": "#FF0000",
+      "background": "#FF00001A",
       "iconColour": "#FF0000"
     }
   },
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,
-  "wallaby.suppressExpirationNotifications": true,
+  "wallaby.suppressExpirationNotifications": true
 }
