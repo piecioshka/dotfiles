@@ -57,3 +57,7 @@ git clone https://github.com/piecioshka/media-scripts.git
 git clone https://github.com/piecioshka/my-binaries.git
 git clone https://github.com/piecioshka/my-scripts.git
 ```
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
