@@ -60,6 +60,12 @@ set -gx NODE_OPTIONS "--max_old_space_size=4096"
 ### Support Claude AI - https://claude.com/product/claude-code
 set -gx PATH $HOME/.local/bin $PATH
 
+### Added by Antigravity
+set -gx PATH $HOME/.antigravity/antigravity/bin $PATH
+
+### Added by LM Studio CLI (lms)
+set -gx PATH $HOME/.lmstudio/bin $PATH
+
 # ------------------------------------------------------------------------------
 
 ### Load file with aliases
