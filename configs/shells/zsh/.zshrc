@@ -2,26 +2,29 @@
 
 setopt EXTENDED_HISTORY
 
+### Resolve the dotfiles repo root from this file's real location (handles symlinks)
+export DOTFILES_DIR="${${(%):-%N}:A:h:h:h:h}"
+
 ### Load file with variables
-source ~/projects/dotfiles/configs/shells/__variables.sh
+source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
 ### Load file with aliases
-source ~/projects/dotfiles/configs/shells/__aliases.sh
+source "$DOTFILES_DIR/configs/shells/__aliases.sh"
 
 ### Load prompt definition
-source ~/projects/dotfiles/configs/shells/zsh/.prompt
+source "$DOTFILES_DIR/configs/shells/zsh/.prompt"
 
 ### Support Angular CLI (from bash)
-source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
+source "$DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash"
 
 ### Support load_nvm
-source ~/projects/dotfiles/configs/shells/zsh/functions/load_nvm.zsh
+source "$DOTFILES_DIR/configs/shells/zsh/functions/load_nvm.zsh"
 
 ### Support Zsh Completion for Homebrew
-source ~/projects/dotfiles/configs/shells/zsh/functions/homebrew-completion.zsh
+source "$DOTFILES_DIR/configs/shells/zsh/functions/homebrew-completion.zsh"
 
 ### Support timestamps for all executed commands
-source ~/projects/dotfiles/configs/shells/zsh/functions/zhist.zsh
+source "$DOTFILES_DIR/configs/shells/zsh/functions/zhist.zsh"
 
 ### Load file .profile
 [ -s ~/.profile ] && source ~/.profile

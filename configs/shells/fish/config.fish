@@ -1,6 +1,9 @@
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 
+### Resolve the dotfiles repo root from this file's real location (handles symlinks)
+set -gx DOTFILES_DIR (path resolve (status --current-filename)/../../../..)
+
 ### Setup default editor
 if [ "$(uname)" = 'Darwin' ]
   set -gx EDITOR code
@@ -43,7 +46,7 @@ set -gx PATH $HOME/.cargo/bin $PATH
 [ -s "/opt/homebrew/bin/rbenv" ] && status --is-interactive; and rbenv init - fish | source
 
 ### Support ripgrep
-set -gx RIPGREP_CONFIG_PATH $HOME/projects/dotfiles/configs/.ripgreprc
+set -gx RIPGREP_CONFIG_PATH $DOTFILES_DIR/configs/.ripgreprc
 
 ### Support pyenv - Python Version Manager
 [ -s "/opt/homebrew/bin/pyenv" ] && status --is-interactive; and source (pyenv init -|psub)
@@ -69,10 +72,10 @@ set -gx PATH $HOME/.lmstudio/bin $PATH
 # ------------------------------------------------------------------------------
 
 ### Load file with aliases
-bass source ~/projects/dotfiles/configs/shells/__aliases.sh
+bass source $DOTFILES_DIR/configs/shells/__aliases.sh
 
 ### Support Angular CLI
-bass source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
+bass source $DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash
 
 ### Load secret config files
 [ -s "$HOME/projects-private/dotfiles-private/.profile" ] && bass source ~/projects-private/dotfiles-private/.profile

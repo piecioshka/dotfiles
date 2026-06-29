@@ -49,7 +49,7 @@ fi
 export PYTHON=$(command -v python3)
 
 ### Support ripgrep
-export RIPGREP_CONFIG_PATH="$HOME/projects/dotfiles/configs/.ripgreprc"
+export RIPGREP_CONFIG_PATH="$DOTFILES_DIR/configs/.ripgreprc"
 
 ### Increase default memory for Node.js processes
 export NODE_OPTIONS=--max_old_space_size=4096

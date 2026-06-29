@@ -58,7 +58,7 @@ alias ......='cd ../../../../..'
 ### Aliases for project directories
 alias pro='cd ~/projects/'
 alias tmp='cd ~/projects/tmp/'
-alias dotfiles='cd ~/projects/dotfiles/'
+alias dotfiles='cd "$DOTFILES_DIR"'
 alias dotfiles-private='cd ~/projects-private/dotfiles-private/'
 
 # ------------------------------------------------------------------------------

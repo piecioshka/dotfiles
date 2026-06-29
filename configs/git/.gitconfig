@@ -187,7 +187,8 @@
     path = ~/projects-private/dotfiles-private/.gitconfig
 
 # Include platform-specific configuration
+# Paths are relative to this file's real location, so the repo works wherever it is cloned.
 [include]
-    # path = ~/projects/dotfiles/configs/git/.gitconfig-linux
-    path = ~/projects/dotfiles/configs/git/.gitconfig-macos
-    # path = ~/projects/dotfiles/configs/git/.gitconfig-windows
+    # path = ./.gitconfig-linux
+    path = ./.gitconfig-macos
+    # path = ./.gitconfig-windows
