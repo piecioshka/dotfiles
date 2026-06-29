@@ -5,6 +5,10 @@ setopt EXTENDED_HISTORY
 ### Resolve the dotfiles repo root from this file's real location (handles symlinks)
 export DOTFILES_DIR="${${(%):-%N}:A:h:h:h:h}"
 
+### Location of the private dotfiles (override via env if kept elsewhere)
+: "${DOTFILES_PRIVATE_DIR:=$HOME/projects-private/dotfiles-private}"
+export DOTFILES_PRIVATE_DIR
+
 ### Load file with variables
 source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
@@ -30,7 +34,7 @@ source "$DOTFILES_DIR/configs/shells/zsh/functions/zhist.zsh"
 [ -s ~/.profile ] && source ~/.profile
 
 ### Load secret config files
-[ -s ~/projects-private/dotfiles-private/.profile ] && source ~/projects-private/dotfiles-private/.profile
+[ -s "$DOTFILES_PRIVATE_DIR/.profile" ] && source "$DOTFILES_PRIVATE_DIR/.profile"
 
 ### Support fzf
 [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -4,6 +4,9 @@ set -gx LC_ALL "en_US.UTF-8"
 ### Resolve the dotfiles repo root from this file's real location (handles symlinks)
 set -gx DOTFILES_DIR (path resolve (status --current-filename)/../../../..)
 
+### Location of the private dotfiles (override via env if kept elsewhere)
+set -q DOTFILES_PRIVATE_DIR; or set -gx DOTFILES_PRIVATE_DIR $HOME/projects-private/dotfiles-private
+
 ### Setup default editor
 if [ "$(uname)" = 'Darwin' ]
   set -gx EDITOR code
@@ -78,7 +81,7 @@ bass source $DOTFILES_DIR/configs/shells/__aliases.sh
 bass source $DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash
 
 ### Load secret config files
-[ -s "$HOME/projects-private/dotfiles-private/.profile" ] && bass source ~/projects-private/dotfiles-private/.profile
+[ -s "$DOTFILES_PRIVATE_DIR/.profile" ] && bass source $DOTFILES_PRIVATE_DIR/.profile
 
 # ------------------------------------------------------------------------------
 

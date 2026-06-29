@@ -3,6 +3,10 @@
 ### Resolve the dotfiles repo root from this file's real location (handles symlinks)
 export DOTFILES_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../../.." && pwd)"
 
+### Location of the private dotfiles (override via env if kept elsewhere)
+: "${DOTFILES_PRIVATE_DIR:=$HOME/projects-private/dotfiles-private}"
+export DOTFILES_PRIVATE_DIR
+
 ### Load file with variables
 source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
@@ -31,7 +35,7 @@ source "$DOTFILES_DIR/configs/shells/bash/functions/tiny_prompt.bash"
 [ -s ~/.profile ] && source ~/.profile
 
 ### Load secret config files
-[ -s ~/projects-private/dotfiles-private/.profile ] && source ~/projects-private/dotfiles-private/.profile
+[ -s "$DOTFILES_PRIVATE_DIR/.profile" ] && source "$DOTFILES_PRIVATE_DIR/.profile"
 
 ### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"

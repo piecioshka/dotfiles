@@ -183,6 +183,9 @@
     name = Piotr Kowalski
 
 # Include private configuration
+# Kept at a fixed path: git does not expand env vars in include.path, and the
+# private repo lives outside this one (no symlink to resolve relative to).
+# A missing file here is silently ignored, so this is safe on other machines.
 [include]
     path = ~/projects-private/dotfiles-private/.gitconfig
 
