@@ -101,7 +101,6 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.commandCenter": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.location": "top",
   "workbench.browser.openLocalhostLinks": false,
