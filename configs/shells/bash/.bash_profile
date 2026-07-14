@@ -1,25 +1,32 @@
 #!/usr/bin/env bash
 
+### Resolve the dotfiles repo root from this file's real location (handles symlinks)
+export DOTFILES_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../../.." && pwd)"
+
+### Location of the private dotfiles (override via env if kept elsewhere)
+: "${DOTFILES_PRIVATE_DIR:=$HOME/projects-private/dotfiles-private}"
+export DOTFILES_PRIVATE_DIR
+
 ### Load file with variables
-source ~/projects/dotfiles/configs/shells/__variables.sh
+source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
 ### Load file with aliases
-source ~/projects/dotfiles/configs/shells/__aliases.sh
+source "$DOTFILES_DIR/configs/shells/__aliases.sh"
 
 ### Load prompt definition
-source ~/projects/dotfiles/configs/shells/bash/.prompt
+source "$DOTFILES_DIR/configs/shells/bash/.prompt"
 
 ### Support Angular CLI
-source ~/projects/dotfiles/configs/shells/bash/functions/angular-cli.bash
+source "$DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash"
 
 ### Support load_nvm
-source ~/projects/dotfiles/configs/shells/bash/functions/load_nvm.bash
+source "$DOTFILES_DIR/configs/shells/bash/functions/load_nvm.bash"
 
 ### Support Bash Completion for Homebrew
-source ~/projects/dotfiles/configs/shells/bash/functions/homebrew-completion.bash
+source "$DOTFILES_DIR/configs/shells/bash/functions/homebrew-completion.bash"
 
 ### Support command to shorten the prompt
-source ~/projects/dotfiles/configs/shells/bash/functions/tiny_prompt.bash
+source "$DOTFILES_DIR/configs/shells/bash/functions/tiny_prompt.bash"
 
 ### Load file .bashrc
 [ -s ~/.bashrc ] && source ~/.bashrc
@@ -28,7 +35,7 @@ source ~/projects/dotfiles/configs/shells/bash/functions/tiny_prompt.bash
 [ -s ~/.profile ] && source ~/.profile
 
 ### Load secret config files
-[ -s ~/projects-private/dotfiles-private/.profile ] && source ~/projects-private/dotfiles-private/.profile
+[ -s "$DOTFILES_PRIVATE_DIR/.profile" ] && source "$DOTFILES_PRIVATE_DIR/.profile"
 
 ### Support rbenv - Ruby Version Manager
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
