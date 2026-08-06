@@ -215,7 +215,8 @@
     "xargs": true,
     "xxd": true,
     "yarn install": true,
-    "yarn": true
+    "yarn": true,
+    "gh": true
   },
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.preferredLocation": "sidebar",
@@ -423,5 +424,8 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,
-  "wallaby.suppressExpirationNotifications": true
+  "wallaby.suppressExpirationNotifications": true,
+  "extensions.supportAgentsWindow": {
+    "monokai.theme-monokai-pro-vscode": true
+  }
 }
