@@ -32,8 +32,8 @@ brew install pyenv # https://github.com/pyenv/pyenv
 brew install lla # https://github.com/triyanox/lla
 brew install eza # https://github.com/eza-community/eza
 
-brew install ncdu # https://dev.yorhel.nl/ncdu
-brew install entr # https://github.com/eradman/entr/
+brew install ncdu # https://dev.yorhel.nl/ncdu - NCurses Disk Usage
+brew install entr # https://github.com/eradman/entr/ - run arbitrary commands when files change
 brew install yt-dlp # https://github.com/yt-dlp/yt-dlp
 ```
 
