@@ -157,6 +157,9 @@
     show = false
     status = false
     reflog = false
+    # My aliases
+    ls = true
+    ll = true
 
 [pull]
     # Rebase the current branch on top of the upstream branch after fetching
