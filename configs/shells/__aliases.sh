@@ -125,12 +125,12 @@ alias gt='git tag'
 ### My Git scripts
 alias gcb='git copy-branch-name'
 alias gf='git fire'
-alias gpp='git publish-branch'
-alias gpu='git projects-update'
 alias gpb='git projects-births'
-alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
-alias gps='git run-on-nested-repos "git -c color.ui=always status -s"'
 alias gpd='git run-on-nested-repos "git -c color.ui=always diff --unified=1"'
+alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
+alias gpp='git publish-branch'
+alias gps='git run-on-nested-repos "git -c color.ui=always status -sb"'
+alias gpu='git projects-update'
 
 ### Official GitHub CLI
 alias gpr='gh pr create --fill-first --draft'
