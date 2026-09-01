@@ -227,6 +227,14 @@
         "command": "workbench.action.terminal.focus"
     },
     {
+        "key": "cmd+3",
+        "command": "claudeVSCodeSidebar.focus"
+    },
+    {
+        "key": "cmd+3",
+        "command": "claudeVSCodeSidebarSecondary.focus"
+    },
+    {
         "key": "shift+cmd+down",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult || inSearchEditor"
