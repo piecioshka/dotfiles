@@ -61,8 +61,6 @@
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
     ui = auto
-    # Always add colors to output. Good for the "what-happened" command.
-    status = always
 
 [color "branch"]
     # current = yellow reverse
