@@ -209,6 +209,13 @@ function __install_yt_dlp {
   __link_file $base/configs/.config/yt-dlp/ ~/.config/yt-dlp
 }
 
+function __install_iterm {
+  __print_title "iTerm2"
+  # Dynamic profile: iTerm2 watches this folder and loads profiles from it
+  mkdir -p "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
+  __link_file $base/configs/iterm/default.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/default.json"
+}
+
 echo "Install configs"
 
 case "$(uname -s)" in
@@ -236,6 +243,7 @@ case "$(uname -s)" in
     __install_btop
     __install_htop
     __install_yt_dlp
+    __install_iterm
     ;;
   CYGWIN*|MINGW*|MSYS*|Windows_NT)
     echo "Running on Windows"
