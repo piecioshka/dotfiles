@@ -57,6 +57,20 @@ function __install_git {
   __link_file $base/configs/git/.gitattributes ~/.gitattributes
   __link_file $base/configs/git/.gitconfig ~/.gitconfig
   __link_file $base/configs/git/.gitignore ~/.gitignore
+
+  # Platform-specific config is included from ~/.gitconfig-<platform>,
+  # because git does not resolve relative include paths through the symlink
+  case "$(uname -s)" in
+    Linux*)
+      __link_file $base/configs/git/.gitconfig-linux ~/.gitconfig-linux
+      ;;
+    Darwin*)
+      __link_file $base/configs/git/.gitconfig-macos ~/.gitconfig-macos
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      __link_file $base/configs/git/.gitconfig-windows ~/.gitconfig-windows
+      ;;
+  esac
 }
 
 function __install_tig {

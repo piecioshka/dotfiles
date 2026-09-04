@@ -193,8 +193,11 @@
     path = ~/projects-private/dotfiles-private/.gitconfig
 
 # Include platform-specific configuration
-# Paths are relative to this file's real location, so the repo works wherever it is cloned.
+# Git resolves a relative include.path against ~/.gitconfig itself, not against
+# the file the symlink points to, so a "./" path silently loads nothing.
+# install.sh links the file for the current platform to ~/.gitconfig-<platform>;
+# only one of them exists and the missing ones are ignored.
 [include]
-    # path = ./.gitconfig-linux
-    path = ./.gitconfig-macos
-    # path = ./.gitconfig-windows
+    path = ~/.gitconfig-linux
+    path = ~/.gitconfig-macos
+    path = ~/.gitconfig-windows
