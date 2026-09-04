@@ -7,6 +7,13 @@ source "$root_dir/configs/shells/__colors.sh"
 
 base="$root_dir"
 
+case "$(uname -s)" in
+  Linux*) os="linux" ;;
+  Darwin*) os="macos" ;;
+  CYGWIN*|MINGW*|MSYS*|Windows_NT) os="windows" ;;
+  *) os="unknown" ;;
+esac
+
 # Link a file or a directory. Safe to run again: a link that already points
 # to the source is left alone, anything else in the way is replaced.
 function __link_file {
@@ -78,17 +85,9 @@ function __install_git {
 
   # Platform-specific config is included from ~/.gitconfig-<platform>,
   # because git does not resolve relative include paths through the symlink
-  case "$(uname -s)" in
-    Linux*)
-      __link_file "$base/configs/git/.gitconfig-linux" ~/.gitconfig-linux
-      ;;
-    Darwin*)
-      __link_file "$base/configs/git/.gitconfig-macos" ~/.gitconfig-macos
-      ;;
-    CYGWIN*|MINGW*|MSYS*|Windows_NT)
-      __link_file "$base/configs/git/.gitconfig-windows" ~/.gitconfig-windows
-      ;;
-  esac
+  if [ -f "$base/configs/git/.gitconfig-$os" ]; then
+    __link_file "$base/configs/git/.gitconfig-$os" ~/.gitconfig-"$os"
+  fi
 }
 
 function __install_tig {
@@ -101,94 +100,42 @@ function __install_tmux {
   __link_file "$base/configs/.tmux.conf" ~/.tmux.conf
 }
 
-function __install_vsc {
-  __print_title "Visual Studio Code"
+# Editors built on VS Code share the config layout; only the app folder differs.
+# Usage: __install_vsc_family <display name> <app folder>
+function __install_vsc_family {
+  local name="$1"
+  local dir="$2"
+  local path
 
-  case "$(uname -s)" in
-    Linux*)
-      echo "Running on Linux"
-      echo "TODO: check what path is used by VSC"
-      ;;
-    Darwin*)
-      echo "Running on macOS"
-      path="$HOME/Library/Application Support/Code/User/"
-      ;;
-    CYGWIN*|MINGW*|MSYS*|Windows_NT)
-      echo "Running on Windows"
-      path="$HOME/AppData/Roaming/Code/User/"
-      ;;
-    *)
-      echo "Unknown OS"
-      ;;
+  __print_title "$name"
+
+  case "$os" in
+    linux) path="$HOME/.config/$dir/User" ;;
+    macos) path="$HOME/Library/Application Support/$dir/User" ;;
+    windows) path="$HOME/AppData/Roaming/$dir/User" ;;
+    *) echo "Unknown OS"; return 0 ;;
   esac
 
-  if [ -d "${path}" ]; then
-    __link_file "$base/configs/vsc/snippets" "${path}snippets"
-    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
-    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
-  else
-    echo -e "Directory ${path} not exists\n"
+  if [ ! -d "$path" ]; then
+    echo -e "Directory ${path} not exists (is ${name} installed?)\n"
+    return 0
   fi
+
+  __link_file "$base/configs/vsc/snippets" "$path/snippets"
+  __link_file "$base/configs/vsc/keybindings.json" "$path/keybindings.json"
+  __link_file "$base/configs/vsc/settings.json" "$path/settings.json"
+}
+
+function __install_vsc {
+  __install_vsc_family "Visual Studio Code" "Code"
 }
 
 function __install_cursor {
-  __print_title "Cursor"
-
-  case "$(uname -s)" in
-    Linux*)
-      echo "Running on Linux"
-      echo "TODO: check what path is used by Cursor"
-      ;;
-    Darwin*)
-      echo "Running on macOS"
-      path="$HOME/Library/Application Support/Cursor/User/"
-      ;;
-    CYGWIN*|MINGW*|MSYS*|Windows_NT)
-      echo "Running on Windows"
-      path="$HOME/AppData/Roaming/Cursor/User/"
-      ;;
-    *)
-      echo "Unknown OS"
-      ;;
-  esac
-
-  if [ -d "${path}" ]; then
-    __link_file "$base/configs/vsc/snippets" "${path}snippets"
-    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
-    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
-  else
-    echo -e "Directory ${path} not exists\n"
-  fi
+  __install_vsc_family "Cursor" "Cursor"
 }
 
 function __install_windsurf {
-  __print_title "Windsurf"
-
-  case "$(uname -s)" in
-    Linux*)
-      echo "Running on Linux"
-      echo "TODO: check what path is used by Windsurf"
-      ;;
-    Darwin*)
-      echo "Running on macOS"
-      path="$HOME/Library/Application Support/Windsurf/User/"
-      ;;
-    CYGWIN*|MINGW*|MSYS*|Windows_NT)
-      echo "Running on Windows"
-      path="$HOME/AppData/Roaming/Windsurf/User/"
-      ;;
-    *)
-      echo "Unknown OS"
-      ;;
-  esac
-
-  if [ -d "${path}" ]; then
-    __link_file "$base/configs/vsc/snippets" "${path}snippets"
-    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
-    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
-  else
-    echo -e "Directory ${path} not exists\n"
-  fi
+  __install_vsc_family "Windsurf" "Windsurf"
 }
 
 function __install_zed {
@@ -235,12 +182,12 @@ function __install_iterm {
 
 echo "Install configs"
 
-case "$(uname -s)" in
-  Linux*)
+case "$os" in
+  linux)
     echo "Running on Linux"
     echo "TODO: verify tools"
     ;;
-  Darwin*)
+  macos)
     echo "Running on macOS"
     __install_profile
     __install_bash
@@ -262,7 +209,7 @@ case "$(uname -s)" in
     __install_yt_dlp
     __install_iterm
     ;;
-  CYGWIN*|MINGW*|MSYS*|Windows_NT)
+  windows)
     echo "Running on Windows"
     __install_bash
     __install_git
