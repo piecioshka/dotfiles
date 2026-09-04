@@ -174,6 +174,46 @@ function __install_yt_dlp {
   __link_file "$base/configs/.config/yt-dlp" ~/.config/yt-dlp
 }
 
+function __install_gh_dash {
+  __print_title "gh dash"
+
+  if ! command -v gh > /dev/null 2>&1; then
+    __print_action "gh not found, skipping"
+    return 0
+  fi
+
+  if ! gh auth status > /dev/null 2>&1; then
+    __print_action "gh is not logged in (run: gh auth login), skipping"
+    return 0
+  fi
+
+  if gh extension list 2> /dev/null | grep -q "dlvhdr/gh-dash"; then
+    __print_action "gh-dash already installed"
+  else
+    __print_action "Install gh-dash"
+    gh extension install dlvhdr/gh-dash
+  fi
+}
+
+function __install_node {
+  __print_title "Node.js"
+
+  if [ ! -s "$HOME/.nvm/nvm.sh" ]; then
+    __print_action "nvm not found, skipping (install: https://github.com/nvm-sh/nvm#install-script)"
+    return 0
+  fi
+
+  # shellcheck disable=SC1091
+  source "$HOME/.nvm/nvm.sh" --no-use
+
+  if [ "$(nvm version stable)" = "N/A" ]; then
+    __print_action "Install Node.js stable"
+    nvm install stable
+  else
+    __print_action "Node.js already installed: $(nvm version stable)"
+  fi
+}
+
 function __install_iterm {
   __print_title "iTerm2"
   # Dynamic profile: iTerm2 watches this folder and loads profiles from it
@@ -208,6 +248,8 @@ case "$os" in
     __install_htop
     __install_yt_dlp
     __install_iterm
+    __install_gh_dash
+    __install_node
     ;;
   windows)
     echo "Running on Windows"

@@ -13,14 +13,12 @@ bin/install.sh # symlinks configs into place, safe to run again
 
 Configs are symlinked from `configs/`, so the repo can live anywhere. Private settings (secrets, work aliases, git identity) load from `DOTFILES_PRIVATE_DIR` (default: `~/projects-private/dotfiles-private`) when it exists.
 
+`install.sh` also installs Vim plugins (Vundle), the `gh dash` extension (when `gh` is logged in) and Node.js stable (when [nvm](https://github.com/nvm-sh/nvm#install-script) is installed). Fish plugins (fisher, bass) are vendored in the repo.
+
 Then:
 
 - **tmux**: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`, then `prefix + I`
-- **Node.js**: install [nvm](https://github.com/nvm-sh/nvm#install-script), then `nvm install stable`
 - **iTerm2**: set the profile tagged `Dynamic` as default in Settings → Profiles
-- **gh**: `gh extension install dlvhdr/gh-dash`
-
-Fish plugins (fisher, bass) are vendored in the repo, Vim plugins (Vundle) are installed by `install.sh`.
 
 ## My scripts
 
