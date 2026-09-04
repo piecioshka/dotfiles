@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+root_dir="$(cd "$script_dir/.." && pwd)"
 source "$script_dir/__shared.sh"
-source "$script_dir/configs/shells/__colors.sh"
+source "$root_dir/configs/shells/__colors.sh"
 
-base=`pwd`
+base="$root_dir"
 
 # ------------------------------------------------------------------------------
 
