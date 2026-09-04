@@ -7,80 +7,98 @@ source "$root_dir/configs/shells/__colors.sh"
 
 base="$root_dir"
 
+# Link a file or a directory. Safe to run again: a link that already points
+# to the source is left alone, anything else in the way is replaced.
 function __link_file {
-  file1=${1}
-  file2=${2}
-  echo -e ""
-  ls -la --color=auto "${file2}"
-  rm -rf "${file2}"
-  __print_action "Remove file: ${file2}"
-  __print_action "Link file: ${file1} => ${file2}"
-  ln -s "${file1}" "${file2}"
+  local source="${1%/}"
+  local target="${2%/}"
+
+  if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
+    __print_action "Already linked: ${target}"
+    return 0
+  fi
+
+  mkdir -p "$(dirname "$target")"
+
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    rm -rf "$target"
+    __print_action "Remove: ${target}"
+  fi
+
+  ln -s "$source" "$target"
+  __print_action "Link: ${source} => ${target}"
 }
 
 # ------------------------------------------------------------------------------
 
 function __install_profile {
   __print_title ".profile"
-  __link_file $base/configs/.profile ~/.profile
+  __link_file "$base/configs/.profile" ~/.profile
 }
 
 function __install_bash {
   __print_title "Bash"
-  __link_file $base/configs/shells/bash/.bash_profile ~/.bash_profile
-  __link_file $base/configs/shells/bash/.bashrc ~/.bashrc
+  __link_file "$base/configs/shells/bash/.bash_profile" ~/.bash_profile
+  __link_file "$base/configs/shells/bash/.bashrc" ~/.bashrc
 }
 
 function __install_zsh {
   __print_title "Zsh"
-  __link_file $base/configs/shells/zsh/.zprofile ~/.zprofile
-  __link_file $base/configs/shells/zsh/.zshrc ~/.zshrc
+  __link_file "$base/configs/shells/zsh/.zprofile" ~/.zprofile
+  __link_file "$base/configs/shells/zsh/.zshrc" ~/.zshrc
 }
 
 function __install_fish {
   __print_title "Fish"
-  rm -rf ~/.config/fish
-  __link_file $base/configs/shells/fish/ ~/.config/fish
+  __link_file "$base/configs/shells/fish" ~/.config/fish
 }
 
 function __install_vim {
   __print_title "Vim"
-  __link_file $base/configs/.vimrc ~/.vimrc
-  mkdir -p ~/.vim/bundle
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  # vim +PluginInstall +qall
-  echo | echo | vim +PluginInstall +qall &>/dev/null
+  __link_file "$base/configs/.vimrc" ~/.vimrc
+
+  if [ -d ~/.vim/bundle/Vundle.vim ]; then
+    __print_action "Vundle already installed"
+  else
+    __print_action "Clone Vundle"
+    git clone --quiet https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  fi
+
+  if command -v vim > /dev/null 2>&1; then
+    __print_action "Install Vim plugins"
+    vim +PluginInstall +qall < /dev/null > /dev/null 2>&1
+  fi
 }
 
 function __install_git {
   __print_title "Git"
-  __link_file $base/configs/git/.gitattributes ~/.gitattributes
-  __link_file $base/configs/git/.gitconfig ~/.gitconfig
-  __link_file $base/configs/git/.gitignore ~/.gitignore
+  __link_file "$base/configs/git/.gitattributes" ~/.gitattributes
+  __link_file "$base/configs/git/.gitconfig" ~/.gitconfig
+  __link_file "$base/configs/git/.gitignore" ~/.gitignore
 
   # Platform-specific config is included from ~/.gitconfig-<platform>,
   # because git does not resolve relative include paths through the symlink
   case "$(uname -s)" in
     Linux*)
-      __link_file $base/configs/git/.gitconfig-linux ~/.gitconfig-linux
+      __link_file "$base/configs/git/.gitconfig-linux" ~/.gitconfig-linux
       ;;
     Darwin*)
-      __link_file $base/configs/git/.gitconfig-macos ~/.gitconfig-macos
+      __link_file "$base/configs/git/.gitconfig-macos" ~/.gitconfig-macos
       ;;
     CYGWIN*|MINGW*|MSYS*|Windows_NT)
-      __link_file $base/configs/git/.gitconfig-windows ~/.gitconfig-windows
+      __link_file "$base/configs/git/.gitconfig-windows" ~/.gitconfig-windows
       ;;
   esac
 }
 
 function __install_tig {
   __print_title "Tig"
-  __link_file $base/configs/.tigrc ~/.tigrc
+  __link_file "$base/configs/.tigrc" ~/.tigrc
 }
 
 function __install_tmux {
   __print_title "Tmux"
-  __link_file $base/configs/.tmux.conf ~/.tmux.conf
+  __link_file "$base/configs/.tmux.conf" ~/.tmux.conf
 }
 
 function __install_vsc {
@@ -105,9 +123,9 @@ function __install_vsc {
   esac
 
   if [ -d "${path}" ]; then
-    __link_file $base/configs/vsc/snippets/ "${path}snippets"
-    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
-    __link_file $base/configs/vsc/settings.json "${path}settings.json"
+    __link_file "$base/configs/vsc/snippets" "${path}snippets"
+    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
+    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
   else
     echo -e "Directory ${path} not exists\n"
   fi
@@ -135,9 +153,9 @@ function __install_cursor {
   esac
 
   if [ -d "${path}" ]; then
-    __link_file $base/configs/vsc/snippets/ "${path}snippets"
-    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
-    __link_file $base/configs/vsc/settings.json "${path}settings.json"
+    __link_file "$base/configs/vsc/snippets" "${path}snippets"
+    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
+    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
   else
     echo -e "Directory ${path} not exists\n"
   fi
@@ -165,9 +183,9 @@ function __install_windsurf {
   esac
 
   if [ -d "${path}" ]; then
-    __link_file $base/configs/vsc/snippets/ "${path}snippets"
-    __link_file $base/configs/vsc/keybindings.json "${path}keybindings.json"
-    __link_file $base/configs/vsc/settings.json "${path}settings.json"
+    __link_file "$base/configs/vsc/snippets" "${path}snippets"
+    __link_file "$base/configs/vsc/keybindings.json" "${path}keybindings.json"
+    __link_file "$base/configs/vsc/settings.json" "${path}settings.json"
   else
     echo -e "Directory ${path} not exists\n"
   fi
@@ -175,45 +193,44 @@ function __install_windsurf {
 
 function __install_zed {
   __print_title "zed"
-  __link_file $base/configs/.config/zed/settings.json ~/.config/zed/settings.json
+  __link_file "$base/configs/.config/zed/settings.json" ~/.config/zed/settings.json
 }
 
 function __install_fzf {
   __print_title "fzf"
-  __link_file $base/configs/.fzf.bash ~/.fzf.bash
-  __link_file $base/configs/.fzf.zsh ~/.fzf.zsh
+  __link_file "$base/configs/.fzf.bash" ~/.fzf.bash
+  __link_file "$base/configs/.fzf.zsh" ~/.fzf.zsh
 }
 
 function __install_fastfetch {
   __print_title "fastfetch"
-  __link_file $base/configs/.config/fastfetch/ ~/.config/fastfetch
+  __link_file "$base/configs/.config/fastfetch" ~/.config/fastfetch
 }
 
 function __install_mc {
   __print_title "mc"
-  __link_file $base/configs/.config/mc/ ~/.config/mc
+  __link_file "$base/configs/.config/mc" ~/.config/mc
 }
 
 function __install_btop {
   __print_title "btop"
-  __link_file $base/configs/.config/btop/ ~/.config/btop
+  __link_file "$base/configs/.config/btop" ~/.config/btop
 }
 
 function __install_htop {
   __print_title "htop"
-  __link_file $base/configs/.config/htop/ ~/.config/htop
+  __link_file "$base/configs/.config/htop" ~/.config/htop
 }
 
 function __install_yt_dlp {
   __print_title "yt-dlp"
-  __link_file $base/configs/.config/yt-dlp/ ~/.config/yt-dlp
+  __link_file "$base/configs/.config/yt-dlp" ~/.config/yt-dlp
 }
 
 function __install_iterm {
   __print_title "iTerm2"
   # Dynamic profile: iTerm2 watches this folder and loads profiles from it
-  mkdir -p "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
-  __link_file $base/configs/iterm/default.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/default.json"
+  __link_file "$base/configs/iterm/default.json" "$HOME/Library/Application Support/iTerm2/DynamicProfiles/default.json"
 }
 
 echo "Install configs"
