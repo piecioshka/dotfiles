@@ -1,0 +1,4 @@
+# Homebrew Brewfile uses Ruby syntax, but it is a package list, not source code.
+# Keep it out of the language statistics, otherwise CodeQL default setup tries
+# to analyze the repository as Ruby and fails with "no source code seen".
+Brewfile linguist-detectable=false
