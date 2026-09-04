@@ -71,8 +71,21 @@ function __install_vim {
     git clone --quiet https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   fi
 
-  if command -v vim > /dev/null 2>&1; then
-    __print_action "Install Vim plugins"
+  if ! command -v vim > /dev/null 2>&1; then
+    __print_action "vim not found, skipping plugins"
+    return 0
+  fi
+
+  # Vundle clones every Plugin 'owner/repo' from .vimrc into ~/.vim/bundle/<repo>
+  local plugin missing=0
+  while read -r plugin; do
+    [ -d "$HOME/.vim/bundle/${plugin##*/}" ] || missing=$((missing + 1))
+  done < <(sed -nE "s/^Plugin '([^']+)'.*/\1/p" "$base/configs/.vimrc")
+
+  if [ "$missing" -eq 0 ]; then
+    __print_action "Vim plugins already installed"
+  else
+    __print_action "Install Vim plugins (${missing} missing)"
     vim +PluginInstall +qall < /dev/null > /dev/null 2>&1
   fi
 }
