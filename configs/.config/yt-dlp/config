@@ -1,0 +1,24 @@
+# default to mp4 with h264 and aac, plays everywhere
+-f bv*[vcodec^=avc1][ext=mp4]+ba[ext=m4a]/bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b
+--merge-output-format mp4
+
+# do not overwrite, do not download the playlist when a single video link is given
+--no-overwrites
+--no-playlist
+
+# metadata and thumbnail embedded in the file
+--embed-metadata
+--embed-thumbnail
+
+# subtitles: prefer manual, fall back to automatic, as srt
+--sub-langs pl,en-orig,en
+--convert-subs srt
+
+# keep file names sane
+--restrict-filenames
+--trim-filenames 120
+
+# faster, no fuss on errors
+--concurrent-fragments 4
+--ignore-errors
+--progress

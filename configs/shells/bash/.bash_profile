@@ -12,6 +12,7 @@ source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
 ### Load file with aliases
 source "$DOTFILES_DIR/configs/shells/__aliases.sh"
+source "$DOTFILES_DIR/configs/shells/__yt-dlp.sh"
 
 ### Load prompt definition
 source "$DOTFILES_DIR/configs/shells/bash/.prompt"

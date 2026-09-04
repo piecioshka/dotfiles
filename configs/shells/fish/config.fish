@@ -76,6 +76,7 @@ set -gx PATH $HOME/.lmstudio/bin $PATH
 
 ### Load file with aliases
 bass source $DOTFILES_DIR/configs/shells/__aliases.sh
+bass source $DOTFILES_DIR/configs/shells/__yt-dlp.sh
 
 ### Support Angular CLI
 bass source $DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash

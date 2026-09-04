@@ -189,6 +189,11 @@ function __install_htop {
   __link_file $base/configs/.config/htop/ ~/.config/htop
 }
 
+function __install_yt_dlp {
+  __print_title "yt-dlp"
+  __link_file $base/configs/.config/yt-dlp/ ~/.config/yt-dlp
+}
+
 echo "Install configs"
 
 case "$(uname -s)" in
@@ -215,6 +220,7 @@ case "$(uname -s)" in
     __install_mc
     __install_btop
     __install_htop
+    __install_yt_dlp
     ;;
   CYGWIN*|MINGW*|MSYS*|Windows_NT)
     echo "Running on Windows"

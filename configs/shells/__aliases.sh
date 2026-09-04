@@ -22,8 +22,6 @@ alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | h
 alias mode="stat -f '%p %N'"
 alias z="code \$(fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
 alias exif-clean="exiftool -all= -overwrite_original"
-alias y="yt-dlp"
-alias mp4="yt-dlp -f 'bv*[vcodec^=avc1][ext=mp4]+ba[ext=m4a][language=pl]/b[ext=mp4]' --merge-output-format mp4"
 
 # ------------------------------------------------------------------------------
 
