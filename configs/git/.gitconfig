@@ -96,7 +96,7 @@
     excludesfile = ~/.gitignore
     # Set up the default editor
     editor = code --wait
-    # Convert end of line to pair: CRLF
+    # Convert CRLF to LF when committing, never touch line endings on checkout
     autocrlf = input
     # Enable file system monitoring
     fsmonitor = true
