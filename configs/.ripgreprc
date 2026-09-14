@@ -14,6 +14,7 @@
 
 ### Ignore directories
 --glob=!.angular/
+--glob=!.cache/
 --glob=!.git/
 --glob=!.next/
 --glob=!.playwright-mcp/
@@ -21,3 +22,4 @@
 --glob=!dist/
 --glob=!node_modules/
 --glob=!storybook-static/
+--glob=!tmp/
