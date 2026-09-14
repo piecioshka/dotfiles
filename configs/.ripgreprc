@@ -13,7 +13,11 @@
 --no-binary
 
 ### Ignore directories
+--glob=!.angular/
 --glob=!.git/
 --glob=!.next/
---glob=!.angular/
+--glob=!.playwright-mcp/
+--glob=!coverage/
+--glob=!dist/
 --glob=!node_modules/
+--glob=!storybook-static/
