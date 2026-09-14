@@ -428,5 +428,6 @@
   "wallaby.suppressExpirationNotifications": true,
   "extensions.supportAgentsWindow": {
     "monokai.theme-monokai-pro-vscode": true
-  }
+  },
+  "claudeCode.hideOnboarding": true
 }
