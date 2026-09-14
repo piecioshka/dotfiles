@@ -14,5 +14,6 @@
 
 ### Ignore directories
 --glob=!.git/
+--glob=!.next/
 --glob=!.angular/
 --glob=!node_modules/
