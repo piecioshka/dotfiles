@@ -162,14 +162,8 @@
     "ffprobe": true,
     "file": true,
     "find": true,
-    "git branch": true,
-    "git diff": true,
-    "git grep": true,
-    "git log": true,
-    "git remote": true,
-    "git show": true,
-    "git status": true,
-    "git tag": true,
+    "gh": true,
+    "git": true,
     "grep": true,
     "head": true,
     "jq": true,
@@ -216,8 +210,7 @@
     "xargs": true,
     "xxd": true,
     "yarn install": true,
-    "yarn": true,
-    "gh": true
+    "yarn": true
   },
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.preferredLocation": "sidebar",
@@ -429,5 +422,13 @@
   "extensions.supportAgentsWindow": {
     "monokai.theme-monokai-pro-vscode": true
   },
-  "claudeCode.hideOnboarding": true
+  "claudeCode.hideOnboarding": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
