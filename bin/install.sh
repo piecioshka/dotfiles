@@ -172,6 +172,19 @@ function __install_mc {
   __link_file "$base/configs/.config/mc" ~/.config/mc
 }
 
+function __install_yazi {
+  __print_title "yazi"
+  __link_file "$base/configs/.config/yazi" ~/.config/yazi
+
+  if ! command -v ya > /dev/null 2>&1; then
+    __print_action "ya not found, skipping plugins"
+    return 0
+  fi
+
+  # Restores the plugin versions pinned in package.toml.
+  ya pkg install > /dev/null 2>&1 && __print_action "Plugins installed"
+}
+
 function __install_btop {
   __print_title "btop"
   __link_file "$base/configs/.config/btop" ~/.config/btop
@@ -257,6 +270,7 @@ case "$os" in
     __install_fzf
     __install_fastfetch
     __install_mc
+    __install_yazi
     __install_btop
     __install_htop
     __install_yt_dlp

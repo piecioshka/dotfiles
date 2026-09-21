@@ -1,0 +1,86 @@
+# Yazi - terminal file manager.
+# Docs: https://yazi-rs.github.io/docs/configuration/yazi/
+
+[mgr]
+# Pane widths: parent / current / preview.
+ratio = [1, 3, 4]
+
+# "natural" sorts file2 before file10 (alphabetical would do the opposite).
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+
+# Show file size next to the name.
+linemode = "size"
+
+show_hidden = true
+show_symlink = true
+
+# Keep this many rows above and below the cursor while scrolling.
+scrolloff = 5
+
+[preview]
+wrap = "no"
+tab_size = 2
+max_width = 1200
+max_height = 1200
+image_filter = "lanczos3"
+image_quality = 85
+
+[opener]
+edit = [
+  { run = '$EDITOR "$@"', block = true, desc = "Edit", for = "unix" },
+]
+
+open = [
+  { run = 'open "$@"', desc = "Open with default app", for = "unix" },
+]
+
+reveal = [
+  { run = 'open -R "$1"', desc = "Reveal in Finder", for = "unix" },
+]
+
+extract = [
+  { run = 'unar "$1"', desc = "Extract here", for = "unix" },
+]
+
+play = [
+  { run = 'open "$@"', orphan = true, desc = "Play", for = "unix" },
+]
+
+[open]
+prepend_rules = [
+  # Extract archives instead of opening them in an editor.
+  { mime = "application/{zip,gzip,x-tar,x-bzip*,x-7z-compressed,x-rar,xz}", use = ["extract", "reveal"] },
+
+  { mime = "text/*", use = ["edit", "open", "reveal"] },
+  { mime = "application/{json,x-ndjson,javascript,xml,x-yaml,toml}", use = ["edit", "open", "reveal"] },
+  { mime = "inode/x-empty", use = ["edit", "reveal"] },
+
+  { mime = "image/*", use = ["open", "reveal"] },
+  { mime = "{audio,video}/*", use = ["play", "reveal"] },
+  { mime = "application/pdf", use = ["open", "reveal"] },
+]
+
+[plugin]
+# Git status for files and directories, rendered by the git plugin.
+prepend_fetchers = [
+  { url = "*", run = "git", group = "git" },
+  { url = "*/", run = "git", group = "git" },
+]
+
+prepend_previewers = [
+  # Markdown through glow - easier to read than raw text.
+  { url = "*.md", run = 'piper -- glow -w $w -s dark "$1"' },
+
+  # JSON through jq - colors and indentation.
+  { mime = "application/{json,x-ndjson}", run = 'piper -- jq -C . "$1"' },
+]
+
+[tasks]
+file_workers = 5
+plugin_workers = 5
+fetch_workers = 5
+preload_workers = 5
+bizarre_retry = 3
