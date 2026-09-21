@@ -1,0 +1,21 @@
+# Yazi keybindings.
+# Docs: https://yazi-rs.github.io/docs/configuration/keymap
+#
+# These only prepend to the defaults, so every built-in binding still works.
+
+[[mgr.prepend_keymap]]
+on = ["c", "m"]
+run = "plugin chmod"
+desc = "Chmod on selected files"
+
+[[mgr.prepend_keymap]]
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "Open lazygit"
+
+# "." alone toggles hidden files and "m" is the linemode prefix,
+# so the size calculation goes under "=" instead.
+[[mgr.prepend_keymap]]
+on = ["=", "s"]
+run = "plugin what-size"
+desc = "Calc size of selection or cwd"

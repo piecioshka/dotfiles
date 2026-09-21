@@ -13,5 +13,35 @@ use = "yazi-rs/plugins:piper"
 rev = "f703392"
 hash = "d1e0499cae5f3aeb628c267616d4b682"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "f703392"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:types"
+rev = "f703392"
+hash = "d368d5a6a72657e1c0e7ee7340dcea8c"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "1cb456f"
+hash = "7699acf73a1079f8a4afef5cec84ce73"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "c5d4b48"
+hash = "e6e98d12b1648d1894c2b560d85eeaa7"
+
+[[plugin.deps]]
+use = "Ape/simple-status"
+rev = "d0da104"
+hash = "68603fdd1dcaf415227e2c77a9317947"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
+
 [flavor]
 deps = []

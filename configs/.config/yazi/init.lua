@@ -10,3 +10,7 @@ require("full-border"):setup({
 require("git"):setup({
 	order = 1500,
 })
+
+-- Header-line and status-line in the lualine style.
+-- Replaces the built-in ones, so simple-status stays disabled on purpose.
+require("yatline"):setup()

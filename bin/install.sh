@@ -183,6 +183,13 @@ function __install_yazi {
 
   # Restores the plugin versions pinned in package.toml.
   ya pkg install > /dev/null 2>&1 && __print_action "Plugins installed"
+
+  # Plugin files live outside the repo, so local fixes are reapplied here.
+  # Re-run these after `ya pkg upgrade --discard`, which restores upstream code.
+  for patch in "$base"/configs/.config/yazi/patches/*.sh; do
+    [ -f "$patch" ] || continue
+    __print_action "$(bash "$patch")"
+  done
 }
 
 function __install_btop {
