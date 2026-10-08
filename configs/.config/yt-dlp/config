@@ -14,9 +14,9 @@
 --sub-langs pl,en-orig,en
 --convert-subs srt
 
-# keep file names sane
+# keep file names sane, long titles are cut to 150 bytes (macOS limit is 255)
 --restrict-filenames
---trim-filenames 120
+-o "%(title).150B [%(id)s].%(ext)s"
 
 # faster, no fuss on errors
 --concurrent-fragments 4
