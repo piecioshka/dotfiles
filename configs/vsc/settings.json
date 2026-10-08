@@ -80,6 +80,17 @@
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://openapi.vercel.sh/vercel.json": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://spec.openapis.org/": true,
+    "https://www.schemastore.org/": true
+  },
   "multiDiffEditor.experimental.enabled": true,
   "scm.defaultViewMode": "tree",
   "search.defaultViewMode": "tree",
@@ -227,7 +238,7 @@
     "yarn": true
   },
   "chat.viewSessions.orientation": "stacked",
-  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.preferredLocation": "panel",
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en,pl",
   "cSpell.userWords": ["piecioshka"],
@@ -288,6 +299,7 @@
   "prettier.vueIndentScriptAndStyle": false,
   "r.lsp.debug": true,
   "r.lsp.diagnostics": false,
+  "security.promptForLocalFileProtocolHandling": false,
   "sequencediagrams.diagram.style": "simple",
   "svelte.enable-ts-plugin": true,
   "todohighlight.defaultStyle": {
