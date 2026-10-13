@@ -9,7 +9,7 @@ set -q DOTFILES_PRIVATE_DIR; or set -gx DOTFILES_PRIVATE_DIR $HOME/projects-priv
 
 ### Setup default editor
 if [ "$(uname)" = 'Darwin' ]
-  set -gx EDITOR code
+  set -gx EDITOR "code --wait"
 else
   set -gx EDITOR vim
 end
@@ -27,9 +27,6 @@ set -gx PATH $HOME/projects/jira-scripts/bin $PATH
 set -gx PATH $HOME/projects/media-scripts/bin $PATH
 set -gx PATH $HOME/projects/my-binaries/bin $PATH
 set -gx PATH $HOME/projects/my-scripts/bin $PATH
-
-### Support GPG
-set -gx PATH /usr/local/opt/gnupg/libexec/gpgbin $PATH
 
 ### Support Homebrew
 # set -gx PATH $HOME/usr/local/bin $PATH
@@ -55,12 +52,14 @@ set -gx RIPGREP_CONFIG_PATH $DOTFILES_DIR/configs/.ripgreprc
 [ -s "/opt/homebrew/bin/pyenv" ] && status --is-interactive; and source (pyenv init -|psub)
 
 ### Resolve an issue: $ fish: Unknown command: python
-if command -v brew > /dev/null 2>&1
-  set -gx PATH (brew --prefix python@3)/libexec/bin $PATH
+# `brew --prefix python@3` points to the newest formula even when it is not installed,
+# opt/python always links to the installed one
+if test -d /opt/homebrew/opt/python/libexec/bin
+  set -gx PATH /opt/homebrew/opt/python/libexec/bin $PATH
 end
 set -gx PYTHON (command -v python3)
 
-### Increase default memory for Node.js processes
+### Set the Node.js heap limit to 4 GB (the default depends on the RAM size)
 set -gx NODE_OPTIONS "--max_old_space_size=4096"
 
 ### Support Claude AI - https://claude.com/product/claude-code
@@ -78,9 +77,6 @@ set -gx PATH $HOME/.lmstudio/bin $PATH
 bass source $DOTFILES_DIR/configs/shells/__aliases.sh
 bass source $DOTFILES_DIR/configs/shells/__yt-dlp.sh
 
-### Support Angular CLI
-bass source $DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash
-
 ### Load secret config files
 [ -s "$DOTFILES_PRIVATE_DIR/.profile" ] && bass source $DOTFILES_PRIVATE_DIR/.profile
 
@@ -88,4 +84,7 @@ bass source $DOTFILES_DIR/configs/shells/bash/functions/angular-cli.bash
 
 # https://github.com/nvm-sh/nvm#fish
 # You must call it on initialization or listening to directory switching won't work
+# A nested fish inherits the nvm Node path, which `brew shellenv` above moves
+# behind /opt/homebrew/bin; drop it, so `nvm use` puts it in front again
+set -gx PATH (string match -v -- "$HOME/.nvm/*" $PATH)
 load_nvm > /dev/stderr

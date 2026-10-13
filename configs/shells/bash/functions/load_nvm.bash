@@ -46,4 +46,4 @@ cdnvm() {
 }
 
 alias cd='cdnvm'
-cdnvm "$PWD" || exit
+cdnvm "$PWD" || true # a failed nvm install must not close the login shell

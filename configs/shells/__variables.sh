@@ -9,12 +9,6 @@ export PATH="$HOME/projects/media-scripts/bin:$PATH"
 export PATH="$HOME/projects/my-binaries/bin:$PATH"
 export PATH="$HOME/projects/my-scripts/bin:$PATH"
 
-### Support GPG
-export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
-
-### Support Homebrew
-export PATH="/usr/local/bin:$PATH"
-
 ### Support Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
@@ -40,7 +34,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ### Setup default editor
 if [[ "$(uname)" == 'Darwin' ]]; then
-  export EDITOR=code
+  export EDITOR="code --wait"
 else
   export EDITOR=vim
 fi
@@ -51,7 +45,7 @@ export PYTHON=$(command -v python3)
 ### Support ripgrep
 export RIPGREP_CONFIG_PATH="$DOTFILES_DIR/configs/.ripgreprc"
 
-### Increase default memory for Node.js processes
+### Set the Node.js heap limit to 4 GB (the default depends on the RAM size)
 export NODE_OPTIONS=--max_old_space_size=4096
 
 ### Support nvm

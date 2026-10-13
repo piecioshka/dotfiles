@@ -9,7 +9,7 @@ source "$DOTFILES_DIR/configs/shells/__colors.sh"
 
 ### Get current state of git repo
 __parse_git_state() {
-    state=`git status 2>&1 | tee`
+    state=`LC_ALL=C git status 2>&1`
 
     dirty=`echo -n "${state}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
     untracked=`echo -n "${state}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
@@ -68,4 +68,5 @@ __get_host() {
     fi
 }
 
-PS1="(bash) ${__COLOR_GREEN_LIGHT}\w${__COLOR_CYAN}\`__get_git_branch_with_state\`${__COLOR_BLUE_LIGHT} \`__get_host\`> ${__COLOR_RESET}"
+# Colors are wrapped in \[ \], otherwise readline counts them as visible characters
+PS1="(bash) \[${__COLOR_GREEN_LIGHT}\]\w\[${__COLOR_CYAN}\]\`__get_git_branch_with_state\`\[${__COLOR_BLUE_LIGHT}\] \`__get_host\`> \[${__COLOR_RESET}\]"

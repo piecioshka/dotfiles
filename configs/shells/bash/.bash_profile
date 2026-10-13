@@ -7,6 +7,10 @@ export DOTFILES_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../../..
 : "${DOTFILES_PRIVATE_DIR:=$HOME/projects-private/dotfiles-private}"
 export DOTFILES_PRIVATE_DIR
 
+### Load file .bashrc first: it runs `brew shellenv`, which puts /opt/homebrew/bin
+### in front of PATH, so nvm, python3 and most from the files below win over it
+[ -s ~/.bashrc ] && source ~/.bashrc
+
 ### Load file with variables
 source "$DOTFILES_DIR/configs/shells/__variables.sh"
 
@@ -29,9 +33,6 @@ source "$DOTFILES_DIR/configs/shells/bash/functions/homebrew-completion.bash"
 ### Support command to shorten the prompt
 source "$DOTFILES_DIR/configs/shells/bash/functions/tiny_prompt.bash"
 
-### Load file .bashrc
-[ -s ~/.bashrc ] && source ~/.bashrc
-
 ### Load file .profile
 [ -s ~/.profile ] && source ~/.profile
 
@@ -42,10 +43,7 @@ source "$DOTFILES_DIR/configs/shells/bash/functions/tiny_prompt.bash"
 [ -s "/opt/homebrew/bin/rbenv" ] && eval "$(rbenv init -)"
 
 ### Support pyenv - Python Version Manager
-# you don't need to do nothing, because pyenv is already available
+# not initialized in bash: add eval "$(pyenv init -)" to use pyenv shims
 
 ### Support fzf
 [ -s ~/.fzf.bash ] && source ~/.fzf.bash
-
-### Support Cargo (Rust Package Manager)
-[ -s "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"

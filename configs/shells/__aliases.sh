@@ -18,7 +18,7 @@ alias v='vim'
 alias tree='tree --dirsfirst -C'
 alias f='find . -not -path "*/node_modules/*" -not -path "*/.git/*" -iname'
 alias grep='grep --color=auto'
-alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # Get file with last modified time.
+alias lastfile="find . -type f -exec stat -f '%m %Sm %N' -t '%F %T' {} + | sort -rn | head -5 | cut -d' ' -f2-" # 5 most recently modified files
 alias mode="stat -f '%p %N'"
 alias z="code \$(fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
 alias exif-clean="exiftool -all= -overwrite_original"
@@ -33,14 +33,14 @@ alias owns="npx github-codeowners who -c CODEOWNERS" # Usage: owns <file-path>
 # ------------------------------------------------------------------------------
 
 ### Network (macOS)
-alias ip="ifconfig | grep 'inet '" # Print all IP addresses
-alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index of /" content
+alias ip="ifconfig | grep 'inet '" # Print all IPv4 addresses
+alias download='wget -nv -m -np -e robots=off --reject "index.html*"' # Download all content of "Index of /" content
 alias https='http --default-scheme=https'
 
 # ------------------------------------------------------------------------------
 
 ### Docker
-alias docker-kill-all='docker kill $(docker ps -a -q)'
+alias docker-kill-all='docker kill $(docker ps -q)'
 alias docker-rm-all='docker rm $(docker ps -a -q)'
 alias docker-stop-all='docker stop $(docker ps -a -q)'
 alias docker-images-rm-all='docker image rm $(docker images -q)'
