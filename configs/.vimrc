@@ -1,5 +1,10 @@
+" Setup UTF-8: 'encoding' has to be set before :scriptencoding and the
+" Unicode characters used below
+set encoding=utf-8
+scriptencoding utf-8
+
 " Use Vundle
-" See: https://github.com/gmarik/Vundle.vim
+" See: https://github.com/VundleVim/Vundle.vim
 " -----------------------------------------------------------------------------
 
 " (cp) use Vim defaults (much better)
@@ -12,7 +17,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle - required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My bundles here:
 
@@ -26,10 +31,8 @@ Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden = 1
 " disable quit NERDTree panel when file open
 let NERDTreeQuitOnOpen = 0
-" disable hideNERDTree when open new file
+" Enter opens the file in a new tab (default key: t)
 let NERDTreeMapOpenInTab = '<ENTER>'
-
-autocmd BufWinEnter * NERDTreeMirror
 
 
 " Set the same state of NERDTree in each tab
@@ -48,9 +51,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
 
-" You should have ctags 5.x, recommend: 'brew install ctags'; after that set 'alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags'
 Plugin 'bling/vim-airline'
-set laststatus=10
+" Always show the status line
+set laststatus=2
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -102,7 +105,7 @@ Plugin 'mattn/emmet-vim'
 " Enable shortcut: CTRL+P which is great to search file in project
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$\|\.hg$\|\.svn$\|.idea$\|vendor\|node_modules$\|bower_components$\|target$\|project$',
+  \ 'dir': '[\/]\(\.git\|\.hg\|\.svn\|\.idea\|vendor\|node_modules\|bower_components\|target\|project\)$',
   \ 'file': '\v\.(exe|so|dll|log|png|jpeg|jpg)$',
   \ }
 let g:ctrlp_show_hidden = 1
@@ -116,7 +119,7 @@ Plugin 'google/vim-searchindex'
 Plugin 'nathanaelkane/vim-indent-guides'
 set ts=4 sw=4 et
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
@@ -152,15 +155,12 @@ filetype plugin indent on    " required
 " https://github.com/scrooloose/syntastic/issues/803
 set shell=bash
 
-" Add directory for temporary files
-set directory^=$HOME/.vim/swp/
+" Add directory for swap files (// keeps the full path in the name, so files
+" with the same name do not collide; install.sh creates the directory)
+set directory^=$HOME/.vim/swp//
 
 " Enable syntax highlight
 syntax on
-
-" Setup UTF-8
-scriptencoding utf-8
-set encoding=utf-8
 
 " Setup font
 set guifont=Monaco:h20
@@ -195,7 +195,7 @@ set history=100
 " Set 4 chars after what editor has stopped
 set tabstop=4
 " Controls tab and backspace spacing in insert mode.
-set softtabstop=0 " 0 means the same as tabstop
+set softtabstop=-1 " negative means the same as shiftwidth
 " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
 set shiftwidth=4
 " (et) expand tabs to spaces (use :retab to redo entire file)
@@ -260,9 +260,9 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 " Live templates
-imap =fn function () {<CR>}<LEFT><UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
-imap =it it('', () => {<CR>});<UP><RIGHT>
-imap =describe describe('', () => {<CR>});<UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
+inoremap =fn function () {<CR>}<LEFT><UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
+inoremap =it it('', () => {<CR>});<UP><RIGHT>
+inoremap =describe describe('', () => {<CR>});<UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
 
 " Ctrl + n - Execute JavaScript file
-map <C-n> :! clear && echo "// Execute file:" % && echo "" && node %<CR>
+nnoremap <C-n> :!clear && echo "// Execute file:" %:S && echo "" && node %:S<CR>

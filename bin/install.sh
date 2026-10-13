@@ -56,6 +56,7 @@ function __install_fish {
 function __install_vim {
   __print_title "Vim"
   __link_file "$base/configs/.vimrc" ~/.vimrc
+  mkdir -p ~/.vim/swp
 
   if [ -d ~/.vim/bundle/Vundle.vim ]; then
     __print_action "Vundle already installed"
