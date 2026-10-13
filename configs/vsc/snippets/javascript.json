@@ -2,7 +2,7 @@
     "Lorem Ipsum (first sentence)": {
         "prefix": "lorem",
         "body": [
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         ]
     },
     "Define CommonJS module": {
@@ -17,7 +17,7 @@
             "(function () {\n\t$1\n})();"
         ]
     },
-    "Lamba": {
+    "Arrow function (lambda)": {
         "prefix": "l",
         "body": [
             "() => {\n\t$1\n}"

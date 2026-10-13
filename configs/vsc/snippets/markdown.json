@@ -2,7 +2,7 @@
     "Lorem Ipsum (first sentence)": {
         "prefix": "lorem",
         "body": [
-            "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         ]
     },
     "Line": {
