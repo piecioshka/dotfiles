@@ -7,13 +7,6 @@ source "$root_dir/configs/shells/__colors.sh"
 
 base="$root_dir"
 
-case "$(uname -s)" in
-  Linux*) os="linux" ;;
-  Darwin*) os="macos" ;;
-  CYGWIN*|MINGW*|MSYS*|Windows_NT) os="windows" ;;
-  *) os="unknown" ;;
-esac
-
 # Link a file or a directory. Safe to run again: a link that already points
 # to the source is left alone, anything else in the way is replaced.
 function __link_file {
