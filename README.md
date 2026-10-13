@@ -11,7 +11,7 @@ brew bundle    # CLI tools and fonts from Brewfile (macOS)
 bin/install.sh # symlinks configs into place, safe to run again
 ```
 
-Configs are symlinked from `configs/`, so the repo can live anywhere. Private settings (secrets, work aliases, git identity) load from `DOTFILES_PRIVATE_DIR` (default: `~/projects-private/dotfiles-private`) when it exists.
+Configs are symlinked from `configs/`, so the repo can live anywhere. Private settings (secrets, work aliases) load from `DOTFILES_PRIVATE_DIR` (default: `~/projects-private/dotfiles-private`) when it exists. Git does not expand variables in include paths, so the git identity always comes from `~/projects-private/dotfiles-private/.gitconfig`.
 
 `install.sh` also installs Vim plugins (Vundle), the `gh dash` extension (when `gh` is logged in) and Node.js stable (when [nvm](https://github.com/nvm-sh/nvm#install-script) is installed). Fish plugins (fisher, bass) are vendored in the repo.
 
