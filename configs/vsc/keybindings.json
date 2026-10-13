@@ -51,8 +51,7 @@
     },
     {
         "key": "ctrl+f5",
-        "command": "-workbench.action.debug.run",
-        "when": "!inDebugMode"
+        "command": "-workbench.action.debug.run"
     },
     {
         "key": "shift+cmd+r",
@@ -61,8 +60,7 @@
     },
     {
         "key": "f5",
-        "command": "-workbench.action.debug.start",
-        "when": "!inDebugMode"
+        "command": "-workbench.action.debug.start"
     },
     {
         "key": "alt+cmd+left",
@@ -99,8 +97,7 @@
     },
     {
         "key": "cmd+k cmd+j",
-        "command": "-editor.unfoldAll",
-        "when": "editorTextFocus"
+        "command": "-editor.unfoldAll"
     },
     {
         "key": "shift+cmd+-",
@@ -109,8 +106,7 @@
     },
     {
         "key": "cmd+k cmd+0",
-        "command": "-editor.foldAll",
-        "when": "editorTextFocus"
+        "command": "-editor.foldAll"
     },
     {
         "key": "shift+cmd+]",
@@ -129,17 +125,16 @@
     },
     {
         "key": "ctrl+shift+r",
-        "command": "-editor.action.refactor",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+        "command": "-editor.action.refactor"
     },
     {
         "key": "shift+cmd+7",
-        "command": "references-view.find",
+        "command": "references-view.findReferences",
         "when": "editorHasReferenceProvider"
     },
     {
         "key": "shift+alt+f12",
-        "command": "-references-view.find",
+        "command": "-references-view.findReferences",
         "when": "editorHasReferenceProvider"
     },
     {
@@ -153,8 +148,7 @@
     },
     {
         "key": "alt+f5",
-        "command": "-workbench.action.editor.nextChange",
-        "when": "editorTextFocus"
+        "command": "-workbench.action.editor.nextChange"
     },
     {
         "key": "shift+cmd+0",
@@ -163,8 +157,7 @@
     },
     {
         "key": "shift+alt+f5",
-        "command": "-workbench.action.editor.previousChange",
-        "when": "editorTextFocus"
+        "command": "-workbench.action.editor.previousChange"
     },
     {
         "key": "shift+cmd+u",
@@ -195,8 +188,7 @@
     },
     {
         "key": "f12",
-        "command": "-editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        "command": "-editor.action.revealDefinition"
     },
     {
         "key": "shift+cmd+a",
@@ -228,11 +220,13 @@
     },
     {
         "key": "cmd+3",
-        "command": "claudeVSCodeSidebar.focus"
+        "command": "claudeVSCodeSidebar.focus",
+        "when": "claude-code:doesNotSupportSecondarySidebar"
     },
     {
         "key": "cmd+3",
-        "command": "claudeVSCodeSidebarSecondary.focus"
+        "command": "claudeVSCodeSidebarSecondary.focus",
+        "when": "!claude-code:doesNotSupportSecondarySidebar"
     },
     {
         "key": "shift+cmd+down",

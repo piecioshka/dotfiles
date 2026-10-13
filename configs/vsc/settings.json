@@ -17,7 +17,7 @@
   "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": false,
   "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": false, // bounded
+  "editor.trimAutoWhitespace": false,
   "editor.wordWrapColumn": 80,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 2,
@@ -30,6 +30,7 @@
   "explorer.autoReveal": false,
   "explorer.compactFolders": true,
   "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -74,11 +75,11 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
-  "html.format.wrapLineLength": -1,
+  "html.format.wrapLineLength": 0,
   "http.systemCertificatesNode": true,
-  "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.suggest.completeFunctionCalls": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.preferences.importModuleSpecifier": "relative",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": true,
   "json.schemaDownload.trustedDomains": {
     "https://developer.microsoft.com/json-schemas/": true,
@@ -91,7 +92,6 @@
     "https://spec.openapis.org/": true,
     "https://www.schemastore.org/": true
   },
-  "multiDiffEditor.experimental.enabled": true,
   "scm.defaultViewMode": "tree",
   "search.defaultViewMode": "tree",
   "search.showLineNumbers": true,
@@ -119,13 +119,8 @@
   },
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.stickyScroll.enabled": false,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": 1,
   "workbench.activityBar.location": "top",
   "workbench.browser.openLocalhostLinks": false,
@@ -256,7 +251,6 @@
     "scminput": true
   },
   "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.chat.completionContext.typescript.mode": "on",
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.enabled": false,
@@ -268,9 +262,6 @@
   ],
   "gitlens.hovers.enabled": false,
   "gitlens.ai.enabled": false,
-  "gitlens.ai.experimental.model": "openai:gpt-4o",
-  "gitlens.ai.experimental.provider": "openai",
-  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
   "hediet.vscode-drawio.resizeImages": null,
   "hexeditor.columnWidth": 16,
   "hexeditor.defaultEndianness": "little",
