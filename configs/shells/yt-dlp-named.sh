@@ -12,7 +12,7 @@ if (($# >= 2)); then
   # and is neither an option nor another URL
   if [[ $prev == *://* && $name != -* && $name != *://* ]]; then
     case "$name" in
-      *.mp4 | *.mkv | *.webm | *.mp3 | *.m4a) name="${name%.*}" ;;
+      *.mp4 | *.mkv | *.webm | *.mp3 | *.m4a | *.srt | *.vtt) name="${name%.*}" ;;
     esac
     exec yt-dlp "${@:1:$#-1}" -o "${name//%/%%}.%(ext)s"
   fi

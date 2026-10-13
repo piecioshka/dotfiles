@@ -10,7 +10,7 @@
 --embed-metadata
 --embed-thumbnail
 
-# subtitles: prefer manual, fall back to automatic, as srt
+# subtitles for the aliases that write them; with --write-subs and --write-auto-subs a manual track wins over an automatic one
 --sub-langs pl,en-orig,en
 --convert-subs srt
 
