@@ -3,7 +3,6 @@
 
 [delta]
     syntax-theme = Monokai Extended
-    navigate = true
     color-only = true
     line-numbers = true
 

@@ -21,7 +21,7 @@
 
     delete-branch = "!f() { git branch -D $1; git push origin --delete $1; }; f"
     # Usage: git rename-branch OLD_NAME NEW_NAME
-    rename-branch = "!f() { git branch -m $1 $2; git push origin :$1 $2; }; f"
+    rename-branch = "!f() { git branch -m \"$1\" \"$2\" && git push origin --delete \"$1\" && git push -u origin \"$2\"; }; f"
     last-branch-name = "!f() { git rev-parse --abbrev-ref HEAD; }; f"
 
     feature = "!f() { git switch -c feature/$1; }; f"
@@ -29,7 +29,8 @@
 
     delete-tag = "!f() { git tag -d $1; git push origin --delete $1; }; f"
     # Usage: git rename-tag OLD_NAME NEW_NAME
-    rename-tag = "!f() { git tag $2 $1; git delete-tag $1; }; f"
+    # An annotated tag is recreated with the same message, the new tag is pushed before the old one is deleted
+    rename-tag = "!f() { if [ \"$(git cat-file -t \"$1\")\" = tag ]; then git tag -a \"$2\" \"$1^{}\" -m \"$(git for-each-ref --format='%(contents)' \"refs/tags/$1\")\"; else git tag \"$2\" \"$1\"; fi && git push origin \"refs/tags/$2\" && git delete-tag \"$1\"; }; f"
     last-tag = "!f() { git tag --list --sort version:refname | tail -n 1; }; f"
 
     cp = cherry-pick
@@ -86,15 +87,16 @@
     verbose = true
 
 [core]
-    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as errors
-    whitespace = space-before-tab,indent-with-non-tab,trailing-space
-    # Enable case sensitivity
-    ignorecase = false
+    # Treat spaces before tabs and all kinds of trailing whitespace as errors
+    whitespace = space-before-tab,trailing-space
     # Enable global configuration for the ignore list
     excludesfile = ~/.gitignore
+    # Enable global attributes (git reads ~/.config/git/attributes by default)
+    attributesfile = ~/.gitattributes
     # Set up the default editor
     editor = code --wait
     # Convert CRLF to LF when committing, never touch line endings on checkout
+    # (with safecrlf = true below, git add refuses a file with CRLF instead of converting it)
     autocrlf = input
     # Enable file system monitoring
     fsmonitor = true
@@ -112,8 +114,6 @@
 [fetch]
     # Remove remote-tracking references that no longer exist on the remote
     prune = true
-    # Remove tags that no longer exist on the remote
-    pruneTags = true
     # Fetch all remotes
     all = true
 
@@ -132,7 +132,7 @@
     allowedSignersFile = ""
 
 [help]
-    # immediately show the help message without waiting for user input
+    # Run the suggested command right away when a git command is mistyped
     autocorrect = 1
 
 [init]
@@ -165,10 +165,6 @@
     autoSetupRemote = true
     # Push tags along with branches
     followTags = true
-
-[remote "origin"]
-    tagopt = --no-tags
-    push = HEAD
 
 [tag]
     gpgsign = false
