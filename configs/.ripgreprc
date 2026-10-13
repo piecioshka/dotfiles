@@ -3,14 +3,11 @@
 ### Don't let ripgrep vomit really long lines to my terminal.
 --max-columns=150
 
-### Flag below means: --no-ignore --hidden --binary
--uuu
+### Search files listed in .gitignore too (only the directories below are skipped)
+--no-ignore
 
 ### Display hidden files
 --hidden
-
-### Ignore binary files
---no-binary
 
 ### Ignore directories
 --glob=!.angular/
