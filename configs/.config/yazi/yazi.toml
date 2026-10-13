@@ -29,34 +29,37 @@ image_filter = "lanczos3"
 image_quality = 85
 
 [opener]
+# %s are the selected files and %s1 the hovered one; yazi quotes them itself.
+# The old "$@" and "$1" no longer receive any files.
 edit = [
-  { run = '$EDITOR "$@"', block = true, desc = "Edit", for = "unix" },
+  { run = '$EDITOR %s', block = true, desc = "Edit", for = "unix" },
 ]
 
 open = [
-  { run = 'open "$@"', desc = "Open with default app", for = "unix" },
+  { run = 'open %s', desc = "Open with default app", for = "unix" },
 ]
 
 reveal = [
-  { run = 'open -R "$1"', desc = "Reveal in Finder", for = "unix" },
+  { run = 'open -R %s1', desc = "Reveal in Finder", for = "unix" },
 ]
 
 extract = [
-  { run = 'unar "$1"', desc = "Extract here", for = "unix" },
+  { run = 'unar %s1', desc = "Extract here", for = "unix" },
 ]
 
 play = [
-  { run = 'open "$@"', orphan = true, desc = "Play", for = "unix" },
+  { run = 'open %s', orphan = true, desc = "Play", for = "unix" },
 ]
 
 [open]
+# yazi drops the x- and vnd. prefixes from mime types before matching.
 prepend_rules = [
   # Extract archives instead of opening them in an editor.
-  { mime = "application/{zip,gzip,x-tar,x-bzip*,x-7z-compressed,x-rar,xz}", use = ["extract", "reveal"] },
+  { mime = "application/{zip,gzip,tar,bzip*,7z*,rar,xz}", use = ["extract", "reveal"] },
 
   { mime = "text/*", use = ["edit", "open", "reveal"] },
-  { mime = "application/{json,x-ndjson,javascript,xml,x-yaml,toml}", use = ["edit", "open", "reveal"] },
-  { mime = "inode/x-empty", use = ["edit", "reveal"] },
+  { mime = "application/{json,ndjson,javascript,xml,yaml,toml}", use = ["edit", "open", "reveal"] },
+  { mime = "inode/empty", use = ["edit", "reveal"] },
 
   { mime = "image/*", use = ["open", "reveal"] },
   { mime = "{audio,video}/*", use = ["play", "reveal"] },
@@ -75,7 +78,7 @@ prepend_previewers = [
   { url = "*.md", run = 'piper -- glow -w $w -s dark "$1"' },
 
   # JSON through jq - colors and indentation.
-  { mime = "application/{json,x-ndjson}", run = 'piper -- jq -C . "$1"' },
+  { mime = "application/{json,ndjson}", run = 'piper -- jq -C . "$1"' },
 ]
 
 [tasks]
