@@ -3,6 +3,7 @@
     {
       "Name" : "Default (Font = FiraCode Nerd)",
       "Window Type" : 0,
+      "Normal Font" : "FiraCodeNF-Reg 12",
       "Rewritable" : true,
       "Guid" : "983218A3-F088-4FEF-93F8-5FCF4D38521A"
     }

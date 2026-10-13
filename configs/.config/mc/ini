@@ -77,7 +77,6 @@ vfs_timeout=60
 ftpfs_directory_timeout=900
 ftpfs_retry_seconds=30
 shell_directory_timeout=900
-fish_directory_timeout=900
 editor_tab_spacing=8
 editor_word_wrap_line_length=72
 editor_option_save_mode=0
