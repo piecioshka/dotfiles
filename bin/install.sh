@@ -201,6 +201,11 @@ function __install_yt_dlp {
   __link_file "$base/configs/.config/yt-dlp" ~/.config/yt-dlp
 }
 
+function __install_husky {
+  __print_title "husky"
+  __link_file "$base/configs/.config/husky" ~/.config/husky
+}
+
 function __install_gh_dash {
   __print_title "gh dash"
 
@@ -275,6 +280,7 @@ case "$os" in
     __install_btop
     __install_htop
     __install_yt_dlp
+    __install_husky
     __install_iterm
     __install_gh_dash
     __install_node

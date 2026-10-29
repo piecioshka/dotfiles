@@ -143,6 +143,11 @@ function __remove_yt_dlp {
   __unlink_file "$base/configs/.config/yt-dlp" ~/.config/yt-dlp
 }
 
+function __remove_husky {
+  __print_title "husky"
+  __unlink_file "$base/configs/.config/husky" ~/.config/husky
+}
+
 function __remove_iterm {
   __print_title "iTerm2"
   __unlink_file "$base/configs/iterm/default.json" "$HOME/Library/Application Support/iTerm2/DynamicProfiles/default.json"
@@ -176,6 +181,7 @@ case "$os" in
     __remove_btop
     __remove_htop
     __remove_yt_dlp
+    __remove_husky
     __remove_iterm
     ;;
   windows)
