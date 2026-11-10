@@ -128,7 +128,7 @@ alias gpb='git publish-branch'
 alias gpd='git run-on-nested-repos "git -c color.ui=always diff --unified=1"'
 alias gpl='git run-on-nested-repos "git -c color.ui=always pull --all"'
 alias gpp='git projects-push'
-alias gps='git run-on-nested-repos "git -c color.ui=always status -sb"'
+alias gps='git projects-status'
 alias gpu='git projects-update'
 
 ### Official GitHub CLI
