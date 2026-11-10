@@ -6,7 +6,6 @@ function __parse_git_state
 
     set -l dirty (echo -n "$state" 2> /dev/null | grep "modified:" &> /dev/null; echo "$status")
     set -l untracked (echo -n "$state" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$status")
-    set -l ahead (echo -n "$state" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$status")
     set -l newfile (echo -n "$state" 2> /dev/null | grep "new file:" &> /dev/null; echo "$status")
     set -l renamed (echo -n "$state" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$status")
     set -l deleted (echo -n "$state" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$status")
@@ -14,9 +13,6 @@ function __parse_git_state
 
     if [ "$renamed" = "0" ]
         set bits ">$bits"
-    end
-    if [ "$ahead" = "0" ]
-        set bits "*$bits"
     end
     if [ "$newfile" = "0" ]
         set bits "+$bits"
@@ -30,11 +26,37 @@ function __parse_git_state
     if [ "$dirty" = "0" ]
         set bits "!$bits"
     end
+    set -l sync (__get_git_upstream_counts)
+    if [ "$sync" != "" ]
+        set bits "$bits $sync"
+    end
+    set bits (string trim -- $bits)
+
     if [ "$bits" != "" ]
         echo " $bits"
     else
         echo ""
     end
+end
+
+# Commits not on the upstream (↑) and upstream commits missing locally (↓).
+# Reads the counts from git instead of parsing `git status` text, so it also
+# works when the branch has diverged and with any git UI language. Prints
+# nothing without an upstream branch or when both sides are in sync.
+function __get_git_upstream_counts
+    set -l counts (git rev-list --left-right --count 'HEAD...@{upstream}' 2> /dev/null | string split \t)
+    if test (count $counts) -ne 2
+        return
+    end
+
+    set -l parts
+    if test $counts[1] -gt 0
+        set -a parts "↑$counts[1]"
+    end
+    if test $counts[2] -gt 0
+        set -a parts "↓$counts[2]"
+    end
+    string join ' ' -- $parts
 end
 
 # Get current branch and status in git repo
