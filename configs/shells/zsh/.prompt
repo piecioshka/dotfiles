@@ -1,19 +1,57 @@
 #!/usr/bin/env zsh
 
-autoload -Uz vcs_info # enable vcs_info
+# ------------------------------------------------------------------------------
+# Same git markers as the bash and fish prompts:
+#   ! modified, x deleted, ? untracked, + new file, > renamed,
+#   ↑N commits not on the upstream, ↓N upstream commits missing locally.
+# ------------------------------------------------------------------------------
 
-check_untracked_files() {
-  if [[ -n $(git status --porcelain 2>/dev/null | grep '^??') ]]; then
-    echo "?"
+### Get current state of git repo
+__parse_git_state() {
+  local state bits='' sync
+  state=$(LC_ALL=C git status 2>&1)
+
+  [[ "$state" == *"renamed:"* ]] && bits=">$bits"
+  [[ "$state" == *"new file:"* ]] && bits="+$bits"
+  [[ "$state" == *"Untracked files"* ]] && bits="?$bits"
+  [[ "$state" == *"deleted:"* ]] && bits="x$bits"
+  [[ "$state" == *"modified:"* ]] && bits="!$bits"
+
+  sync=$(__get_git_upstream_counts)
+  [[ -n "$sync" ]] && bits="$bits $sync"
+  bits="${bits# }"
+
+  [[ -n "$bits" ]] && echo " $bits"
+}
+
+### Commits not on the upstream (↑) and upstream commits missing locally (↓).
+### Reads the counts from git instead of parsing `git status` text, so it also
+### works when the branch has diverged and with any git UI language. Prints
+### nothing without an upstream branch or when both sides are in sync.
+__get_git_upstream_counts() {
+  local counts ahead behind parts=''
+  counts=$(git rev-list --left-right --count 'HEAD...@{upstream}' 2>/dev/null) || return
+  read -r ahead behind <<< "$counts"
+  [[ -z "$behind" ]] && return
+
+  (( ahead > 0 )) && parts="↑$ahead"
+  (( behind > 0 )) && parts="${parts:+$parts }↓$behind"
+  echo "$parts"
+}
+
+### Get current branch and status in git repo
+__get_git_branch_with_state() {
+  local branch git_state
+  branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+
+  if [[ -n "$branch" ]]; then
+    git_state=$(__parse_git_state)
+    echo " [$branch$git_state]"
   fi
 }
 
-precmd () {
-  vcs_info
-  untracked_files=$(check_untracked_files)
-}
-
-get_host() {
+### Get host name (hidden when it contains ".lan" or ".local")
+__get_host() {
   local host host_lc
   host=$(hostname 2>/dev/null)
   host_lc=$(echo "$host" | tr '[:upper:]' '[:lower:]')
@@ -25,14 +63,5 @@ get_host() {
   fi
 }
 
-# Configure vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats '%b%u%c'
-zstyle ':vcs_info:*' actionformats '%b|%a%u%c'
-zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:git:*' unstagedstr '!'
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' check-for-staged-changes false
-
 setopt prompt_subst
-PS1='(zsh) %F{green}%~%f%F{cyan}${vcs_info_msg_0_:+ [${vcs_info_msg_0_}${untracked_files}]}%f%F{blue} $(get_host)> %f'
+PS1='(zsh) %F{green}%~%f%F{cyan}$(__get_git_branch_with_state)%f%F{blue} $(__get_host)> %f'
